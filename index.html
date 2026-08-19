@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="EarnJoy - Free educational study materials, lecture PDFs and learning resources for students.">
-
-    <meta name="keywords"
-        content="EarnJoy, study materials, lecture notes, PDF, students, free education">
-
-    <meta name="author" content="EarnJoy">
+          content="EarnJoy - Free study materials, lecture PDFs and educational resources for students.">
 
     <title>EarnJoy | Earning with Enjoy</title>
 
@@ -27,9 +21,13 @@
 
         <div class="header-container">
 
-            <a href="index.html" class="brand">
+            <a href="./" class="brand">
 
-                <img src="Logo.png" alt="EarnJoy Logo" class="logo">
+                <img
+                    src="Logo.png"
+                    alt="EarnJoy Logo"
+                    class="logo"
+                >
 
                 <div class="brand-text">
                     <h1>EarnJoy</h1>
@@ -45,123 +43,143 @@
 
     <!-- ================= HERO SECTION ================= -->
 
-    <section class="hero">
+    <main>
 
-        <div class="hero-container">
+        <section class="hero">
 
-            <h2>Free Study Materials</h2>
+            <div class="hero-container">
 
-            <p>
-                Find your course, read the lecture materials and
-                download PDFs completely free.
-            </p>
-
-            <!-- Search -->
-
-            <div class="search-container">
-
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search courses or study materials..."
-                    autocomplete="off"
-                >
-
-                <button id="clearSearch" class="clear-button">
-                    ×
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= MAIN CONTENT ================= -->
-
-    <main class="main-container">
-
-        <section class="courses-section">
-
-            <div class="section-heading">
-
-                <div>
-                    <h2>Available Courses</h2>
-
-                    <p>
-                        Select a course to find its study materials.
-                    </p>
-                </div>
-
-                <span id="courseCount" class="course-count">
-                    0 Courses
-                </span>
-
-            </div>
-
-
-            <!-- Courses will be loaded here using JavaScript -->
-
-            <div id="coursesContainer" class="courses-container">
-
-                <div class="loading">
-                    Loading courses...
-                </div>
-
-            </div>
-
-
-            <!-- No results -->
-
-            <div id="noResults" class="no-results hidden">
-
-                <div class="no-results-icon">
-                    🔍
-                </div>
-
-                <h3>No results found</h3>
+                <h2>Free Study Materials</h2>
 
                 <p>
-                    Try searching with another course or topic name.
+                    Find your course, read the lecture materials
+                    and download PDFs completely free.
                 </p>
+
+                <div class="search-container">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search courses or study materials..."
+                        autocomplete="off"
+                    >
+
+                </div>
 
             </div>
 
         </section>
 
+
+        <!-- ================= COURSES SECTION ================= -->
+
+        <section class="courses-section">
+
+            <div class="courses-container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Available Courses</h2>
+
+                        <p>
+                            Select a course to find its study materials.
+                        </p>
+                    </div>
+
+                    <span
+                        id="courseCount"
+                        class="course-count">
+                        0 Courses
+                    </span>
+
+                </div>
+
+
+                <!-- Loading Message -->
+
+                <div
+                    id="loadingMessage"
+                    class="status-message">
+
+                    <div class="loader"></div>
+
+                    <p>Loading study materials...</p>
+
+                </div>
+
+
+                <!-- Error Message -->
+
+                <div
+                    id="errorMessage"
+                    class="status-message error-message hidden">
+
+                    <h3>Unable to load study materials</h3>
+
+                    <p>
+                        Please refresh the page and try again.
+                    </p>
+
+                </div>
+
+
+                <!-- Courses -->
+
+                <div
+                    id="coursesContainer"
+                    class="courses-grid">
+                </div>
+
+
+                <!-- No Results -->
+
+                <div
+                    id="noResults"
+                    class="no-results hidden">
+
+                    <div class="no-results-icon">
+                        🔎
+                    </div>
+
+                    <h3>No results found</h3>
+
+                    <p>
+                        Try searching with another course or topic name.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+
+            <div class="footer-container">
+
+                <h3>EarnJoy</h3>
+
+                <p>
+                    Free educational study materials for students.
+                </p>
+
+                <p class="copyright">
+                    © 2026 EarnJoy. All study materials are provided free of cost.
+                </p>
+
+            </div>
+
+        </footer>
+
     </main>
 
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <h3>EarnJoy</h3>
-
-            <p>Earning with Enjoy</p>
-
-            <p class="footer-description">
-                Free educational study materials for students.
-            </p>
-
-            <div class="footer-line"></div>
-
-            <p class="copyright">
-                © <span id="currentYear"></span> EarnJoy. All Rights Reserved.
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <!-- JavaScript -->
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
