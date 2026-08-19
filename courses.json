@@ -1,0 +1,16 @@
+{
+    "courses": [
+        {
+            "id": "stock-market",
+            "name": "Stock Market",
+            "description": "Learn the fundamentals of financial markets, investing and the stock market.",
+            "icon": "📈",
+            "materials": [
+                {
+                    "title": "Day 1 - Introduction to Financial Markets",
+                    "pdf": "Lectures/Stock Market/Day 1 - Introduction to Financial Markets.pdf"
+                },
+            ]
+        }
+    ]
+}
