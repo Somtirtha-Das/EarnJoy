@@ -32,7 +32,7 @@ async function loadCourses() {
 
     try {
 
-        const response = await fetch("courses.json");
+        const response = await fetch("courses.json?v=2");
 
         if (!response.ok) {
             throw new Error("Unable to load course data.");
