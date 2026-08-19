@@ -103,7 +103,6 @@ body {
     color: #64748b;
 }
 
-
 /* ================= YOUTUBE LINK ================= */
 
 .youtube-link {
@@ -119,7 +118,7 @@ body {
 
     padding: 10px 0;
 
-    color: #ff0000;
+    color: #ff0000 !important;
 
     text-decoration: none;
 
@@ -136,14 +135,14 @@ body {
 
 
 .youtube-link:hover {
-    color: #cc0000;
+    color: #cc0000 !important;
 
     transform: translateY(-1px);
 }
 
 
 .youtube-icon {
-    color: #ff0000;
+    color: #ff0000 !important;
 
     font-size: 17px;
 
@@ -152,7 +151,7 @@ body {
 
 
 .youtube-link:hover .youtube-icon {
-    color: #cc0000;
+    color: #cc0000 !important;
 }
 
 
