@@ -1,5 +1,5 @@
 /* =====================================================
-   EarnJoy - Main JavaScript
+   EARNJOY - JAVASCRIPT
    ===================================================== */
 
 
@@ -7,53 +7,108 @@
 
 let courses = [];
 
-const coursesContainer =
-    document.getElementById("coursesContainer");
+
+/* ================= DOM ELEMENTS ================= */
 
 const searchInput =
     document.getElementById("searchInput");
 
-const clearSearch =
-    document.getElementById("clearSearch");
-
-const noResults =
-    document.getElementById("noResults");
+const coursesContainer =
+    document.getElementById("coursesContainer");
 
 const courseCount =
     document.getElementById("courseCount");
 
-const currentYear =
-    document.getElementById("currentYear");
+const loadingMessage =
+    document.getElementById("loadingMessage");
+
+const errorMessage =
+    document.getElementById("errorMessage");
+
+const noResults =
+    document.getElementById("noResults");
 
 
-/* ================= LOAD COURSE DATA ================= */
+/* ================= LOAD COURSES ================= */
 
 async function loadCourses() {
 
     try {
 
-        const response = await fetch("courses.json?v=2");
+        /*
+         * cache: "no-store"
+         * prevents the browser from using an old
+         * courses.json file.
+         *
+         * The timestamp also creates a fresh URL
+         * every time the page loads.
+         */
+
+        const response = await fetch(
+            "courses.json?v=" + Date.now(),
+            {
+                cache: "no-store"
+            }
+        );
+
+
+        /* Check HTTP response */
 
         if (!response.ok) {
-            throw new Error("Unable to load course data.");
+
+            throw new Error(
+                "Unable to load courses.json. HTTP Status: " +
+                response.status
+            );
+
         }
+
+
+        /* Read JSON */
 
         const data = await response.json();
 
-        courses = data.courses || [];
+
+        /* Validate JSON structure */
+
+        if (!data || !Array.isArray(data.courses)) {
+
+            throw new Error(
+                "Invalid courses.json structure."
+            );
+
+        }
+
+
+        /* Store courses */
+
+        courses = data.courses;
+
+
+        /* Hide loading */
+
+        loadingMessage.classList.add("hidden");
+
+
+        /* Display courses */
 
         displayCourses(courses);
 
-    } catch (error) {
+    }
 
-        console.error(error);
+    catch (error) {
 
-        coursesContainer.innerHTML = `
-            <div class="loading">
-                Unable to load study materials.
-                Please try again later.
-            </div>
-        `;
+        console.error(
+            "EarnJoy loading error:",
+            error
+        );
+
+        loadingMessage.classList.add("hidden");
+
+        errorMessage.classList.remove("hidden");
+
+        courseCount.textContent =
+            "0 Courses";
 
     }
 
@@ -66,9 +121,20 @@ function displayCourses(courseList) {
 
     coursesContainer.innerHTML = "";
 
-    courseCount.textContent =
-        `${courseList.length} ${courseList.length === 1 ? "Course" : "Courses"}`;
+    noResults.classList.add("hidden");
 
+
+    /* Update course count */
+
+    const count = courseList.length;
+
+    courseCount.textContent =
+        count === 1
+            ? "1 Course"
+            : `${count} Courses`;
+
+
+    /* No courses */
 
     if (courseList.length === 0) {
 
@@ -78,54 +144,13 @@ function displayCourses(courseList) {
 
     }
 
-    noResults.classList.add("hidden");
 
+    /* Create course cards */
 
     courseList.forEach(course => {
 
         const card =
-            document.createElement("div");
-
-        card.className = "course-card";
-
-
-        card.innerHTML = `
-
-            <div class="course-icon">
-                ${course.icon || "📚"}
-            </div>
-
-            <h3>
-                ${escapeHTML(course.name)}
-            </h3>
-
-            <p class="course-description">
-                ${escapeHTML(course.description || "")}
-            </p>
-
-            <p class="material-count">
-                📄 ${course.materials.length}
-                ${course.materials.length === 1 ? "Material" : "Materials"}
-            </p>
-
-            <button
-                class="view-course"
-                onclick="toggleMaterials('${course.id}')"
-            >
-                View Study Materials
-            </button>
-
-            <div
-                id="materials-${course.id}"
-                class="materials-container"
-            >
-
-                ${createMaterialsHTML(course.materials)}
-
-            </div>
-
-        `;
-
+            createCourseCard(course);
 
         coursesContainer.appendChild(card);
 
@@ -134,85 +159,218 @@ function displayCourses(courseList) {
 }
 
 
-/* ================= CREATE MATERIALS ================= */
+/* ================= CREATE COURSE CARD ================= */
 
-function createMaterialsHTML(materials) {
+function createCourseCard(course) {
 
-    if (!materials || materials.length === 0) {
+    const card =
+        document.createElement("article");
 
-        return `
-            <p class="course-description">
-                No study materials available yet.
-            </p>
-        `;
-
-    }
+    card.className =
+        "course-card";
 
 
-    return materials.map(material => {
+    /* Icon */
 
-        const safePDF =
-            encodeURI(material.pdf);
+    const icon =
+        document.createElement("div");
 
-        return `
+    icon.className =
+        "course-icon";
 
-            <div class="material">
+    icon.textContent =
+        course.icon || "📚";
 
-                <div class="material-title">
-                    📄 ${escapeHTML(material.title)}
-                </div>
 
-                <div class="material-actions">
+    /* Course title */
 
-                    <a
-                        href="${safePDF}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="material-button read-button"
-                    >
-                        📖 Read PDF
-                    </a>
+    const title =
+        document.createElement("h3");
 
-                    <a
-                        href="${safePDF}"
-                        download
-                        class="material-button download-button"
-                    >
-                        ⬇ Download PDF
-                    </a>
+    title.textContent =
+        course.name;
 
-                </div>
 
-            </div>
+    /* Description */
 
-        `;
+    const description =
+        document.createElement("p");
 
-    }).join("");
+    description.className =
+        "course-description";
+
+    description.textContent =
+        course.description || "";
+
+
+    /* Material count */
+
+    const materialCount =
+        document.createElement("div");
+
+    materialCount.className =
+        "material-count";
+
+    const materials =
+        Array.isArray(course.materials)
+            ? course.materials
+            : [];
+
+    materialCount.textContent =
+        materials.length === 1
+            ? "📄 1 Study Material"
+            : `📄 ${materials.length} Study Materials`;
+
+
+    /* Materials section */
+
+    const materialsSection =
+        document.createElement("div");
+
+    materialsSection.className =
+        "materials";
+
+
+    const materialsTitle =
+        document.createElement("div");
+
+    materialsTitle.className =
+        "materials-title";
+
+    materialsTitle.textContent =
+        "Study Materials";
+
+
+    materialsSection.appendChild(
+        materialsTitle
+    );
+
+
+    /* Create each material */
+
+    materials.forEach(material => {
+
+        const materialItem =
+            createMaterialItem(material);
+
+        materialsSection.appendChild(
+            materialItem
+        );
+
+    });
+
+
+    /* Build card */
+
+    card.appendChild(icon);
+
+    card.appendChild(title);
+
+    card.appendChild(description);
+
+    card.appendChild(materialCount);
+
+    card.appendChild(materialsSection);
+
+
+    return card;
 
 }
 
 
-/* ================= TOGGLE MATERIALS ================= */
+/* ================= CREATE MATERIAL ================= */
 
-function toggleMaterials(courseId) {
+function createMaterialItem(material) {
 
-    const materials =
-        document.getElementById(
-            `materials-${courseId}`
-        );
+    const item =
+        document.createElement("div");
 
-    if (!materials) {
-        return;
-    }
+    item.className =
+        "material-item";
 
-    materials.classList.toggle("active");
+
+    /* Material title */
+
+    const title =
+        document.createElement("h4");
+
+    title.textContent =
+        material.title;
+
+
+    /* Buttons container */
+
+    const actions =
+        document.createElement("div");
+
+    actions.className =
+        "material-actions";
+
+
+    /* ================= READ BUTTON ================= */
+
+    const readButton =
+        document.createElement("a");
+
+    readButton.className =
+        "btn btn-read";
+
+    readButton.textContent =
+        "Read PDF";
+
+    readButton.href =
+        encodeURI(material.pdf);
+
+    readButton.target =
+        "_blank";
+
+    readButton.rel =
+        "noopener noreferrer";
+
+
+    /* ================= DOWNLOAD BUTTON ================= */
+
+    const downloadButton =
+        document.createElement("a");
+
+    downloadButton.className =
+        "btn btn-download";
+
+    downloadButton.textContent =
+        "Download";
+
+    downloadButton.href =
+        encodeURI(material.pdf);
+
+    downloadButton.download = "";
+
+
+    /* Add buttons */
+
+    actions.appendChild(
+        readButton
+    );
+
+    actions.appendChild(
+        downloadButton
+    );
+
+
+    /* Add content */
+
+    item.appendChild(title);
+
+    item.appendChild(actions);
+
+
+    return item;
 
 }
 
 
 /* ================= SEARCH ================= */
 
-function searchCourses() {
+function performSearch() {
 
     const searchTerm =
         searchInput.value
@@ -220,98 +378,65 @@ function searchCourses() {
             .toLowerCase();
 
 
+    /* Empty search */
+
     if (searchTerm === "") {
 
         displayCourses(courses);
-
-        clearSearch.style.display = "none";
 
         return;
 
     }
 
 
-    clearSearch.style.display = "block";
-
+    /* Filter courses */
 
     const filteredCourses =
         courses.filter(course => {
 
             const courseName =
-                course.name.toLowerCase();
+                (course.name || "")
+                    .toLowerCase();
 
-            const courseDescription =
-                (course.description || "").toLowerCase();
+            const description =
+                (course.description || "")
+                    .toLowerCase();
 
             const materialMatch =
-                course.materials.some(material =>
-                    material.title
-                        .toLowerCase()
-                        .includes(searchTerm)
+                Array.isArray(course.materials)
+                    &&
+                course.materials.some(
+                    material =>
+                        (material.title || "")
+                            .toLowerCase()
+                            .includes(searchTerm)
                 );
 
 
             return (
-                courseName.includes(searchTerm) ||
-                courseDescription.includes(searchTerm) ||
+                courseName.includes(searchTerm)
+                ||
+                description.includes(searchTerm)
+                ||
                 materialMatch
             );
 
         });
 
 
-    displayCourses(filteredCourses);
+    displayCourses(
+        filteredCourses
+    );
 
 }
 
 
-/* ================= CLEAR SEARCH ================= */
-
-function clearSearchInput() {
-
-    searchInput.value = "";
-
-    clearSearch.style.display = "none";
-
-    displayCourses(courses);
-
-    searchInput.focus();
-
-}
-
-
-/* ================= ESCAPE HTML ================= */
-
-function escapeHTML(text) {
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
-
-}
-
-
-/* ================= EVENT LISTENERS ================= */
+/* ================= SEARCH EVENT ================= */
 
 searchInput.addEventListener(
     "input",
-    searchCourses
+    performSearch
 );
-
-
-clearSearch.addEventListener(
-    "click",
-    clearSearchInput
-);
-
-
-/* ================= CURRENT YEAR ================= */
-
-currentYear.textContent =
-    new Date().getFullYear();
 
 
 /* ================= START WEBSITE ================= */
