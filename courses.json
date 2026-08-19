@@ -1,0 +1,56 @@
+{
+    "courses": [
+        {
+            "id": "stock-market",
+            "name": "Stock Market",
+            "description": "Learn the fundamentals of financial markets, investing and the stock market.",
+            "icon": "📈",
+            "materials": [
+                {
+                    "title": "Day 1 - Introduction to Financial Markets",
+                    "pdf": "lectures/Stock Market/Day 1 - Introduction to Financial Markets.pdf"
+                },
+                {
+                    "title": "Day 2 - Types of Financial Markets",
+                    "pdf": "lectures/Stock Market/Day 2 - Types of Financial Markets.pdf"
+                },
+                {
+                    "title": "Day 3 - Stock Market Basics",
+                    "pdf": "lectures/Stock Market/Day 3 - Stock Market Basics.pdf"
+                }
+            ]
+        },
+        {
+            "id": "marketing-management",
+            "name": "Marketing Management",
+            "description": "Study materials covering important concepts of Marketing Management.",
+            "icon": "📊",
+            "materials": [
+                {
+                    "title": "Module 1",
+                    "pdf": "lectures/Marketing Management/Module 1.pdf"
+                },
+                {
+                    "title": "Module 2",
+                    "pdf": "lectures/Marketing Management/Module 2.pdf"
+                }
+            ]
+        },
+        {
+            "id": "business-law",
+            "name": "Business Law",
+            "description": "Important study materials and lecture notes for Business Law.",
+            "icon": "⚖️",
+            "materials": [
+                {
+                    "title": "Module 1",
+                    "pdf": "lectures/Business Law/Module 1.pdf"
+                },
+                {
+                    "title": "Module 2",
+                    "pdf": "lectures/Business Law/Module 2.pdf"
+                }
+            ]
+        }
+    ]
+}
