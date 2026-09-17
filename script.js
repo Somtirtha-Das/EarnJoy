@@ -169,20 +169,79 @@ function createCourseCard(course) {
     card.className =
         "course-card";
 
+    /* Make entire course card clickable */
 
-    /* Icon */
+    card.addEventListener("click", () => {
 
-    const icon =
+        window.location.href =
+            "course.html?id=" + encodeURIComponent(course.id);
+
+    });
+
+
+    /* ================= COURSE IMAGE ================= */
+
+    const image =
+        document.createElement("img");
+
+    image.className =
+        "course-image";
+
+    image.src =
+        course.image || "Logo.png";
+
+    image.alt =
+        course.name;
+
+
+    /* ================= COURSE INFO ================= */
+
+    const courseInfo =
         document.createElement("div");
 
-    icon.className =
-        "course-icon";
-
-    icon.textContent =
-        course.icon || "📚";
+    courseInfo.className =
+        "course-info";
 
 
-    /* Course title */
+    /* ================= PROVIDER ================= */
+
+    const provider =
+        document.createElement("div");
+
+    provider.className =
+        "course-provider";
+
+
+    const providerLogo =
+        document.createElement("img");
+
+    providerLogo.src =
+        "Logo.png";
+
+    providerLogo.alt =
+        "EarnJoy";
+
+    providerLogo.className =
+        "provider-logo";
+
+
+    const providerName =
+        document.createElement("span");
+
+    providerName.textContent =
+        "EarnJoy";
+
+
+    provider.appendChild(
+        providerLogo
+    );
+
+    provider.appendChild(
+        providerName
+    );
+
+
+    /* ================= COURSE TITLE ================= */
 
     const title =
         document.createElement("h3");
@@ -191,92 +250,86 @@ function createCourseCard(course) {
         course.name;
 
 
-    /* Description */
+    /* ================= COURSE META ================= */
 
-    const description =
-        document.createElement("p");
-
-    description.className =
-        "course-description";
-
-    description.textContent =
-        course.description || "";
-
-
-    /* Material count */
-
-    const materialCount =
+    const meta =
         document.createElement("div");
 
-    materialCount.className =
-        "material-count";
+    meta.className =
+        "course-meta";
 
-    const materials =
-        Array.isArray(course.materials)
-            ? course.materials
-            : [];
-
-    materialCount.textContent =
-        materials.length === 1
-            ? "📄 1 Study Material"
-            : `📄 ${materials.length} Study Materials`;
+    meta.textContent =
+        "⭐ 4.8 · Beginner · Course";
 
 
-    /* Materials section */
+    /* ================= COURSE BADGE ================= */
 
-    const materialsSection =
-        document.createElement("div");
+    const badge =
+        document.createElement("span");
 
-    materialsSection.className =
-        "materials";
+    badge.className =
+        "course-badge";
 
-
-    const materialsTitle =
-        document.createElement("div");
-
-    materialsTitle.className =
-        "materials-title";
-
-    materialsTitle.textContent =
-        "Study Materials";
+    badge.textContent =
+        "30 Days Course";
 
 
-    materialsSection.appendChild(
-        materialsTitle
+    /* ================= PREVIEW BUTTON ================= */
+
+    const preview =
+        document.createElement("span");
+
+    preview.className =
+        "preview-button";
+
+    preview.textContent =
+        "Preview";
+
+
+    /* ================= BUILD CARD ================= */
+
+    courseInfo.appendChild(
+        provider
     );
 
+    courseInfo.appendChild(
+        title
+    );
 
-    /* Create each material */
+    courseInfo.appendChild(
+        meta
+    );
 
-    materials.forEach(material => {
+    const bottomRow =
+        document.createElement("div");
 
-        const materialItem =
-            createMaterialItem(material);
+    bottomRow.className =
+        "course-bottom";
 
-        materialsSection.appendChild(
-            materialItem
-        );
+    bottomRow.appendChild(
+        badge
+    );
 
-    });
+    bottomRow.appendChild(
+        preview
+    );
 
+    courseInfo.appendChild(
+        bottomRow
+    );
 
-    /* Build card */
+    card.appendChild(
+        image
+    );
 
-    card.appendChild(icon);
-
-    card.appendChild(title);
-
-    card.appendChild(description);
-
-    card.appendChild(materialCount);
-
-    card.appendChild(materialsSection);
+    card.appendChild(
+        courseInfo
+    );
 
 
     return card;
 
 }
-
 
 /* ================= CREATE MATERIAL ================= */
 
