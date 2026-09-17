@@ -259,7 +259,7 @@ function createCourseCard(course) {
         "course-meta";
 
     meta.textContent =
-        "⭐ 4.8 · Beginner · Course";
+        "Beginner · Course";
 
 
     /* ================= COURSE BADGE ================= */
