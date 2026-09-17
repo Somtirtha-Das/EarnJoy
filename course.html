@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EarnJoy Stock Market Course - Study Materials"
+    >
+
+    <title>Stock Market | EarnJoy</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <a
+                href="index.html"
+                class="brand"
+            >
+
+                <img
+                    src="Logo.png"
+                    alt="EarnJoy Logo"
+                    class="logo"
+                >
+
+                <div class="brand-text">
+
+                    <h1>EarnJoy</h1>
+
+                    <p>Earning with Enjoy</p>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="https://www.youtube.com/@EarnJoyOfficial"
+                class="youtube-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="youtube-icon">▶</span>
+
+                <span>Watch Lectures on YouTube</span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= COURSE CONTENT ================= -->
+
+    <main class="course-page">
+
+        <div
+            id="courseDetails"
+            class="course-page-container"
+        >
+
+            Loading course...
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <h3>EarnJoy</h3>
+
+            <p>Earning with Enjoy</p>
+
+            <p class="footer-description">
+                Free educational study materials for students.
+            </p>
+
+            <div class="footer-line"></div>
+
+            <p class="copyright">
+                © <span id="currentYear"></span>
+                EarnJoy. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        let courses = [];
+
+
+        async function loadCourse() {
+
+            const container =
+                document.getElementById(
+                    "courseDetails"
+                );
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "courses.json?v=" +
+                        Date.now(),
+                        {
+                            cache: "no-store"
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to load courses."
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                courses =
+                    data.courses || [];
+
+
+                const params =
+                    new URLSearchParams(
+                        window.location.search
+                    );
+
+
+                const courseId =
+                    params.get("id");
+
+
+                const course =
+                    courses.find(
+                        item =>
+                            item.id === courseId
+                    );
+
+
+                if (!course) {
+
+                    container.innerHTML = `
+                        <div class="no-results">
+                            <div class="no-results-icon">
+                                ⚠️
+                            </div>
+
+                            <h3>
+                                Course not found
+                            </h3>
+
+                            <p>
+                                Please return to the homepage.
+                            </p>
+                        </div>
+                    `;
+
+                    return;
+
+                }
+
+
+                displayCourse(course);
+
+            }
+
+            catch (error) {
+
+                console.error(error);
+
+                container.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">
+                            ⚠️
+                        </div>
+
+                        <h3>
+                            Unable to load course
+                        </h3>
+
+                        <p>
+                            Please try refreshing the page.
+                        </p>
+                    </div>
+                `;
+
+            }
+
+        }
+
+
+
+        function displayCourse(course) {
+
+            const container =
+                document.getElementById(
+                    "courseDetails"
+                );
+
+
+            const materials =
+                Array.isArray(course.materials)
+                    ? course.materials
+                    : [];
+
+
+            let materialsHTML = "";
+
+
+            materials.forEach(
+                (material, index) => {
+
+                    materialsHTML += `
+
+                        <div class="course-material-item">
+
+                            <div class="material-number">
+                                ${index + 1}
+                            </div>
+
+                            <div class="course-material-info">
+
+                                <h3>
+                                    ${material.title}
+                                </h3>
+
+                            </div>
+
+                            <div class="course-material-actions">
+
+                                <a
+                                    href="${encodeURI(material.pdf)}"
+                                    class="btn btn-read"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Read PDF
+                                </a>
+
+                                <a
+                                    href="${encodeURI(material.pdf)}"
+                                    class="btn btn-download"
+                                    download
+                                >
+                                    Download
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+
+            container.innerHTML = `
+
+                <div class="course-page-header">
+
+                    <a
+                        href="index.html"
+                        class="back-button"
+                    >
+                        ← Back to Courses
+                    </a>
+
+
+                    <img
+                        src="${course.image || "Logo.png"}"
+                        alt="${course.name}"
+                        class="course-page-image"
+                    >
+
+
+                    <div class="course-page-provider">
+
+                        <img
+                            src="Logo.png"
+                            alt="EarnJoy"
+                        >
+
+                        <span>
+                            EarnJoy
+                        </span>
+
+                    </div>
+
+
+                    <h1>
+                        ${course.name}
+                    </h1>
+
+
+                    <p class="course-page-description">
+                        ${course.description || ""}
+                    </p>
+
+
+                    <div class="course-page-meta">
+                        ⭐ 4.8 · Beginner · Course
+                    </div>
+
+
+                    <div class="course-page-count">
+                        📄 ${materials.length}
+                        ${materials.length === 1
+                            ? "Study Material"
+                            : "Study Materials"}
+                    </div>
+
+                </div>
+
+
+                <section class="course-materials-section">
+
+                    <h2>
+                        Study Materials
+                    </h2>
+
+                    <p>
+                        Access all lectures and study materials
+                        from this course.
+                    </p>
+
+
+                    <div class="course-materials-list">
+
+                        ${materialsHTML}
+
+                    </div>
+
+                </section>
+
+            `;
+
+        }
+
+
+        document.getElementById(
+            "currentYear"
+        ).textContent =
+            new Date().getFullYear();
+
+
+        loadCourse();
+
+    </script>
+
+
+</body>
+
+</html>
