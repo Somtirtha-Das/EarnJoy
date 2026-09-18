@@ -825,22 +825,22 @@ footer p {
         gap: 12px;
     }
 
-    .logo-container {
-        gap: 9px;
-    }
+    .brand {
+    gap: 9px;
+}
 
-    .logo-container img {
-        width: 40px;
-        height: 40px;
-    }
+.logo {
+    width: 40px;
+    height: 40px;
+}
 
-    .logo-text h1 {
-        font-size: 19px;
-    }
+.brand-text h1 {
+    font-size: 19px;
+}
 
-    .logo-text p {
-        font-size: 9px;
-    }
+.brand-text p {
+    font-size: 9px;
+}
 
     .youtube-link {
         padding: 8px 9px;
@@ -1004,19 +1004,18 @@ footer p {
         width: calc(100% - 22px);
     }
 
-    .logo-container img {
-        width: 37px;
-        height: 37px;
-    }
+    .logo {
+    width: 37px;
+    height: 37px;
+}
 
-    .logo-text h1 {
-        font-size: 17px;
-    }
+.brand-text h1 {
+    font-size: 17px;
+}
 
-    .logo-text p {
-        font-size: 8px;
-    }
-
+.brand-text p {
+    font-size: 8px;
+}
     .hero {
         padding: 55px 14px 50px;
     }
