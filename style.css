@@ -38,7 +38,7 @@ input {
    HEADER
    ========================================================= */
 
-header {
+.header {
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -52,47 +52,116 @@ header {
     width: min(1320px, calc(100% - 40px));
     min-height: 78px;
     margin: 0 auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 24px;
 }
 
-.logo-container {
-    display: flex;
+/* EarnJoy Brand */
+
+.brand {
+    display: inline-flex;
     align-items: center;
     gap: 12px;
+
+    text-decoration: none;
+    color: inherit;
+
     min-width: 0;
 }
 
-.logo-container img {
+.logo {
     width: 46px;
     height: 46px;
+
     object-fit: contain;
+    display: block;
+
     border-radius: 10px;
     flex-shrink: 0;
 }
 
-.logo-text {
+.brand-text {
     display: flex;
     flex-direction: column;
+
     line-height: 1.1;
 }
 
-.logo-text h1 {
+.brand-text h1 {
     margin: 0;
+
+    color: #101828;
+
     font-size: 22px;
     font-weight: 800;
+
     letter-spacing: -0.5px;
-    color: #101828;
 }
 
-.logo-text p {
+.brand-text p {
     margin: 4px 0 0;
+
+    color: #667085;
+
     font-size: 11px;
     font-weight: 600;
-    color: #667085;
+
     letter-spacing: 0.4px;
+}
+
+/* =========================================================
+   YOUTUBE LINK
+   ========================================================= */
+
+.youtube-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: #d92d20;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.youtube-link:hover {
+    background: #fff1f0;
+    color: #b42318;
+
+    transform: translateY(-1px);
+}
+
+.youtube-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 16px;
+
+    border-radius: 5px;
+
+    background: #ff0000;
+    color: #ffffff;
+
+    font-size: 9px;
+    line-height: 1;
 }
 
 /* =========================================================
