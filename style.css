@@ -470,6 +470,13 @@ input {
     margin-top: 22px;
 }
 
+.course-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 22px;
+}
+
 .course-badge {
     display: inline-flex;
     align-items: center;
