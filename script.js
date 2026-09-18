@@ -253,18 +253,6 @@ function createCourseCard(course) {
         "30 Days Course";
 
 
-    /* ================= PREVIEW BUTTON ================= */
-
-    const preview =
-        document.createElement("span");
-
-    preview.className =
-        "preview-button";
-
-    preview.textContent =
-        "Preview";
-
-
     /* ================= BUILD CARD ================= */
 
     courseInfo.appendChild(
@@ -287,10 +275,6 @@ function createCourseCard(course) {
 
     bottomRow.appendChild(
         badge
-    );
-
-    bottomRow.appendChild(
-        preview
     );
 
     courseInfo.appendChild(
