@@ -739,15 +739,43 @@ input {
 
 footer {
     padding: 32px 20px;
-    background: #ffffff;
-    border-top: 1px solid #eaecf0;
+
+    background: #4169E1;
+
+    border-top: none;
+
     text-align: center;
+
+    color: #ffffff;
+}
+
+footer h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 800;
 }
 
 footer p {
     margin: 0;
-    color: #667085;
+
+    color: #ffffff;
+
     font-size: 13px;
+}
+
+footer .footer-description {
+    color: #ffffff;
+}
+
+footer .copyright {
+    color: #ffffff;
+}
+
+footer .footer-line {
+    background: rgba(255, 255, 255, 0.35);
 }
 
 /* =========================================================
