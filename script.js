@@ -19,14 +19,6 @@ const coursesContainer =
 const courseCount =
     document.getElementById("courseCount");
 
-const loadingMessage =
-    document.getElementById("loadingMessage");
-
-const errorMessage =
-    document.getElementById("errorMessage");
-
-const noResults =
-    document.getElementById("noResults");
 
 
 /* ================= LOAD COURSES ================= */
@@ -85,11 +77,6 @@ async function loadCourses() {
         courses = data.courses;
 
 
-        /* Hide loading */
-
-        loadingMessage.classList.add("hidden");
-
-
         /* Display courses */
 
         displayCourses(courses);
@@ -102,10 +89,6 @@ async function loadCourses() {
             "EarnJoy loading error:",
             error
         );
-
-        loadingMessage.classList.add("hidden");
-
-        errorMessage.classList.remove("hidden");
 
         courseCount.textContent =
             "0 Courses";
@@ -121,8 +104,6 @@ function displayCourses(courseList) {
 
     coursesContainer.innerHTML = "";
 
-    noResults.classList.add("hidden");
-
 
     /* Update course count */
 
@@ -137,8 +118,6 @@ function displayCourses(courseList) {
     /* No courses */
 
     if (courseList.length === 0) {
-
-        noResults.classList.remove("hidden");
 
         return;
 
