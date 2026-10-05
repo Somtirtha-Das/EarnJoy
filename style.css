@@ -1369,3 +1369,344 @@ button {
         transition: none;
     }
 }
+
+
+/* =========================================================
+   DISCOVERY PAGES
+   ========================================================= */
+
+.discovery-page {
+    min-height: 60vh;
+    background: #f7f9fc;
+}
+
+.discovery-container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 40px 0 90px;
+}
+
+.discovery-hero {
+    max-width: 760px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.discovery-hero h1 {
+    margin: 7px 0 0;
+    color: #101828;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.08;
+    font-weight: 850;
+    letter-spacing: -1.7px;
+}
+
+.discovery-hero p {
+    max-width: 650px;
+    margin: 16px auto 0;
+    color: #667085;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.category-card {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 15px;
+    min-height: 128px;
+    padding: 22px;
+    border: 1px solid #e4e7ec;
+    border-radius: 18px;
+    background: #ffffff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    border-color: #d8dee8;
+    box-shadow: 0 16px 34px rgba(16, 24, 40, 0.09);
+}
+
+.category-card:focus-visible,
+.resource-action:focus-visible,
+.faq-card summary:focus-visible {
+    outline: 3px solid rgba(71, 84, 103, 0.25);
+    outline-offset: 3px;
+}
+
+.category-icon,
+.resource-icon,
+.roadmap-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #f2f4f7;
+    font-size: 25px;
+}
+
+.category-card h3 {
+    margin: 0;
+    color: #101828;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.category-card p {
+    margin: 5px 0 0;
+    color: #667085;
+    font-size: 13px;
+}
+
+.category-arrow {
+    color: #667085;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.resource-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.resource-card {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    border: 1px solid #e4e7ec;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.05);
+}
+
+.resource-main h2 {
+    margin: 5px 0 0;
+    color: #101828;
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.resource-main p {
+    margin: 7px 0 0;
+    color: #667085;
+    font-size: 14px;
+}
+
+.resource-stats {
+    margin-top: 9px;
+    color: #475467;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.resource-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    background: #101828;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.resource-action:hover {
+    background: #1d2939;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.roadmap-card {
+    position: relative;
+    padding: 28px;
+    border: 1px solid #e4e7ec;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.05);
+}
+
+.roadmap-number {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    color: #98a2b3;
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 1px;
+}
+
+.roadmap-card h2 {
+    margin: 20px 0 7px;
+    color: #101828;
+    font-size: 22px;
+}
+
+.roadmap-card > p {
+    margin: 0;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.roadmap-card ol {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 20px 0 0;
+    padding-left: 22px;
+    color: #475467;
+    font-size: 13px;
+}
+
+.roadmap-card li::marker {
+    color: #667085;
+    font-weight: 800;
+}
+
+.roadmap-status {
+    display: inline-flex;
+    margin-top: 18px;
+    padding: 6px 9px;
+    border-radius: 999px;
+    background: #f2f4f7;
+    color: #667085;
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.roadmap-note {
+    margin-top: 22px;
+    padding: 20px 22px;
+    border: 1px solid #dfe4ec;
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+.roadmap-note strong {
+    color: #101828;
+    font-size: 14px;
+}
+
+.roadmap-note p {
+    margin: 5px 0 0;
+    color: #667085;
+    font-size: 13px;
+}
+
+.faq-card > p {
+    margin-bottom: 26px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #eaecf0;
+}
+
+.faq-list details {
+    border-bottom: 1px solid #eaecf0;
+}
+
+.faq-list summary {
+    position: relative;
+    padding: 20px 38px 20px 0;
+    color: #101828;
+    font-size: 15px;
+    font-weight: 750;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    content: "+";
+    position: absolute;
+    right: 4px;
+    top: 17px;
+    color: #667085;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.faq-list details[open] summary::after {
+    content: "−";
+}
+
+.faq-list details p {
+    margin: -2px 38px 20px 0;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+@media (max-width: 850px) {
+    .roadmap-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .discovery-container {
+        width: min(100% - 28px, 1120px);
+        padding: 28px 0 60px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-card {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .resource-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 21px;
+    }
+
+    .resource-action {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .roadmap-card {
+        padding: 23px;
+    }
+
+    .info-card {
+        padding: 26px 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .category-card,
+    .resource-action {
+        transition: none;
+    }
+}
