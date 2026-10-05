@@ -6,6 +6,10 @@ const data = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "courses.json
 
 const urls = [
     { loc: "/", changefreq: "weekly", priority: "1.0" },
+    { loc: "/categories.html", changefreq: "weekly", priority: "0.8" },
+    { loc: "/roadmap.html", changefreq: "monthly", priority: "0.8" },
+    { loc: "/resources.html", changefreq: "weekly", priority: "0.8" },
+    { loc: "/faq.html", changefreq: "monthly", priority: "0.6" },
     { loc: "/about.html", changefreq: "monthly", priority: "0.5" },
     { loc: "/contact.html", changefreq: "monthly", priority: "0.4" },
     { loc: "/privacy.html", changefreq: "yearly", priority: "0.3" },
