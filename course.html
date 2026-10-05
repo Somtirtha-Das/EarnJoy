@@ -12,10 +12,47 @@
 
     <meta
         name="description"
-        content="EarnJoy Stock Market Course - Study Materials"
+        content="Learn courses, lectures and study resources on EarnJoy."
     >
 
-    <title>Stock Market | EarnJoy</title>
+    <meta name="robots" content="index, follow">
+
+    <link
+        rel="canonical"
+        href="https://earnjoy.das105070.workers.dev/course.html"
+    >
+
+    <meta property="og:title" content="Course | EarnJoy">
+    <meta property="og:description"
+        content="Learn courses, lectures and study resources on EarnJoy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url"
+        content="https://earnjoy.das105070.workers.dev/course.html">
+    <meta property="og:image"
+        content="https://earnjoy.das105070.workers.dev/Logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Course | EarnJoy">
+    <meta name="twitter:description"
+        content="Learn courses, lectures and study resources on EarnJoy.">
+    <meta name="twitter:image"
+        content="https://earnjoy.das105070.workers.dev/Logo.png">
+
+    <title>Course | EarnJoy</title>
+
+    <script id="courseStructuredData" type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Course | EarnJoy",
+        "description": "Learn courses, lectures and study resources on EarnJoy.",
+        "provider": {
+            "@type": "Organization",
+            "name": "EarnJoy",
+            "url": "https://earnjoy.das105070.workers.dev/"
+        }
+    }
+    </script>
 
     <link
         rel="stylesheet"
@@ -208,6 +245,8 @@
                 }
 
 
+                updateCourseSEO(course);
+
                 displayCourse(course);
 
             }
@@ -236,6 +275,201 @@
 
         }
 
+
+
+        function updateCourseSEO(course) {
+
+            const courseName =
+                course.name || "Course";
+
+            const courseDescription =
+                course.description ||
+                "Learn courses, lectures and study resources on EarnJoy.";
+
+            const pageUrl =
+                window.location.href.split("#")[0];
+
+            const title =
+                courseName + " Course | EarnJoy";
+
+
+            document.title = title;
+
+
+            const descriptionMeta =
+                document.querySelector(
+                    'meta[name="description"]'
+                );
+
+            if (descriptionMeta) {
+
+                descriptionMeta.setAttribute(
+                    "content",
+                    courseDescription
+                );
+
+            }
+
+
+            const canonical =
+                document.querySelector(
+                    'link[rel="canonical"]'
+                );
+
+            if (canonical) {
+
+                canonical.setAttribute(
+                    "href",
+                    pageUrl
+                );
+
+            }
+
+
+            const ogTitle =
+                document.querySelector(
+                    'meta[property="og:title"]'
+                );
+
+            if (ogTitle) {
+
+                ogTitle.setAttribute(
+                    "content",
+                    title
+                );
+
+            }
+
+
+            const ogDescription =
+                document.querySelector(
+                    'meta[property="og:description"]'
+                );
+
+            if (ogDescription) {
+
+                ogDescription.setAttribute(
+                    "content",
+                    courseDescription
+                );
+
+            }
+
+
+            const ogUrl =
+                document.querySelector(
+                    'meta[property="og:url"]'
+                );
+
+            if (ogUrl) {
+
+                ogUrl.setAttribute(
+                    "content",
+                    pageUrl
+                );
+
+            }
+
+
+            const ogImage =
+                document.querySelector(
+                    'meta[property="og:image"]'
+                );
+
+            if (ogImage) {
+
+                ogImage.setAttribute(
+                    "content",
+                    new URL(
+                        course.image || "Logo.png",
+                        window.location.href
+                    ).href
+                );
+
+            }
+
+
+            const twitterTitle =
+                document.querySelector(
+                    'meta[name="twitter:title"]'
+                );
+
+            if (twitterTitle) {
+
+                twitterTitle.setAttribute(
+                    "content",
+                    title
+                );
+
+            }
+
+
+            const twitterDescription =
+                document.querySelector(
+                    'meta[name="twitter:description"]'
+                );
+
+            if (twitterDescription) {
+
+                twitterDescription.setAttribute(
+                    "content",
+                    courseDescription
+                );
+
+            }
+
+
+            const twitterImage =
+                document.querySelector(
+                    'meta[name="twitter:image"]'
+                );
+
+            if (twitterImage) {
+
+                twitterImage.setAttribute(
+                    "content",
+                    new URL(
+                        course.image || "Logo.png",
+                        window.location.href
+                    ).href
+                );
+
+            }
+
+
+            const structuredData =
+                document.getElementById(
+                    "courseStructuredData"
+                );
+
+            if (structuredData) {
+
+                structuredData.textContent =
+                    JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Course",
+                        "name": courseName,
+                        "description": courseDescription,
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "EarnJoy",
+                            "url": "https://earnjoy.das105070.workers.dev/"
+                        },
+                        "url": pageUrl,
+                        "image": new URL(
+                            course.image || "Logo.png",
+                            window.location.href
+                        ).href,
+                        "hasCourseInstance": {
+                            "@type": "CourseInstance",
+                            "courseMode": "online",
+                            "courseWorkload": "Self-paced"
+                        }
+                    });
+
+            }
+
+        }
 
 
         function displayCourse(course) {
