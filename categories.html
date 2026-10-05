@@ -33,7 +33,7 @@ courses.forEach(c => { const key=c.category||"Other"; if(!map.has(key)) map.set(
 grid.innerHTML="";
 if(!map.size){ grid.innerHTML='<div class="empty-state"><h3>No categories available</h3><p>New learning categories will appear here as courses are added.</p></div>'; return; }
 [...map.entries()].sort((a,b)=>a[0].localeCompare(b[0])).forEach(([name,list])=>{
-const card=document.createElement("a"); card.className="category-card"; card.href="index.html?category="+encodeURIComponent(name)+"#courses";
+const card=document.createElement("a"); card.className="category-card"; card.href="courses.html?category="+encodeURIComponent(name);
 card.innerHTML='<span class="category-icon" aria-hidden="true">'+(list[0].icon||"📚")+'</span><div><h3></h3><p></p></div><span class="category-arrow" aria-hidden="true">→</span>';
 card.querySelector("h3").textContent=name; card.querySelector("p").textContent=list.length+" "+(list.length===1?"course":"courses")+" available";
 grid.appendChild(card);
