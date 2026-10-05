@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
         content="EarnJoy is a free learning platform offering courses, lectures and study resources to help everyone gain knowledge and develop useful skills.">
-
     <meta name="keywords"
         content="EarnJoy, free courses, online learning, study materials, lectures, knowledge, skills">
-
     <meta name="author" content="EarnJoy">
-
     <meta name="robots" content="index, follow">
-
     <link rel="canonical" href="https://earnjoy.das105070.workers.dev/">
 
     <meta property="og:title" content="EarnJoy | Free Courses, Knowledge & Skills">
@@ -30,8 +23,7 @@
     <meta name="twitter:title" content="EarnJoy | Free Courses, Knowledge & Skills">
     <meta name="twitter:description"
         content="Free courses, lectures and study resources to help you gain knowledge and develop useful skills.">
-    <meta name="twitter:image"
-        content="https://earnjoy.das105070.workers.dev/Logo.png">
+    <meta name="twitter:image" content="https://earnjoy.das105070.workers.dev/Logo.png">
 
     <title>EarnJoy | Free Courses, Knowledge & Skills</title>
 
@@ -57,181 +49,95 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Logo.png">
-
 </head>
-
 
 <body>
 
-
-    <!-- ================= HEADER ================= -->
-
-    <header class="header">
-
-        <div class="header-container">
-
-            <a href="index.html" class="brand">
-
-                <img
-                    src="Logo.png"
-                    alt="EarnJoy Logo"
-                    class="logo"
-                >
-
-                <div class="brand-text">
-
-                    <h1>EarnJoy</h1>
-
-                    <p>Earning with Enjoy</p>
-
-                </div>
-
-            </a>
-
-            <!-- New Courses Announcement -->
-
-<div class="new-courses-announcement">
-    <span>New Courses are coming soon</span>
-</div>
-
-            <!-- YouTube Channel -->
-
-            <a
-                href="https://www.youtube.com/@EarnJoyOfficial"
-                class="youtube-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-
-                <span class="youtube-icon">▶</span>
-
-                <span>Watch Lectures on YouTube</span>
-
-            </a>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- ================= HERO SECTION ================= -->
-
-    <section class="hero">
-
-        <div class="hero-container">
-
-<span class="hero-eyebrow">LEARN • EXPLORE • GROW</span>
-
-<h2>Your Gateway to Knowledge & Skills</h2>
-
-<p>
-    Learn at your own pace with free courses, lectures and
-    study resources.
-</p>
-
-
-            <!-- Search -->
-
-            <div class="search-container">
-
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search courses or study materials..."
-                    autocomplete="off"
-                >
-
+<header class="header">
+    <div class="header-container">
+        <a href="index.html" class="brand" aria-label="EarnJoy home">
+            <img src="Logo.png" alt="EarnJoy Logo" class="logo">
+            <div class="brand-text">
+                <span class="brand-name">EarnJoy</span>
+                <span class="brand-tagline">Earning with Enjoy</span>
             </div>
+        </a>
 
+        <div class="new-courses-announcement" aria-label="Announcement">
+            <span>New Courses are coming soon</span>
         </div>
 
-    </section>
+        <a href="https://www.youtube.com/@EarnJoyOfficial"
+            class="youtube-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Watch EarnJoy lectures on YouTube">
+            <span class="youtube-icon" aria-hidden="true">▶</span>
+            <span class="youtube-label">Watch Lectures on YouTube</span>
+        </a>
+    </div>
+</header>
 
+<section class="hero">
+    <div class="hero-container">
+        <span class="hero-eyebrow">LEARN • EXPLORE • GROW</span>
+        <h1>Your Gateway to Knowledge &amp; Skills</h1>
+        <p>Learn at your own pace with free courses, lectures and study resources.</p>
 
+        <div class="search-container">
+            <label class="sr-only" for="searchInput">Search courses and study materials</label>
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search courses or study materials..."
+                autocomplete="off"
+                aria-describedby="searchHelp"
+            >
+        </div>
+        <p id="searchHelp" class="sr-only">Search by course name, category, topic or study material.</p>
+    </div>
+</section>
 
-    <!-- ================= MAIN CONTENT ================= -->
-
-    <main class="main-container">
-
-        <section class="courses-section">
-
-
-            <!-- Section Heading -->
+<main class="main-container">
+    <section class="courses-section" aria-labelledby="coursesHeading">
+        <div class="courses-wrapper">
 
             <div class="section-heading">
-
                 <div>
-
-                    <h2>Available Courses</h2>
-
-                    <p>
-                        Select a course to find its study materials.
-                    </p>
-
+                    <h2 id="coursesHeading">Available Courses</h2>
+                    <p>Explore courses and learn at your own pace.</p>
                 </div>
-
-
-                <span
-                    id="courseCount"
-                    class="course-count"
-                >
-                    0 Courses
-                </span>
-
+                <span id="courseCount" class="course-count">0 Courses</span>
             </div>
 
-
-
-            <!-- ================= COURSES ================= -->
-
-            <div
-                id="coursesContainer"
-                class="courses-container"
-            >
+            <div class="category-bar" aria-label="Browse by category">
+                <button class="category-filter active" type="button" data-category="all">All</button>
+                <div id="categoryFilters"></div>
             </div>
 
+            <div id="coursesContainer" class="courses-container"></div>
 
-        </section>
-
-    </main>
-
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <h3>EarnJoy</h3>
-
-            <p>
-                Earning with Enjoy
-            </p>
-
-            <p class="footer-description">
-                Free educational study materials.
-            </p>
-
-            <div class="footer-line"></div>
-
-            <p class="copyright">
-                © <span id="currentYear"></span>
-                EarnJoy. All Rights Reserved.
-            </p>
+            <div id="emptyState" class="empty-state" hidden>
+                <div class="empty-state-icon" aria-hidden="true">🔎</div>
+                <h3 id="emptyStateTitle">No courses found</h3>
+                <p id="emptyStateText">Try a different search or category.</p>
+                <button id="clearFilters" class="clear-filters" type="button">Show All Courses</button>
+            </div>
 
         </div>
+    </section>
+</main>
 
-    </footer>
+<footer class="footer">
+    <div class="footer-container">
+        <h2>EarnJoy</h2>
+        <p>Earning with Enjoy</p>
+        <p class="footer-description">Free courses, lectures and study resources.</p>
+        <div class="footer-line"></div>
+        <p class="copyright">© <span id="currentYear"></span> EarnJoy. All Rights Reserved.</p>
+    </div>
+</footer>
 
-
-
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <script src="script.js"></script>
-
-
+<script src="script.js"></script>
 </body>
-
 </html>
