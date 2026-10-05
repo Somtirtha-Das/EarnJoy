@@ -1,7 +1,9 @@
 {
+    "schemaVersion": 2,
     "courses": [
         {
             "id": "stock-market",
+            "slug": "stock-market",
             "name": "Stock Market",
             "description": "Learn the fundamentals of financial markets, investing and the stock market.",
             "category": "Finance",
@@ -11,14 +13,8 @@
             "language": "English",
             "provider": "EarnJoy",
             "featured": true,
-            "tags": [
-                "stock market",
-                "investing",
-                "financial markets",
-                "finance",
-                "trading",
-                "wealth"
-            ],
+            "thumbnailAlt": "Stock Market learning course thumbnail",
+            "tags": ["stock market", "investing", "financial markets", "finance", "trading", "wealth"],
             "icon": "📈",
             "image": "stock-market.jpg",
             "materials": [
