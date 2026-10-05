@@ -1177,3 +1177,187 @@ button {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* =========================================================
+   FEATURED / WHY / RELATED / PROGRESS
+   ========================================================= */
+
+.content-container {
+    width: min(1320px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.featured-section {
+    padding: 70px 20px 76px;
+    background: #ffffff;
+}
+
+.featured-courses {
+    margin-top: 8px;
+}
+
+.featured-card {
+    border-color: #dfe4ec;
+}
+
+.why-section {
+    padding: 76px 20px;
+    background: #f7f9fc;
+}
+
+.centered-heading {
+    justify-content: center;
+    text-align: center;
+}
+
+.centered-heading > div {
+    max-width: 720px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.why-card {
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.04);
+}
+
+.why-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 17px;
+    border-radius: 12px;
+    background: #f2f4f7;
+    font-size: 22px;
+}
+
+.why-card h3 {
+    margin: 0;
+    color: #101828;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.why-card p {
+    margin: 9px 0 0;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.related-section {
+    margin-top: 54px;
+}
+
+.progress-summary {
+    display: grid;
+    grid-template-columns: auto minmax(120px, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    background: #f9fafb;
+    color: #475467;
+    font-size: 13px;
+}
+
+.progress-summary strong {
+    color: #101828;
+    white-space: nowrap;
+}
+
+.progress-track {
+    height: 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e4e7ec;
+}
+
+.progress-track span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: #101828;
+    transition: width 0.2s ease;
+}
+
+.progress-reset {
+    border: 0;
+    background: transparent;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.progress-reset:hover {
+    color: #101828;
+    text-decoration: underline;
+}
+
+.complete-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 8px;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.complete-control input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #101828;
+}
+
+@media (max-width: 900px) {
+    .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        width: min(100% - 28px, 1320px);
+    }
+
+    .featured-section,
+    .why-section {
+        padding: 55px 16px 60px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-summary {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .progress-reset {
+        justify-self: start;
+        padding: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .progress-track span {
+        transition: none;
+    }
+}
