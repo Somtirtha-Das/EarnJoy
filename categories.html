@@ -33,10 +33,10 @@ courses.forEach(c => { const key=c.category||"Other"; if(!map.has(key)) map.set(
 grid.innerHTML="";
 if(!map.size){ grid.innerHTML='<div class="empty-state"><h3>No categories available</h3><p>New learning categories will appear here as courses are added.</p></div>'; return; }
 [...map.entries()].sort((a,b)=>a[0].localeCompare(b[0])).forEach(([name,list])=>{
-const card=document.createElement("a"); card.className="category-card"; card.href="index.html#courses";
+const card=document.createElement("a"); card.className="category-card"; card.href="index.html?category="+encodeURIComponent(name)+"#courses";
 card.innerHTML='<span class="category-icon" aria-hidden="true">'+(list[0].icon||"📚")+'</span><div><h3></h3><p></p></div><span class="category-arrow" aria-hidden="true">→</span>';
 card.querySelector("h3").textContent=name; card.querySelector("p").textContent=list.length+" "+(list.length===1?"course":"courses")+" available";
-card.addEventListener("click",()=>sessionStorage.setItem("earnjoy-category",name)); grid.appendChild(card);
+grid.appendChild(card);
 });
 }).catch(()=>{document.getElementById("categoryGrid").innerHTML='<div class="empty-state"><h3>Categories could not be loaded</h3><p>Please return to the homepage and try again.</p></div>';});
 </script>
