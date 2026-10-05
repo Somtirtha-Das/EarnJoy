@@ -2,521 +2,276 @@
    EARNJOY - JAVASCRIPT
    ===================================================== */
 
-
-/* ================= GLOBAL VARIABLES ================= */
-
 let courses = [];
+let activeCategory = "all";
 
-
-/* ================= DOM ELEMENTS ================= */
-
-const searchInput =
-    document.getElementById("searchInput");
-
-const coursesContainer =
-    document.getElementById("coursesContainer");
-
-const courseCount =
-    document.getElementById("courseCount");
-
-
-
-/* ================= LOAD COURSES ================= */
+const searchInput = document.getElementById("searchInput");
+const coursesContainer = document.getElementById("coursesContainer");
+const courseCount = document.getElementById("courseCount");
+const categoryFilters = document.getElementById("categoryFilters");
+const emptyState = document.getElementById("emptyState");
+const emptyStateTitle = document.getElementById("emptyStateTitle");
+const emptyStateText = document.getElementById("emptyStateText");
+const clearFilters = document.getElementById("clearFilters");
 
 async function loadCourses() {
-
     try {
-
-        /*
-         * cache: "no-store"
-         * prevents the browser from using an old
-         * courses.json file.
-         *
-         * The timestamp also creates a fresh URL
-         * every time the page loads.
-         */
-
-        const response = await fetch(
-            "courses.json?v=" + Date.now(),
-            {
-                cache: "no-store"
-            }
-        );
-
-
-        /* Check HTTP response */
+        const response = await fetch("courses.json?v=" + Date.now(), {
+            cache: "no-store"
+        });
 
         if (!response.ok) {
-
-            throw new Error(
-                "Unable to load courses.json. HTTP Status: " +
-                response.status
-            );
-
+            throw new Error("Unable to load courses.json. HTTP Status: " + response.status);
         }
-
-
-        /* Read JSON */
 
         const data = await response.json();
 
-
-        /* Validate JSON structure */
-
         if (!data || !Array.isArray(data.courses)) {
-
-            throw new Error(
-                "Invalid courses.json structure."
-            );
-
+            throw new Error("Invalid courses.json structure.");
         }
 
-
-        /* Store courses */
-
         courses = data.courses;
-
-
-        /* Display courses */
-
+        buildCategoryFilters(courses);
         displayCourses(courses);
-
-    }
-
-    catch (error) {
-
-        console.error(
-            "EarnJoy loading error:",
-            error
+    } catch (error) {
+        console.error("EarnJoy loading error:", error);
+        courseCount.textContent = "Unable to load";
+        showEmptyState(
+            "Courses could not be loaded",
+            "Please refresh the page and try again."
         );
-
-        courseCount.textContent =
-            "0 Courses";
-
     }
-
 }
 
-
-/* ================= DISPLAY COURSES ================= */
-
-function displayCourses(courseList) {
-
-    coursesContainer.innerHTML = "";
-
-
-    /* Update course count */
-
-    const count = courseList.length;
-
-    courseCount.textContent =
-        count === 1
-            ? "1 Course"
-            : `${count} Courses`;
-
-
-    /* No courses */
-
-    if (courseList.length === 0) {
-
-        return;
-
-    }
-
-
-    /* Create course cards */
-
-    courseList.forEach(course => {
-
-        const card =
-            createCourseCard(course);
-
-        coursesContainer.appendChild(card);
-
-    });
-
-}
-
-
-/* ================= CREATE COURSE CARD ================= */
-
-function createCourseCard(course) {
-
-    const card =
-        document.createElement("article");
-
-    card.className =
-        "course-card";
-
-    /* Make entire course card clickable */
-
-    card.addEventListener("click", () => {
-
-        window.location.href =
-            "course.html?id=" + encodeURIComponent(course.id);
-
-    });
-
-
-    /* ================= COURSE IMAGE ================= */
-
-    const image =
-        document.createElement("img");
-
-    image.className =
-        "course-image";
-
-    image.src =
-        course.image || "Logo.png";
-
-    image.alt =
-        course.name;
-
-
-    /* ================= COURSE INFO ================= */
-
-    const courseInfo =
-        document.createElement("div");
-
-    courseInfo.className =
-        "course-info";
-
-
-    /* ================= PROVIDER ================= */
-
-    const provider =
-        document.createElement("div");
-
-    provider.className =
-        "course-provider";
-
-
-    const providerLogo =
-        document.createElement("img");
-
-    providerLogo.src =
-        "Logo.png";
-
-    providerLogo.alt =
-        "EarnJoy";
-
-    providerLogo.className =
-        "provider-logo";
-
-
-    const providerName =
-        document.createElement("span");
-
-    providerName.textContent =
-        "EarnJoy";
-
-
-    provider.appendChild(
-        providerLogo
-    );
-
-    provider.appendChild(
-        providerName
-    );
-
-
-    /* ================= COURSE TITLE ================= */
-
-    const title =
-        document.createElement("h3");
-
-    title.textContent =
-        course.name;
-
-
-    /* ================= COURSE META ================= */
-
-    const meta =
-        document.createElement("div");
-
-    meta.className =
-        "course-meta";
-
-    meta.textContent =
-        "Beginner · Course";
-
-
-    /* ================= COURSE BADGE ================= */
-
-    const badge =
-        document.createElement("span");
-
-    badge.className =
-        "course-badge";
-
-    badge.textContent =
-        "30 Days Course";
-
-
-    /* ================= BUILD CARD ================= */
-
-    courseInfo.appendChild(
-        provider
-    );
-
-    courseInfo.appendChild(
-        title
-    );
-
-    courseInfo.appendChild(
-        meta
-    );
-
-    const bottomRow =
-        document.createElement("div");
-
-    bottomRow.className =
-        "course-bottom";
-
-    bottomRow.appendChild(
-        badge
-    );
-
-    courseInfo.appendChild(
-        bottomRow
-    );
-
-    card.appendChild(
-        image
-    );
-
-    card.appendChild(
-        courseInfo
-    );
-
-
-    return card;
-
-}
-
-/* ================= CREATE MATERIAL ================= */
-
-function createMaterialItem(material) {
-
-    const item =
-        document.createElement("div");
-
-    item.className =
-        "material-item";
-
-
-    /* Material title */
-
-    const title =
-        document.createElement("h4");
-
-    title.textContent =
-        material.title;
-
-
-    /* Buttons container */
-
-    const actions =
-        document.createElement("div");
-
-    actions.className =
-        "material-actions";
-
-
-    /* ================= READ BUTTON ================= */
-
-    const readButton =
-        document.createElement("a");
-
-    readButton.className =
-        "btn btn-read";
-
-    readButton.textContent =
-        "Read PDF";
-
-    readButton.href =
-        encodeURI(material.pdf);
-
-    readButton.target =
-        "_blank";
-
-    readButton.rel =
-        "noopener noreferrer";
-
-
-    /* ================= DOWNLOAD BUTTON ================= */
-
-    const downloadButton =
-        document.createElement("a");
-
-    downloadButton.className =
-        "btn btn-download";
-
-    downloadButton.textContent =
-        "Download";
-
-    downloadButton.href =
-        encodeURI(material.pdf);
-
-    downloadButton.download = "";
-
-
-    /* Add buttons */
-
-    actions.appendChild(
-        readButton
-    );
-
-    actions.appendChild(
-        downloadButton
-    );
-
-
-    /* Add content */
-
-    item.appendChild(title);
-
-    item.appendChild(actions);
-
-
-    return item;
-
-}
-
-
-/* ================= SEARCH ================= */
-
-function performSearch() {
-
-    const searchTerm =
-        searchInput.value
-            .trim()
-            .toLowerCase();
-
-
-    /* Empty search */
-
-    if (searchTerm === "") {
-
-        displayCourses(courses);
-
-        return;
-
-    }
-
-
-    /* Filter courses */
-
-    const filteredCourses =
-        courses.filter(course => {
-
-            const courseName =
-                (course.name || "")
-                    .toLowerCase();
-
-            const description =
-                (course.description || "")
-                    .toLowerCase();
-
-            const materialMatch =
-                Array.isArray(course.materials)
-                    &&
-                course.materials.some(
-                    material =>
-                        (material.title || "")
-                            .toLowerCase()
-                            .includes(searchTerm)
-                );
-
-
-            return (
-                courseName.includes(searchTerm)
-                ||
-                description.includes(searchTerm)
-                ||
-                materialMatch
-            );
-
+function buildCategoryFilters(courseList) {
+    const categories = [...new Set(
+        courseList
+            .map(course => course.category)
+            .filter(Boolean)
+    )].sort();
+
+    categoryFilters.innerHTML = "";
+
+    categories.forEach(category => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "category-filter";
+        button.dataset.category = category;
+        button.textContent = category;
+
+        button.addEventListener("click", function() {
+            setActiveCategory(category);
         });
 
-
-    displayCourses(
-        filteredCourses
-    );
-
+        categoryFilters.appendChild(button);
+    });
 }
 
+function setActiveCategory(category) {
+    activeCategory = category;
 
-/* ================= SEARCH EVENT ================= */
+    document.querySelectorAll(".category-filter").forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.category === category
+        );
+    });
 
-searchInput.addEventListener(
-    "input",
-    performSearch
-);
+    applyFilters();
+}
 
+function applyFilters() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
 
-/* ================= START WEBSITE ================= */
+    const filteredCourses = courses.filter(course => {
+        const matchesCategory =
+            activeCategory === "all" ||
+            (course.category || "").toLowerCase() === activeCategory.toLowerCase();
+
+        if (!matchesCategory) {
+            return false;
+        }
+
+        if (!searchTerm) {
+            return true;
+        }
+
+        const searchableText = [
+            course.name,
+            course.description,
+            course.category,
+            course.subcategory,
+            course.level,
+            course.language,
+            ...(Array.isArray(course.tags) ? course.tags : []),
+            ...(Array.isArray(course.materials)
+                ? course.materials.map(material => material.title)
+                : [])
+        ]
+            .filter(Boolean)
+            .join(" ")
+            .toLowerCase();
+
+        return searchableText.includes(searchTerm);
+    });
+
+    displayCourses(filteredCourses, searchTerm);
+}
+
+function displayCourses(courseList, searchTerm = "") {
+    coursesContainer.innerHTML = "";
+
+    const count = courseList.length;
+    courseCount.textContent = count === 1 ? "1 Course" : count + " Courses";
+
+    if (count === 0) {
+        const title = searchTerm
+            ? "No courses match your search"
+            : "No courses in this category";
+
+        const text = searchTerm
+            ? "Try another keyword or clear the filters."
+            : "Choose another category to explore available courses.";
+
+        showEmptyState(title, text);
+        return;
+    }
+
+    hideEmptyState();
+
+    courseList.forEach(course => {
+        coursesContainer.appendChild(createCourseCard(course));
+    });
+}
+
+function createCourseCard(course) {
+    const card = document.createElement("a");
+    card.className = "course-card";
+    card.href = "course.html?id=" + encodeURIComponent(course.id);
+    card.setAttribute("aria-label", "Open " + (course.name || "course"));
+
+    const image = document.createElement("img");
+    image.className = "course-image";
+    image.src = course.image || "Logo.png";
+    image.alt = course.name || "Course";
+    image.loading = "lazy";
+    image.decoding = "async";
+
+    const courseInfo = document.createElement("div");
+    courseInfo.className = "course-card-content";
+
+    const provider = document.createElement("div");
+    provider.className = "course-provider";
+
+    const providerLogo = document.createElement("img");
+    providerLogo.src = "Logo.png";
+    providerLogo.alt = "EarnJoy";
+    providerLogo.loading = "lazy";
+
+    const providerName = document.createElement("span");
+    providerName.textContent = course.provider || "EarnJoy";
+
+    provider.appendChild(providerLogo);
+    provider.appendChild(providerName);
+
+    const title = document.createElement("h3");
+    title.textContent = course.name || "Untitled Course";
+
+    const description = document.createElement("p");
+    description.className = "course-description";
+    description.textContent = course.description || "";
+
+    const meta = document.createElement("div");
+    meta.className = "course-meta";
+
+    const level = course.level || "Beginner";
+    const duration = course.duration || (
+        Array.isArray(course.materials)
+            ? course.materials.length + " lessons"
+            : "Self-paced"
+    );
+
+    meta.textContent = level + " · " + duration;
+
+    const bottomRow = document.createElement("div");
+    bottomRow.className = "course-bottom";
+
+    const badge = document.createElement("span");
+    badge.className = "course-badge";
+    badge.textContent = course.category || "Course";
+
+    bottomRow.appendChild(badge);
+
+    courseInfo.appendChild(provider);
+    courseInfo.appendChild(title);
+    courseInfo.appendChild(description);
+    courseInfo.appendChild(meta);
+    courseInfo.appendChild(bottomRow);
+
+    card.appendChild(image);
+    card.appendChild(courseInfo);
+
+    return card;
+}
+
+function showEmptyState(title, text) {
+    emptyState.hidden = false;
+    emptyStateTitle.textContent = title;
+    emptyStateText.textContent = text;
+    coursesContainer.hidden = true;
+}
+
+function hideEmptyState() {
+    emptyState.hidden = true;
+    coursesContainer.hidden = false;
+}
+
+function resetFilters() {
+    activeCategory = "all";
+    searchInput.value = "";
+
+    document.querySelectorAll(".category-filter").forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.category === "all"
+        );
+    });
+
+    displayCourses(courses);
+}
+
+searchInput.addEventListener("input", applyFilters);
+clearFilters.addEventListener("click", resetFilters);
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
 
 loadCourses();
 
-/* =========================================================
+/* =====================================================
    BASIC SOURCE CODE PROTECTION
-   Chrome + Microsoft Edge
-   ========================================================= */
+   ===================================================== */
 
-document.addEventListener("contextmenu", function (event) {
+document.addEventListener("contextmenu", function(event) {
     event.preventDefault();
 });
 
-document.addEventListener("keydown", function (event) {
-
+document.addEventListener("keydown", function(event) {
     const key = event.key.toLowerCase();
 
-    /* F12 — Chrome / Microsoft Edge */
     if (event.key === "F12") {
         event.preventDefault();
         event.stopPropagation();
         return false;
     }
 
-    /* Ctrl + Shift + I — Developer Tools */
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        key === "i"
-    ) {
+    if (event.ctrlKey && event.shiftKey && ["i", "j", "c"].includes(key)) {
         event.preventDefault();
         event.stopPropagation();
         return false;
     }
 
-    /* Ctrl + Shift + J — Console */
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        key === "j"
-    ) {
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
-    }
-
-    /* Ctrl + Shift + C — Inspect Element */
-    if (
-        event.ctrlKey &&
-        event.shiftKey &&
-        key === "c"
-    ) {
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
-    }
-
-    /* Ctrl + U — View Source */
-    if (
-        event.ctrlKey &&
-        key === "u"
-    ) {
+    if (event.ctrlKey && key === "u") {
         event.preventDefault();
         event.stopPropagation();
         return false;
