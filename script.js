@@ -26,7 +26,9 @@ async function loadCourses() {
         courses = data.courses;
         buildCategoryFilters(courses);
         displayFeaturedCourses(courses.filter(course => course.featured));
-        displayCourses(courses);
+        const initialCategory = new URLSearchParams(location.search).get("category");
+        if (initialCategory && categoriesInclude(initialCategory)) setActiveCategory(initialCategory);
+        else displayCourses(courses);
     } catch (error) {
         console.error("EarnJoy loading error:", error);
         courseCount.textContent = "Unable to load";
@@ -52,6 +54,10 @@ function buildCategoryFilters(courseList) {
         button.addEventListener("click", () => setActiveCategory(category));
         categoryFilters.appendChild(button);
     });
+}
+
+function categoriesInclude(category) {
+    return courses.some(course => (course.category || "").toLowerCase() === category.toLowerCase());
 }
 
 function setActiveCategory(category) {
