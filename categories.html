@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Course Categories | EarnJoy</title>
+<meta name="description" content="Explore EarnJoy courses by category and discover learning paths across finance, business, data analytics and more.">
+<link rel="canonical" href="https://earnjoy.das105070.workers.dev/categories.html">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="Logo.png">
+</head>
+<body>
+<header class="header"><div class="header-container">
+<a href="index.html" class="brand" aria-label="EarnJoy home"><img src="Logo.png" alt="EarnJoy Logo" class="logo" width="46" height="46"><div class="brand-text"><span class="brand-name">EarnJoy</span><span class="brand-tagline">Earning with Enjoy</span></div></a>
+<a href="https://www.youtube.com/@EarnJoyOfficial" class="youtube-link" target="_blank" rel="noopener noreferrer" aria-label="Watch EarnJoy lectures on YouTube"><span class="youtube-icon" aria-hidden="true">▶</span><span class="youtube-label">Watch Lectures on YouTube</span></a>
+</div></header>
+<main class="discovery-page">
+<div class="discovery-container">
+<a href="index.html" class="back-button">← Back to EarnJoy</a>
+<header class="discovery-hero"><span class="section-kicker">EXPLORE</span><h1>Course Categories</h1><p>Discover learning opportunities by subject and find the right place to start.</p></header>
+<section aria-labelledby="categoriesHeading"><h2 id="categoriesHeading" class="sr-only">Available course categories</h2><div id="categoryGrid" class="category-grid"><div class="loading-state">Loading categories…</div></div></section>
+</div>
+</main>
+<footer class="footer"><div class="footer-container"><h2>EarnJoy</h2><p>Earning with Enjoy</p><p class="footer-description">Free courses, lectures and study resources.</p><nav class="footer-links" aria-label="Footer navigation">
+<a href="categories.html">Categories</a><a href="roadmap.html">Roadmaps</a><a href="resources.html">Resources</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+</nav><div class="footer-line"></div><p class="copyright">© <span id="currentYear"></span> EarnJoy. All Rights Reserved.</p></div></footer>
+<script>
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+fetch("courses.json?v=" + Date.now(), {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(); return r.json(); }).then(data => {
+const grid=document.getElementById("categoryGrid"), courses=Array.isArray(data.courses)?data.courses:[], map=new Map();
+courses.forEach(c => { const key=c.category||"Other"; if(!map.has(key)) map.set(key,[]); map.get(key).push(c); });
+grid.innerHTML="";
+if(!map.size){ grid.innerHTML='<div class="empty-state"><h3>No categories available</h3><p>New learning categories will appear here as courses are added.</p></div>'; return; }
+[...map.entries()].sort((a,b)=>a[0].localeCompare(b[0])).forEach(([name,list])=>{
+const card=document.createElement("a"); card.className="category-card"; card.href="index.html#courses";
+card.innerHTML='<span class="category-icon" aria-hidden="true">'+(list[0].icon||"📚")+'</span><div><h3></h3><p></p></div><span class="category-arrow" aria-hidden="true">→</span>';
+card.querySelector("h3").textContent=name; card.querySelector("p").textContent=list.length+" "+(list.length===1?"course":"courses")+" available";
+card.addEventListener("click",()=>sessionStorage.setItem("earnjoy-category",name)); grid.appendChild(card);
+});
+}).catch(()=>{document.getElementById("categoryGrid").innerHTML='<div class="empty-state"><h3>Categories could not be loaded</h3><p>Please return to the homepage and try again.</p></div>';});
+</script>
+</body>
+</html>
