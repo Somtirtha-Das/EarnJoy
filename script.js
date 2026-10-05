@@ -243,6 +243,11 @@ function resetFilters() {
 searchInput.addEventListener("input", applyFilters);
 clearFilters.addEventListener("click", resetFilters);
 
+const allCategoryButton = document.querySelector('.category-filter[data-category="all"]');
+if (allCategoryButton) {
+    allCategoryButton.addEventListener("click", resetFilters);
+}
+
 document.getElementById("currentYear").textContent =
     new Date().getFullYear();
 
