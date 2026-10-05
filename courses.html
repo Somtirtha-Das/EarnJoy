@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore all EarnJoy courses with search, categories and detailed filters for level, duration and more.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://earnjoy.das105070.workers.dev/courses.html">
+<meta property="og:title" content="Courses | EarnJoy">
+<meta property="og:description" content="Explore EarnJoy courses and find the right learning path with search and detailed filters.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://earnjoy.das105070.workers.dev/courses.html">
+<meta property="og:image" content="https://earnjoy.das105070.workers.dev/Logo.png">
+<title>Courses | EarnJoy — Explore Free Courses</title>
+<script type="application/ld+json">
+{
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"EarnJoy Courses",
+    "description":"Explore all available EarnJoy courses with search and detailed filters.",
+    "url":"https://earnjoy.das105070.workers.dev/courses.html",
+    "isPartOf":{"@type":"WebSite","name":"EarnJoy","url":"https://earnjoy.das105070.workers.dev/"}
+}
+</script>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="Logo.png">
+</head>
+<body>
+<header class="header"><div class="header-container">
+<a href="index.html" class="brand" aria-label="EarnJoy home"><img src="Logo.png" alt="EarnJoy Logo" class="logo" width="46" height="46"><div class="brand-text"><span class="brand-name">EarnJoy</span><span class="brand-tagline">Earning with Enjoy</span></div></a>
+<a href="https://www.youtube.com/@EarnJoyOfficial" class="youtube-link" target="_blank" rel="noopener noreferrer" aria-label="Watch EarnJoy lectures on YouTube"><span class="youtube-icon" aria-hidden="true">▶</span><span class="youtube-label">Watch Lectures on YouTube</span></a>
+</div></header>
+
+<main class="discovery-page">
+<div class="courses-page-container">
+<a href="index.html" class="back-button">← Back to EarnJoy</a>
+<header class="discovery-hero courses-page-hero"><span class="section-kicker">EXPLORE &amp; DISCOVER</span><h1>All Courses</h1><p>Find the right course using search, categories and detailed filters.</p></header>
+
+<section class="course-catalogue" aria-labelledby="catalogueHeading">
+<h2 id="catalogueHeading" class="sr-only">Course catalogue</h2>
+<div class="catalogue-toolbar">
+<div class="catalogue-search"><label for="courseSearch">Search Courses</label><input id="courseSearch" type="search" placeholder="Search by course, topic or material..." autocomplete="off"></div>
+<div class="catalogue-sort"><label for="sortCourses">Sort By</label><select id="sortCourses"><option value="recommended">Recommended</option><option value="az">A–Z</option><option value="duration-short">Shortest Duration</option><option value="duration-long">Longest Duration</option></select></div>
+</div>
+
+<div class="catalogue-layout">
+<aside class="course-filters" aria-labelledby="filterHeading">
+<div class="filter-header"><div><span class="section-kicker">REFINE</span><h2 id="filterHeading">Filters</h2></div><button id="clearCourseFilters" class="filter-clear" type="button">Clear All</button></div>
+<div class="filter-group"><label for="categoryFilter">Category</label><select id="categoryFilter"></select></div>
+<div class="filter-group"><label for="subcategoryFilter">Subcategory</label><select id="subcategoryFilter"></select></div>
+<div class="filter-group"><label for="levelFilter">Level</label><select id="levelFilter"></select></div>
+<div class="filter-group"><label for="durationFilter">Duration</label><select id="durationFilter"><option value="">All Durations</option></select></div>
+<label class="featured-filter"><input id="featuredFilter" type="checkbox"><span>Featured Courses Only</span></label>
+</aside>
+
+<section class="catalogue-results" aria-live="polite" aria-labelledby="resultsHeading">
+<div class="results-header"><div><span class="section-kicker">COURSE CATALOGUE</span><h2 id="resultsHeading">Available Courses</h2></div><span id="courseCount" class="course-count">0 Courses</span></div>
+<div id="courseGrid" class="courses-container"></div>
+<div id="emptyState" class="empty-state" hidden><div class="empty-state-icon" aria-hidden="true">🔎</div><h3 id="emptyStateTitle">No courses found</h3><p id="emptyStateText">Try changing your search or filters.</p><button id="clearEmptyFilters" class="clear-filters" type="button">Clear Filters</button></div>
+</section>
+</div>
+</section>
+</div>
+</main>
+
+<footer class="footer"><div class="footer-container"><h2>EarnJoy</h2><p>Earning with Enjoy</p><p class="footer-description">Free courses, lectures and study resources.</p><nav class="footer-links" aria-label="Footer navigation"><a href="courses.html">Courses</a><a href="categories.html">Categories</a><a href="roadmap.html">Roadmaps</a><a href="resources.html">Resources</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav><div class="footer-line"></div><p class="copyright">© <span id="currentYear"></span> EarnJoy. All Rights Reserved.</p></div></footer>
+
+<script>
+document.getElementById("clearEmptyFilters").addEventListener("click", () => document.getElementById("clearCourseFilters").click());
+</script>
+<script src="script.js"></script>
+</body>
+</html>
