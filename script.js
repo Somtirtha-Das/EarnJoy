@@ -458,3 +458,67 @@ searchInput.addEventListener(
 /* ================= START WEBSITE ================= */
 
 loadCourses();
+
+/* =========================================================
+   BASIC SOURCE CODE PROTECTION
+   Chrome + Microsoft Edge
+   ========================================================= */
+
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+});
+
+document.addEventListener("keydown", function (event) {
+
+    const key = event.key.toLowerCase();
+
+    /* F12 — Chrome / Microsoft Edge */
+    if (event.key === "F12") {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }
+
+    /* Ctrl + Shift + I — Developer Tools */
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        key === "i"
+    ) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }
+
+    /* Ctrl + Shift + J — Console */
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        key === "j"
+    ) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }
+
+    /* Ctrl + Shift + C — Inspect Element */
+    if (
+        event.ctrlKey &&
+        event.shiftKey &&
+        key === "c"
+    ) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }
+
+    /* Ctrl + U — View Source */
+    if (
+        event.ctrlKey &&
+        key === "u"
+    ) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }
+});
