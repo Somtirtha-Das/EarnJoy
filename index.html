@@ -4,25 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="EarnJoy is a free learning platform offering courses, lectures and study resources to help everyone gain knowledge and develop useful skills.">
-    <meta name="keywords"
-        content="EarnJoy, free courses, online learning, study materials, lectures, knowledge, skills">
+    <meta name="description" content="EarnJoy is a free learning platform offering courses, lectures and study resources to help everyone gain knowledge and develop useful skills.">
+    <meta name="keywords" content="EarnJoy, free courses, online learning, study materials, lectures, knowledge, skills">
     <meta name="author" content="EarnJoy">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://earnjoy.das105070.workers.dev/">
 
     <meta property="og:title" content="EarnJoy | Free Courses, Knowledge & Skills">
-    <meta property="og:description"
-        content="Learn at your own pace with free courses, lectures and study resources on EarnJoy.">
+    <meta property="og:description" content="Learn at your own pace with free courses, lectures and study resources on EarnJoy.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://earnjoy.das105070.workers.dev/">
     <meta property="og:image" content="https://earnjoy.das105070.workers.dev/Logo.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="EarnJoy | Free Courses, Knowledge & Skills">
-    <meta name="twitter:description"
-        content="Free courses, lectures and study resources to help you gain knowledge and develop useful skills.">
+    <meta name="twitter:description" content="Free courses, lectures and study resources to help you gain knowledge and develop useful skills.">
     <meta name="twitter:image" content="https://earnjoy.das105070.workers.dev/Logo.png">
 
     <title>EarnJoy | Free Courses, Knowledge & Skills</title>
@@ -50,13 +46,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Logo.png">
 </head>
-
 <body>
-
 <header class="header">
     <div class="header-container">
         <a href="index.html" class="brand" aria-label="EarnJoy home">
-            <img src="Logo.png" alt="EarnJoy Logo" class="logo">
+            <img src="Logo.png" alt="EarnJoy Logo" class="logo" width="46" height="46">
             <div class="brand-text">
                 <span class="brand-name">EarnJoy</span>
                 <span class="brand-tagline">Earning with Enjoy</span>
@@ -67,11 +61,7 @@
             <span>New Courses are coming soon</span>
         </div>
 
-        <a href="https://www.youtube.com/@EarnJoyOfficial"
-            class="youtube-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Watch EarnJoy lectures on YouTube">
+        <a href="https://www.youtube.com/@EarnJoyOfficial" class="youtube-link" target="_blank" rel="noopener noreferrer" aria-label="Watch EarnJoy lectures on YouTube">
             <span class="youtube-icon" aria-hidden="true">▶</span>
             <span class="youtube-label">Watch Lectures on YouTube</span>
         </a>
@@ -83,27 +73,67 @@
         <span class="hero-eyebrow">LEARN • EXPLORE • GROW</span>
         <h1>Your Gateway to Knowledge &amp; Skills</h1>
         <p>Learn at your own pace with free courses, lectures and study resources.</p>
-
         <div class="search-container">
             <label class="sr-only" for="searchInput">Search courses and study materials</label>
-            <input
-                type="search"
-                id="searchInput"
-                placeholder="Search courses or study materials..."
-                autocomplete="off"
-                aria-describedby="searchHelp"
-            >
+            <input type="search" id="searchInput" placeholder="Search courses or study materials..." autocomplete="off" aria-describedby="searchHelp">
         </div>
         <p id="searchHelp" class="sr-only">Search by course name, category, topic or study material.</p>
     </div>
 </section>
 
-<main class="main-container">
-    <section class="courses-section" aria-labelledby="coursesHeading">
-        <div class="courses-wrapper">
-
+<main>
+    <section class="featured-section" aria-labelledby="featuredHeading">
+        <div class="content-container">
             <div class="section-heading">
                 <div>
+                    <span class="section-kicker">START HERE</span>
+                    <h2 id="featuredHeading">Featured Courses</h2>
+                    <p>Begin with courses selected as a strong starting point for learning.</p>
+                </div>
+            </div>
+            <div id="featuredCourses" class="courses-container featured-courses"></div>
+        </div>
+    </section>
+
+    <section class="why-section" aria-labelledby="whyHeading">
+        <div class="content-container">
+            <div class="section-heading centered-heading">
+                <div>
+                    <span class="section-kicker">WHY EARNJOY</span>
+                    <h2 id="whyHeading">Why Learn with EarnJoy?</h2>
+                    <p>A simple learning experience built around accessible knowledge and useful skills.</p>
+                </div>
+            </div>
+            <div class="why-grid">
+                <article class="why-card">
+                    <div class="why-icon" aria-hidden="true">📚</div>
+                    <h3>Structured Learning</h3>
+                    <p>Courses are organized into clear topics and study materials so you can learn step by step.</p>
+                </article>
+                <article class="why-card">
+                    <div class="why-icon" aria-hidden="true">🆓</div>
+                    <h3>Free Access</h3>
+                    <p>Explore available learning resources without a paid subscription or complicated sign-up.</p>
+                </article>
+                <article class="why-card">
+                    <div class="why-icon" aria-hidden="true">🎯</div>
+                    <h3>Learn at Your Pace</h3>
+                    <p>Study when you want and revisit course materials whenever you need them.</p>
+                </article>
+                <article class="why-card">
+                    <div class="why-icon" aria-hidden="true">🌱</div>
+                    <h3>Skills &amp; Knowledge</h3>
+                    <p>Discover practical subjects that can support personal learning, academic growth and career development.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses-section" aria-labelledby="coursesHeading">
+        <div class="courses-wrapper">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">EXPLORE</span>
                     <h2 id="coursesHeading">Available Courses</h2>
                     <p>Explore courses and learn at your own pace.</p>
                 </div>
@@ -123,7 +153,6 @@
                 <p id="emptyStateText">Try a different search or category.</p>
                 <button id="clearFilters" class="clear-filters" type="button">Show All Courses</button>
             </div>
-
         </div>
     </section>
 </main>
@@ -143,7 +172,6 @@
         <p class="copyright">© <span id="currentYear"></span> EarnJoy. All Rights Reserved.</p>
     </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
