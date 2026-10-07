@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const SITE_URL = "https://earnjoy.das105070.workers.dev";
-const data = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "courses.json"), "utf8"));
+const data = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "courses.json"), "utf8"));
 
 const urls = [
     { loc: "/", changefreq: "weekly", priority: "1.0" },

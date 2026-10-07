@@ -4,10 +4,10 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow"><title>Study Resources | EarnJoy</title>
 <meta name="description" content="Explore study materials and learning resources available through EarnJoy courses.">
-<link rel="canonical" href="https://earnjoy.das105070.workers.dev/resources.html"><link rel="stylesheet" href="style.css"><link rel="icon" type="image/png" href="Logo.png">
+<link rel="canonical" href="https://earnjoy.das105070.workers.dev/resources.html"><link rel="stylesheet" href="assets/css/style.css"><link rel="icon" type="image/png" href="assets/images/branding/Logo.png">
 </head>
 <body>
-<header class="header"><div class="header-container"><a href="index.html" class="brand" aria-label="EarnJoy home"><img src="Logo.png" alt="EarnJoy Logo" class="logo" width="46" height="46"><div class="brand-text"><span class="brand-name">EarnJoy</span><span class="brand-tagline">Earning with Enjoy</span></div></a><a href="https://www.youtube.com/@EarnJoyOfficial" class="youtube-link" target="_blank" rel="noopener noreferrer" aria-label="Watch EarnJoy lectures on YouTube"><span class="youtube-icon" aria-hidden="true">▶</span><span class="youtube-label">Watch Lectures on YouTube</span></a></div></header>
+<header class="header"><div class="header-container"><a href="index.html" class="brand" aria-label="EarnJoy home"><img src="assets/images/branding/Logo.png" alt="EarnJoy Logo" class="logo" width="46" height="46"><div class="brand-text"><span class="brand-name">EarnJoy</span><span class="brand-tagline">Earning with Enjoy</span></div></a><a href="https://www.youtube.com/@EarnJoyOfficial" class="youtube-link" target="_blank" rel="noopener noreferrer" aria-label="Watch EarnJoy lectures on YouTube"><span class="youtube-icon" aria-hidden="true">▶</span><span class="youtube-label">Watch Lectures on YouTube</span></a></div></header>
 <main class="discovery-page"><div class="discovery-container"><a href="index.html" class="back-button">← Back to EarnJoy</a>
 <header class="discovery-hero"><span class="section-kicker">STUDY HUB</span><h1>Learning Resources</h1><p>Find course materials in one place and continue learning at your own pace.</p></header>
 <div id="resourceGrid" class="resource-grid"><div class="loading-state">Loading resources…</div></div>
@@ -15,7 +15,7 @@
 <footer class="footer"><div class="footer-container"><h2>EarnJoy</h2><p>Earning with Enjoy</p><p class="footer-description">Free courses, lectures and study resources.</p><nav class="footer-links" aria-label="Footer navigation"><a href="courses.html">Courses</a><a href="categories.html">Categories</a><a href="roadmap.html">Roadmaps</a><a href="resources.html">Resources</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav><div class="footer-line"></div><p class="copyright">© <span id="currentYear"></span> EarnJoy. All Rights Reserved.</p></div></footer>
 <script>
 document.getElementById("currentYear").textContent=new Date().getFullYear();
-fetch("courses.json?v="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{
+fetch("data/courses.json?v="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{
 const grid=document.getElementById("resourceGrid"), courses=Array.isArray(data.courses)?data.courses:[];
 grid.innerHTML="";
 if(!courses.length){grid.innerHTML='<div class="empty-state"><h3>No resources available yet</h3><p>Learning resources will appear here as courses are published.</p></div>';return;}

@@ -15,7 +15,7 @@ const emptyStateText = document.getElementById("emptyStateText");
 
 async function loadCourses() {
     try {
-        const response = await fetch("courses.json?v=" + Date.now(), { cache: "no-store" });
+        const response = await fetch("data/courses.json?v=" + Date.now(), { cache: "no-store" });
         if (!response.ok) throw new Error("Unable to load courses.json. HTTP Status: " + response.status);
 
         const data = await response.json();
@@ -67,7 +67,7 @@ function createCourseCard(course, featured = false) {
 
     const image = document.createElement("img");
     image.className = "course-image";
-    image.src = course.image || "Logo.png";
+    image.src = course.image || "assets/images/branding/Logo.png";
     image.alt = course.thumbnailAlt || course.name || "Course";
     image.width = 800;
     image.height = 500;
@@ -81,7 +81,7 @@ function createCourseCard(course, featured = false) {
     provider.className = "course-provider";
 
     const providerLogo = document.createElement("img");
-    providerLogo.src = "Logo.png";
+    providerLogo.src = "assets/images/branding/Logo.png";
     providerLogo.alt = "";
     providerLogo.width = 45;
     providerLogo.height = 45;

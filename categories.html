@@ -7,12 +7,12 @@
 <title>Course Categories | EarnJoy</title>
 <meta name="description" content="Explore EarnJoy courses by category and discover learning paths across finance, business, data analytics and more.">
 <link rel="canonical" href="https://earnjoy.das105070.workers.dev/categories.html">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="Logo.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/png" href="assets/images/branding/Logo.png">
 </head>
 <body>
 <header class="header"><div class="header-container">
-<a href="index.html" class="brand" aria-label="EarnJoy home"><img src="Logo.png" alt="EarnJoy Logo" class="logo" width="46" height="46"><div class="brand-text"><span class="brand-name">EarnJoy</span><span class="brand-tagline">Earning with Enjoy</span></div></a>
+<a href="index.html" class="brand" aria-label="EarnJoy home"><img src="assets/images/branding/Logo.png" alt="EarnJoy Logo" class="logo" width="46" height="46"><div class="brand-text"><span class="brand-name">EarnJoy</span><span class="brand-tagline">Earning with Enjoy</span></div></a>
 <a href="https://www.youtube.com/@EarnJoyOfficial" class="youtube-link" target="_blank" rel="noopener noreferrer" aria-label="Watch EarnJoy lectures on YouTube"><span class="youtube-icon" aria-hidden="true">▶</span><span class="youtube-label">Watch Lectures on YouTube</span></a>
 </div></header>
 <main class="discovery-page">
@@ -27,7 +27,7 @@
 </nav><div class="footer-line"></div><p class="copyright">© <span id="currentYear"></span> EarnJoy. All Rights Reserved.</p></div></footer>
 <script>
 document.getElementById("currentYear").textContent = new Date().getFullYear();
-fetch("courses.json?v=" + Date.now(), {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(); return r.json(); }).then(data => {
+fetch("data/courses.json?v=" + Date.now(), {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(); return r.json(); }).then(data => {
 const grid=document.getElementById("categoryGrid"), courses=Array.isArray(data.courses)?data.courses:[], map=new Map();
 courses.forEach(c => { const key=c.category||"Other"; if(!map.has(key)) map.set(key,[]); map.get(key).push(c); });
 grid.innerHTML="";
