@@ -13,15 +13,183 @@ const emptyState = document.getElementById("emptyState");
 const emptyStateTitle = document.getElementById("emptyStateTitle");
 const emptyStateText = document.getElementById("emptyStateText");
 
+const FALLBACK_COURSES = [
+    {
+        "id": "stock-market",
+        "slug": "stock-market",
+        "name": "Stock Market",
+        "description": "Learn the fundamentals of financial markets, investing and the stock market.",
+        "category": "Finance",
+        "subcategory": "Stock Market",
+        "level": "Beginner",
+        "duration": "30 Days",
+        "language": "English",
+        "provider": "EarnJoy",
+        "featured": true,
+        "thumbnailAlt": "Stock Market learning course thumbnail",
+        "tags": [
+            "stock market",
+            "investing",
+            "financial markets",
+            "finance",
+            "trading",
+            "wealth"
+        ],
+        "icon": "📈",
+        "image": "assets/images/courses/stock-market.jpg",
+        "materials": [
+            {
+                "title": "Day 1 - Introduction to Financial Markets",
+                "pdf": "content/courses/stock-market/materials/day-01.pdf"
+            },
+            {
+                "title": "Financial Markets Day 2",
+                "pdf": "content/courses/stock-market/materials/day-02.pdf"
+            },
+            {
+                "title": "Financial Markets Day 3",
+                "pdf": "content/courses/stock-market/materials/day-03.pdf"
+            },
+            {
+                "title": "Financial Markets Day 4",
+                "pdf": "content/courses/stock-market/materials/day-04.pdf"
+            },
+            {
+                "title": "Financial Markets Day 5",
+                "pdf": "content/courses/stock-market/materials/day-05.pdf"
+            },
+            {
+                "title": "Financial Markets Day 6",
+                "pdf": "content/courses/stock-market/materials/day-06.pdf"
+            },
+            {
+                "title": "Financial Markets Day 7",
+                "pdf": "content/courses/stock-market/materials/day-07.pdf"
+            },
+            {
+                "title": "Financial Markets Day 8",
+                "pdf": "content/courses/stock-market/materials/day-08.pdf"
+            },
+            {
+                "title": "Financial Markets Day 9",
+                "pdf": "content/courses/stock-market/materials/day-09.pdf"
+            },
+            {
+                "title": "Financial Markets Day 10",
+                "pdf": "content/courses/stock-market/materials/day-10.pdf"
+            },
+            {
+                "title": "Financial Markets Day 11",
+                "pdf": "content/courses/stock-market/materials/day-11.pdf"
+            },
+            {
+                "title": "Financial Markets Day 12",
+                "pdf": "content/courses/stock-market/materials/day-12.pdf"
+            },
+            {
+                "title": "Financial Markets Day 13",
+                "pdf": "content/courses/stock-market/materials/day-13.pdf"
+            },
+            {
+                "title": "Financial Markets Day 14",
+                "pdf": "content/courses/stock-market/materials/day-14.pdf"
+            },
+            {
+                "title": "Financial Markets Day 15",
+                "pdf": "content/courses/stock-market/materials/day-15.pdf"
+            },
+            {
+                "title": "Financial Markets Day 16",
+                "pdf": "content/courses/stock-market/materials/day-16.pdf"
+            },
+            {
+                "title": "Financial Markets Day 17",
+                "pdf": "content/courses/stock-market/materials/day-17.pdf"
+            },
+            {
+                "title": "Financial Markets Day 18",
+                "pdf": "content/courses/stock-market/materials/day-18.pdf"
+            },
+            {
+                "title": "Financial Markets Day 19",
+                "pdf": "content/courses/stock-market/materials/day-19.pdf"
+            },
+            {
+                "title": "Financial Markets Day 20",
+                "pdf": "content/courses/stock-market/materials/day-20.pdf"
+            },
+            {
+                "title": "Financial Markets Day 21",
+                "pdf": "content/courses/stock-market/materials/day-21.pdf"
+            },
+            {
+                "title": "Financial Markets Day 22",
+                "pdf": "content/courses/stock-market/materials/day-22.pdf"
+            },
+            {
+                "title": "Financial Markets Day 23",
+                "pdf": "content/courses/stock-market/materials/day-23.pdf"
+            },
+            {
+                "title": "Financial Markets Day 24",
+                "pdf": "content/courses/stock-market/materials/day-24.pdf"
+            },
+            {
+                "title": "Financial Markets Day 25",
+                "pdf": "content/courses/stock-market/materials/day-25.pdf"
+            },
+            {
+                "title": "Financial Markets Day 26",
+                "pdf": "content/courses/stock-market/materials/day-26.pdf"
+            },
+            {
+                "title": "Financial Markets Day 27",
+                "pdf": "content/courses/stock-market/materials/day-27.pdf"
+            },
+            {
+                "title": "Financial Markets Day 28",
+                "pdf": "content/courses/stock-market/materials/day-28.pdf"
+            },
+            {
+                "title": "Financial Markets Day 29",
+                "pdf": "content/courses/stock-market/materials/day-29.pdf"
+            },
+            {
+                "title": "Financial Markets Day 30",
+                "pdf": "content/courses/stock-market/materials/day-30.pdf"
+            }
+        ]
+    }
+];
+
 async function loadCourses() {
     try {
-        const response = await fetch("data/courses.json?v=" + Date.now(), { cache: "no-store" });
-        if (!response.ok) throw new Error("Unable to load courses.json. HTTP Status: " + response.status);
+        const paths = [
+            window.location.origin + "/data/courses.json",
+            "data/courses.json"
+        ];
+        let loadedData = null;
+        let lastError = null;
 
-        const data = await response.json();
-        if (!data || !Array.isArray(data.courses)) throw new Error("Invalid courses.json structure.");
+        for (const path of paths) {
+            try {
+                const response = await fetch(path + (path.includes("?") ? "&" : "?") + "v=" + Date.now(), { cache: "no-store" });
+                if (!response.ok) throw new Error("HTTP " + response.status);
+                const data = await response.json();
+                if (!data || !Array.isArray(data.courses)) throw new Error("Invalid courses.json structure");
+                loadedData = data;
+                break;
+            } catch (error) {
+                lastError = error;
+            }
+        }
 
-        courses = data.courses;
+        if (!loadedData) {
+            console.warn("EarnJoy course data endpoint unavailable; using built-in catalogue fallback.", lastError);
+            loadedData = { courses: FALLBACK_COURSES };
+        }
+
+        courses = loadedData.courses;
 
         if (featuredCourses) displayFeaturedCourses(courses.filter(course => course.featured));
         if (courseGrid) initializeCoursesPage();
