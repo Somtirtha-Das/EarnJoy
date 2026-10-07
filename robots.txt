@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://earnjoy.das105070.workers.dev/sitemap.xml
+Sitemap: https://somtirtha-das.github.io/EarnJoy/sitemap.xml
