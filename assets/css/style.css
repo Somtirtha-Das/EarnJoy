@@ -4278,3 +4278,67 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
 @media(max-width:800px){.privacy-hero{grid-template-columns:1fr;gap:15px;padding:42px 7%;margin-bottom:42px}.privacy-hero-art{min-height:230px}.privacy-art-ring{width:210px;height:210px}.privacy-art-ring.ring-two{width:170px;height:170px}.privacy-shield{width:140px;height:158px}.privacy-art-caption{right:8%;bottom:0}.privacy-layout{grid-template-columns:1fr;gap:28px}.privacy-aside{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}.privacy-aside-label{grid-column:1/-1}.privacy-aside a{font-size:10px}}
 @media(max-width:520px){.privacy-container{width:calc(100% - 30px);padding-top:22px}.privacy-hero{min-height:0;padding:34px 24px}.privacy-hero h1{font-size:48px;letter-spacing:-1.8px}.privacy-hero-copy>p{font-size:14px}.privacy-meta{font-size:8px}.privacy-aside{padding:17px 14px;grid-template-columns:1fr}.privacy-section{padding-bottom:30px;margin-bottom:30px}.privacy-section p,.privacy-section li{font-size:13px}.privacy-note{grid-template-columns:1fr;gap:6px}.privacy-contact-section{padding:22px 18px}}
 @media(prefers-reduced-motion:reduce){.privacy-aside a{transition:none}}
+
+
+/* =========================================================
+   TERMS OF USE — EDITORIAL PAGE
+   ========================================================= */
+.terms-page{background:#f4f0e7;color:#292a23}
+.terms-world{overflow:hidden;background:#f4f0e7}
+.terms-container{width:min(1180px,calc(100% - 48px));margin:0 auto;padding:34px 0 88px}
+.terms-back{display:inline-flex;align-items:center;min-height:40px;color:#666653;text-decoration:none;font-size:13px;font-weight:700}
+.terms-back:hover{color:#a45f3d}
+.terms-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);align-items:center;min-height:430px;margin:28px 0 66px;padding:56px 7%;overflow:hidden;background:#e7e3d8;border:1px solid #d8d1c2}
+.terms-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.3),transparent 58%);pointer-events:none}
+.terms-hero-copy{position:relative;z-index:1;max-width:650px}
+.terms-kicker,.terms-number,.terms-aside-label{display:block;color:#8b654b;font-size:10px;font-weight:800;letter-spacing:1.8px}
+.terms-hero h1{margin:22px 0 18px;color:#282920;font-family:Georgia,serif;font-size:clamp(45px,6.2vw,74px);font-weight:400;line-height:1;letter-spacing:-2.5px}
+.terms-hero h1 em{color:#9d6849;font-weight:400}
+.terms-hero-copy>p{max-width:570px;color:#65665b;font-size:15px;line-height:1.85}
+.terms-meta{display:flex;flex-wrap:wrap;gap:12px 25px;margin-top:32px;padding-top:16px;border-top:1px solid #ccc5b6;color:#777466;font-size:9px;font-weight:800;letter-spacing:1.1px}
+.terms-hero-art{position:relative;min-height:290px;display:grid;place-items:center}
+.terms-orbit{position:absolute;width:260px;height:260px;border:1px solid rgba(157,104,73,.35);border-radius:50%}
+.terms-orbit:after{content:"";position:absolute;inset:20px;border:1px dashed rgba(83,91,73,.35);border-radius:50%}
+.terms-orbit.orbit-b{width:205px;height:205px;transform:rotate(40deg);border-style:dotted}
+.terms-document{position:relative;z-index:1;width:166px;height:210px;padding:18px 16px;background:#fbf8ef;border:1px solid #c9c0ad;box-shadow:12px 14px 0 rgba(69,75,60,.13);transform:rotate(4deg)}
+.terms-doc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:23px;color:#8c684c;font-size:8px;font-weight:800;letter-spacing:1px}
+.terms-doc-top span:first-child{font-family:Georgia,serif;font-size:20px}
+.terms-document i{display:block;width:100%;height:3px;margin:10px 0;background:#d9d2c3}
+.terms-document i.short{width:62%}
+.terms-doc-seal{position:absolute;right:13px;bottom:45px;width:35px;height:35px;display:grid;place-items:center;border:1px solid #a45f3d;border-radius:50%;color:#a45f3d;font-size:20px}
+.terms-document strong{position:absolute;left:16px;bottom:17px;color:#394438;font-family:Georgia,serif;font-size:13px;font-weight:400;line-height:1.15;letter-spacing:1px}
+.terms-art-caption{position:absolute;right:0;bottom:2px;color:#92795f;font-size:9px;font-weight:800;line-height:1.5;letter-spacing:1.5px}
+.terms-layout{display:grid;grid-template-columns:220px minmax(0,1fr);align-items:start;gap:70px}
+.terms-aside{position:sticky;top:112px;display:flex;flex-direction:column;padding:22px 18px;background:#ece8de;border:1px solid #dcd5c7}
+.terms-aside-label{margin:0 0 14px}
+.terms-aside a{padding:10px 0;border-top:1px solid #dcd5c7;color:#626356;text-decoration:none;font-size:10.5px;font-weight:650;transition:color .2s ease}
+.terms-aside a:hover{color:#a45f3d}
+.terms-article{min-width:0}
+.terms-section{padding:0 0 40px;margin:0 0 38px;border-bottom:1px solid #d8d1c2;scroll-margin-top:110px}
+.terms-number{margin-bottom:14px;color:#9d6849}
+.terms-section h2{margin:0 0 18px;color:#292a23;font-family:Georgia,serif;font-size:clamp(26px,3vw,35px);font-weight:400;line-height:1.15;letter-spacing:-.5px}
+.terms-section h3{margin:23px 0 7px;color:#414b3d;font-size:15px;font-weight:800}
+.terms-section p,.terms-section li{color:#66675d;font-size:14px;line-height:1.85}
+.terms-section p{margin:0 0 14px}
+.terms-section a{color:#985c3f;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+.terms-section ul{padding-left:21px;margin:10px 0 18px}
+.terms-section li{padding:3px 0 3px 4px}
+.terms-callout{display:grid;grid-template-columns:150px 1fr;gap:18px;margin-top:25px;padding:19px 20px;background:#e7e3d8;border-left:3px solid #9d6849}
+.terms-callout strong{color:#414b3d;font-family:Georgia,serif;font-size:16px;font-weight:400}
+.terms-callout span{color:#66675d;font-size:12px;line-height:1.8}
+.terms-financial{padding:25px;background:#ece8de;border:1px solid #d8d1c2}
+.terms-risk-line{display:flex;align-items:flex-start;gap:13px;margin-top:20px;padding-top:17px;border-top:1px solid #d4cbbb}
+.terms-risk-line>span{width:25px;height:25px;flex:0 0 25px;display:grid;place-items:center;border:1px solid #b27a4e;border-radius:50%;color:#9d6849;font-family:Georgia,serif}
+.terms-risk-line p{margin:0;font-size:12px}
+.terms-contact{padding:30px;background:#e7e3d8;border:1px solid #d8d1c2}
+.terms-contact-link{display:flex;flex-direction:column;gap:6px;width:fit-content;max-width:100%;margin-top:20px;padding:17px 22px;background:#394438;color:#f4f0e7!important;text-decoration:none!important}
+.terms-contact-link span{color:#d7ad86;font-size:9px;font-weight:800;letter-spacing:1.2px}
+.terms-contact-link strong{font-family:Georgia,serif;font-size:19px;font-weight:400}
+.terms-contact-link b{padding-left:12px;color:#d7ad86}
+.terms-contact-link:hover{background:#4a5948}
+.terms-disclaimer{padding:18px 0 0;color:#858477;font-size:11px;line-height:1.8}
+.terms-endmark{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:60px;color:#8b806c;font-size:9px;letter-spacing:1.6px;text-align:center}
+.terms-endmark span{width:52px;height:1px;flex:0 0 52px;background:#cfc8b8}
+@media(max-width:800px){.terms-hero{grid-template-columns:1fr;gap:15px;padding:42px 7%;margin-bottom:42px}.terms-hero-art{min-height:235px}.terms-orbit{width:210px;height:210px}.terms-orbit.orbit-b{width:170px;height:170px}.terms-art-caption{right:8%;bottom:0}.terms-layout{grid-template-columns:1fr;gap:28px}.terms-aside{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}.terms-aside-label{grid-column:1/-1}.terms-aside a{font-size:10px}}
+@media(max-width:520px){.terms-container{width:calc(100% - 30px);padding-top:22px}.terms-hero{min-height:0;padding:34px 24px}.terms-hero h1{font-size:47px;letter-spacing:-1.8px}.terms-hero-copy>p{font-size:14px}.terms-meta{font-size:8px}.terms-aside{grid-template-columns:1fr;padding:17px 14px}.terms-section{padding-bottom:29px;margin-bottom:29px}.terms-section p,.terms-section li{font-size:13px}.terms-callout{grid-template-columns:1fr;gap:6px}.terms-financial{padding:21px 17px}.terms-contact{padding:22px 18px}.terms-endmark{font-size:8px;gap:10px}.terms-endmark span{width:25px;flex-basis:25px}}
+@media(prefers-reduced-motion:reduce){.terms-aside a{transition:none}}
