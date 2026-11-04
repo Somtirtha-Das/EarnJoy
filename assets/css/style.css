@@ -3959,3 +3959,161 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
     .roadmap-page .roadmap-card:hover,
     .roadmap-page .back-button:hover { transform: none; }
 }
+
+
+/* =========================================================
+   EARNJOY ABOUT — THE HUMAN EDITORIAL
+   A calm, tactile brand story with a distinct paper-and-ink identity.
+   ========================================================= */
+.about-page {
+    --about-ink: #292d2b;
+    --about-muted: #77766d;
+    --about-paper: #f5f1e8;
+    --about-card: #fffdf7;
+    --about-line: #ded8ca;
+    --about-copper: #ad684d;
+    --about-olive: #737c5b;
+    background: var(--about-paper);
+    color: var(--about-ink);
+    font-family: Inter,ui-sans-serif,system-ui,sans-serif;
+}
+.about-page .header {
+    background: rgba(245,241,232,.96);
+    border-bottom: 1px solid #e3ddcf;
+}
+.about-page .brand-name { color: #292d2b; font-family: Georgia,"Times New Roman",serif; letter-spacing: -.7px; }
+.about-page .brand-tagline { color: #858174; }
+.about-page .new-courses-announcement { border-color: #e1d8c8; background: #eee8dc; box-shadow: none; }
+.about-page .announcement-dot { background: #a87959; box-shadow: 0 0 0 4px rgba(168,121,89,.12); }
+.about-page .announcement-label { color: #77513d; }
+.about-page .announcement-text { color: #827b6e; }
+.about-page .header-nav-link { color: #555b4c; }
+.about-page .header-nav-link:hover { background: #eae5d9; color: #292d2b; }
+.about-page .youtube-link { color: #a84d40; }
+.about-page .info-page-container {
+    width: min(1080px,100%);
+    padding: 34px 24px 112px;
+}
+.about-page .back-button {
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    padding: 7px 12px;
+    border: 1px solid #d9d1c2;
+    border-radius: 2px;
+    background: rgba(255,253,247,.65);
+    color: #77766d;
+    font-size: 11px;
+    transition: color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.about-page .back-button:hover { transform: translateX(-3px); border-color: #ad927c; color: #684c3c; }
+.about-page .info-card {
+    position: relative;
+    overflow: hidden;
+    margin: 58px 0 0;
+    padding: clamp(32px,6vw,76px) clamp(25px,8vw,104px) 82px;
+    border: 1px solid #e2dccf;
+    border-radius: 2px;
+    background:
+      linear-gradient(90deg,transparent 0 49.94%,rgba(173,104,77,.045) 50%,transparent 50.06%),
+      var(--about-card);
+    box-shadow: 0 24px 70px rgba(67,57,42,.055);
+}
+.about-page .info-card::before {
+    content: "A NOTE ON WHY WE EXIST";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 17px;
+    background: #e9e4d8;
+    color: #817a69;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.about-page .info-card::after {
+    content: "EJ";
+    position: absolute;
+    right: 35px;
+    bottom: -76px;
+    color: rgba(115,124,91,.055);
+    font: 500 210px/.8 Georgia,serif;
+    pointer-events: none;
+}
+.about-page .info-card .section-kicker {
+    display: inline-block;
+    margin: 0 0 22px;
+    color: var(--about-copper);
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: 3px;
+}
+.about-page .info-card h1 {
+    max-width: 700px;
+    margin: 0 0 27px;
+    color: #303630;
+    font: 500 clamp(48px,7vw,82px)/.98 Georgia,"Times New Roman",serif;
+    letter-spacing: -3.5px;
+}
+.about-page .info-card h1::after {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 2px;
+    margin-top: 27px;
+    background: var(--about-copper);
+}
+.about-page .info-card > p {
+    position: relative;
+    z-index: 1;
+    max-width: 690px;
+    margin: 0 0 18px;
+    color: #6d6e65;
+    font-size: 14px;
+    line-height: 1.95;
+}
+.about-page .info-card > p:first-of-type {
+    max-width: 700px;
+    margin-bottom: 22px;
+    color: #41483f;
+    font: 500 clamp(18px,2.2vw,23px)/1.65 Georgia,"Times New Roman",serif;
+}
+.about-page .info-card h2 {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin: 54px 0 17px;
+    padding-top: 25px;
+    border-top: 1px solid var(--about-line);
+    color: #384238;
+    font: 500 30px/1.15 Georgia,"Times New Roman",serif;
+    letter-spacing: -.6px;
+}
+.about-page .info-card h2::before {
+    content: "✳";
+    color: var(--about-olive);
+    font: 18px Georgia,serif;
+}
+.about-page .info-card h2 + p { padding-left: 35px; }
+.about-page .premium-footer { background: #292e29; }
+.about-page .premium-footer .footer-links a { color: #d4d3c8; }
+.about-page .premium-footer .footer-links a:hover { color: #d7a487; }
+.about-page .premium-footer .footer-description,
+.about-page .premium-footer .copyright { color: #aaa99e; }
+@media (max-width: 620px) {
+    .about-page .info-page-container { padding: 24px 16px 76px; }
+    .about-page .info-card { margin-top: 38px; padding: 58px 23px 55px; }
+    .about-page .info-card::before { font-size: 7px; letter-spacing: 1.4px; }
+    .about-page .info-card::after { right: 8px; bottom: -42px; font-size: 145px; }
+    .about-page .info-card h1 { font-size: clamp(46px,13vw,64px); letter-spacing: -2.5px; }
+    .about-page .info-card > p { font-size: 13px; }
+    .about-page .info-card > p:first-of-type { font-size: 18px; }
+    .about-page .info-card h2 { margin-top: 39px; font-size: 26px; }
+    .about-page .info-card h2 + p { padding-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .about-page .back-button { transition: none; }
+    .about-page .back-button:hover { transform: none; }
+}
