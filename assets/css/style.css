@@ -3525,3 +3525,199 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
     .category-page .category-card:hover,
     .category-page .back-button:hover { transform: none; }
 }
+
+
+/* =========================================================
+   EARNJOY RESOURCES — THE NOCTURNE ARCHIVE
+   A quiet, dark reading room for learning material.
+   ========================================================= */
+.resources-page {
+    --archive-bg: #171321;
+    --archive-panel: #211b2e;
+    --archive-line: #393044;
+    --archive-paper: #f1e9df;
+    --archive-muted: #b4a8ba;
+    --archive-accent: #d2a6d5;
+    background: var(--archive-bg);
+    color: var(--archive-paper);
+    font-family: Inter,ui-sans-serif,system-ui,sans-serif;
+}
+.resources-page .header {
+    background: rgba(25,20,35,.96);
+    border-bottom: 1px solid #352b42;
+}
+.resources-page .brand-name { color: #f5edf4; font-family: Georgia,serif; letter-spacing: -.6px; }
+.resources-page .brand-tagline { color: #aa9eb2; }
+.resources-page .new-courses-announcement { border-color: #493b53; background: #2a2235; box-shadow: none; }
+.resources-page .announcement-dot { background: #d2a6d5; box-shadow: 0 0 0 4px rgba(210,166,213,.13); }
+.resources-page .announcement-label { color: #f1e9df; }
+.resources-page .announcement-text { color: #b9adbf; }
+.resources-page .header-nav-link { color: #d2c6d7; }
+.resources-page .header-nav-link:hover { background: #342a40; color: #fff; }
+.resources-page .youtube-link { color: #f09b9b; }
+.resources-page .discovery-page {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: calc(100vh - 78px);
+    padding: 38px 24px 112px;
+    background:
+      radial-gradient(ellipse at 78% 8%,rgba(121,77,133,.22),transparent 31%),
+      radial-gradient(ellipse at 10% 70%,rgba(73,61,106,.2),transparent 34%),
+      linear-gradient(145deg,#171321 0%,#1d1928 54%,#211b2e 100%);
+}
+.resources-page .discovery-page::before {
+    content: "EARNJOY  /  READING ROOM";
+    position: absolute;
+    z-index: -1;
+    top: 175px;
+    right: -28px;
+    color: rgba(230,211,231,.07);
+    font: 800 10px Inter,sans-serif;
+    letter-spacing: 4px;
+    writing-mode: vertical-rl;
+}
+.resources-page .discovery-page::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: .2;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(237,218,239,.3) .55px,transparent .55px);
+    background-size: 17px 17px;
+    mask-image: linear-gradient(90deg,transparent,#000 55%,transparent);
+}
+.resources-page .discovery-container { position: relative; z-index: 1; width: min(1120px,100%); margin: 0 auto; }
+.resources-page .back-button {
+    margin: 0;
+    min-height: 36px;
+    padding: 7px 12px;
+    border: 1px solid #493d54;
+    border-radius: 4px;
+    background: rgba(43,35,55,.65);
+    color: #c7b9cc;
+    font-size: 11px;
+    transition: border-color .2s ease,color .2s ease,transform .2s ease;
+}
+.resources-page .back-button:hover { transform: translateX(-3px); border-color: #a77eae; color: #f4e6f2; }
+.resources-page .discovery-hero {
+    position: relative;
+    max-width: 820px;
+    margin: 75px 0 48px;
+    padding: 0 0 34px;
+    border-bottom: 1px solid #493c52;
+}
+.resources-page .discovery-hero::after {
+    content: "FIELD NOTES  /  VOL. 01";
+    display: block;
+    margin-top: 25px;
+    color: #8e7e98;
+    font: 700 9px Inter,sans-serif;
+    letter-spacing: 2.5px;
+}
+.resources-page .discovery-hero .section-kicker {
+    color: #d2a6d5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+.resources-page .discovery-hero h1 {
+    margin: 17px 0 14px;
+    color: #f2e9ed;
+    font: 500 clamp(48px,7vw,80px)/.98 Georgia,"Times New Roman",serif;
+    letter-spacing: -3.4px;
+}
+.resources-page .discovery-hero p { max-width: 510px; margin: 0; color: #b4a8ba; font-size: 15px; line-height: 1.85; }
+.resources-page .resource-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.resources-page .resource-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 58px minmax(0,1fr) auto;
+    align-items: center;
+    gap: 23px;
+    min-height: 166px;
+    padding: 24px 27px;
+    border: 1px solid #3d3348;
+    border-radius: 5px;
+    background: linear-gradient(105deg,rgba(44,35,57,.96),rgba(34,28,46,.92));
+    box-shadow: 0 12px 32px rgba(0,0,0,.12);
+    transition: transform .24s ease,border-color .24s ease,background .24s ease,box-shadow .24s ease;
+}
+.resources-page .resource-card:hover {
+    transform: translateY(-3px);
+    border-color: #80648a;
+    background: linear-gradient(105deg,#332840,#282035);
+    box-shadow: 0 18px 38px rgba(0,0,0,.22);
+}
+.resources-page .resource-icon {
+    width: 54px;
+    height: 66px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #65516e;
+    border-radius: 3px 8px 8px 3px;
+    background: linear-gradient(145deg,#493451,#30263d);
+    color: #e3c4df;
+    font-size: 23px;
+    box-shadow: inset 4px 0 0 rgba(210,166,213,.16),5px 7px 14px rgba(0,0,0,.16);
+}
+.resources-page .resource-main { min-width: 0; }
+.resources-page .resource-main .section-kicker { color: #c99bce; font-size: 9px; font-weight: 800; letter-spacing: 2px; }
+.resources-page .resource-main h2 { margin: 5px 0 7px; color: #f2e9ed; font: 500 25px/1.15 Georgia,"Times New Roman",serif; letter-spacing: -.3px; }
+.resources-page .resource-main p { max-width: 620px; margin: 0; color: #b6aabb; font-size: 12px; line-height: 1.7; }
+.resources-page .resource-stats { margin-top: 12px; color: #8f819a; font-size: 10px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; }
+.resources-page .resource-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 15px;
+    border: 1px solid #79617f;
+    border-radius: 3px;
+    color: #ead5e8;
+    font-size: 11px;
+    font-weight: 750;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s ease,color .2s ease,border-color .2s ease;
+}
+.resources-page .resource-action:hover { border-color: #d2a6d5; background: #d2a6d5; color: #211b2e; }
+.resources-page .loading-state,
+.resources-page .empty-state {
+    padding: 48px 24px;
+    border: 1px dashed #55465e;
+    border-radius: 4px;
+    background: rgba(42,34,54,.7);
+    color: #b4a8ba;
+    text-align: center;
+}
+.resources-page .empty-state h3 { color: #f2e9ed; font: 500 27px Georgia,serif; }
+.resources-page .empty-state p { color: #b4a8ba; }
+.resources-page .premium-footer { background: #100d18; border-top: 1px solid #352b42; }
+.resources-page .premium-footer .footer-links a { color: #c3b6c9; }
+.resources-page .premium-footer .footer-links a:hover { color: #d2a6d5; }
+.resources-page .premium-footer .footer-description,
+.resources-page .premium-footer .copyright { color: #93869d; }
+@media (max-width: 760px) {
+    .resources-page .resource-card { grid-template-columns: 48px minmax(0,1fr); gap: 16px; padding: 20px; }
+    .resources-page .resource-icon { width: 46px; height: 58px; }
+    .resources-page .resource-action { grid-column: 2; justify-self: start; min-height: 38px; }
+}
+@media (max-width: 620px) {
+    .resources-page .discovery-page { padding: 27px 17px 78px; }
+    .resources-page .discovery-page::before { top: 115px; right: -20px; font-size: 8px; }
+    .resources-page .discovery-hero { margin: 55px 0 32px; padding-bottom: 25px; }
+    .resources-page .discovery-hero h1 { font-size: clamp(45px,12vw,64px); letter-spacing: -2.5px; }
+    .resources-page .discovery-hero p { max-width: 340px; font-size: 13px; }
+    .resources-page .resource-card { gap: 13px; padding: 17px 15px; }
+    .resources-page .resource-main h2 { font-size: 22px; }
+    .resources-page .resource-main p { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .resources-page .resource-card,
+    .resources-page .resource-action,
+    .resources-page .back-button { transition: none; }
+    .resources-page .resource-card:hover,
+    .resources-page .back-button:hover { transform: none; }
+}
