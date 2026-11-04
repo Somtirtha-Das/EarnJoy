@@ -16,6 +16,26 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://earnjoy.das105070.workers.dev/cat-success-series.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://earnjoy.das105070.workers.dev/cat-success-series-qa.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://earnjoy.das105070.workers.dev/cat-success-series-dilr.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://earnjoy.das105070.workers.dev/cat-success-series-varc.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://earnjoy.das105070.workers.dev/categories.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
