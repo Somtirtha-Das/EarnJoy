@@ -4623,3 +4623,68 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
 @media(prefers-reduced-motion:reduce){
  .roadmap-page .roadmap-hero-link{transition:none}
 }
+
+/* =========================================================
+   VISUAL CONTRAST REFINEMENT — clearer text and dividers
+   ========================================================= */
+:root {
+    --color-subtle: #7b8796;
+    --color-border: #cbd2dc;
+    --color-border-strong: #aeb8c6;
+}
+.experience-strip { border-bottom-color: #cbd4df; }
+.experience-divider { background: #c4cedb; }
+.premium-footer .footer-line { background: rgba(255,255,255,.52); }
+
+.qa-collection-heading { border-bottom-color: #c8c0b2; }
+.qa-collection-count { border-left-color: #c8c0b2; }
+.qa-module-detail-footer { border-top-color: #c8c0b2; }
+.bookworld-topline,
+.cat-academy-top { border-bottom-color: rgba(64,51,40,.32); }
+.bookworld-hero { border-bottom-color: rgba(64,51,40,.32); }
+.bw-feature-bottom { border-top-color: #cdbfae; }
+.cat-card-bottom { border-top-color: rgba(53,75,58,.28); }
+
+.contact-page {
+    --contact-line: #c5bba8;
+    --contact-muted: #68685e;
+}
+.contact-edition { color: #756f60; }
+.contact-note { color: #706c60; }
+
+.privacy-meta,
+.terms-meta,
+.faq-hero-meta {
+    border-top-color: #bfb7a7;
+    color: #69685d;
+}
+.privacy-aside a,
+.terms-aside a,
+.faq-aside a { border-top-color: #c8bfaf; }
+.privacy-section,
+.terms-section,
+.faq-group { border-bottom-color: #c5bcaa; }
+.privacy-service { border-top-color: #c8bfaf; }
+.privacy-endmark span,
+.terms-endmark span { background: #bdb4a3; }
+.privacy-muted,
+.privacy-disclaimer,
+.terms-disclaimer { color: #6c6d62; }
+.terms-document i { background: #c4baa8; }
+.terms-risk-line { border-top-color: #c5bcaa; }
+.faq-item,
+.faq-item:last-child { border-color: #c5bcaa; }
+
+.category-breadcrumb {
+    border-bottom-color: #c3bcad;
+    color: #66695e;
+}
+.category-editorial-hero { border-bottom-color: #c4bcab; }
+.category-hero-foot {
+    border-top-color: #bdb5a5;
+    color: #65675d;
+}
+.roadmap-page .roadmap-hero-foot { border-top-color: #b6c4b3; color: #5f715f; }
+.roadmap-page .roadmap-intro-row { border-bottom-color: #b9c8b8; }
+.roadmap-page .roadmap-stage-label { border-color: #c1cdbd; }
+.about-page { --about-line: #c4bba9; }
