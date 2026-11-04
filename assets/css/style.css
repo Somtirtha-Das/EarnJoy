@@ -4427,3 +4427,100 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
 @media(prefers-reduced-motion:reduce){
  .faq-aside a,.faq-item summary>i{transition:none}
 }
+
+
+/* =========================================================
+   STOCK MARKET COURSE — EDITORIAL LEARNING EXPERIENCE
+   ========================================================= */
+.stock-market-detail{background:#f4f0e7;color:#292a23}
+.stock-market-world{background:#f4f0e7}
+.stock-market-detail .course-page-container{width:min(1160px,calc(100% - 48px));padding:30px 0 88px}
+.stock-market-detail .back-button{display:inline-flex;align-items:center;min-height:40px;margin:0 0 12px;padding:0;border:0;background:transparent;color:#666653;font-size:13px;font-weight:700;text-decoration:none}
+.stock-market-detail .back-button:hover{color:#a45f3d}
+.stock-market-breadcrumb{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:0 0 24px;color:#8a826f;font-size:9px;font-weight:800;letter-spacing:1.3px}
+.stock-market-breadcrumb i{color:#b79d7d;font-style:normal}
+.stock-market-detail .course-overview{grid-template-columns:minmax(280px,.88fr) minmax(0,1.12fr);gap:clamp(28px,5vw,66px);align-items:center;margin:0 0 62px;padding:clamp(22px,4vw,48px);border:1px solid #d9d3c5;border-radius:2px;background:#e9e5d9;box-shadow:none}
+.stock-market-detail .course-overview-media{position:relative;min-width:0}
+.stock-market-detail .course-overview-media:after{content:"EARNJOY  /  FINANCE";position:absolute;right:-12px;bottom:18px;padding:10px 13px;background:#354238;color:#e9e5d9;font-size:8px;font-weight:800;letter-spacing:1.5px}
+.stock-market-detail .course-page-image{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border:0;border-radius:0;box-shadow:12px 14px 0 rgba(69,75,60,.12)}
+.stock-market-eyebrow{display:block;margin-bottom:22px;color:#8c654b;font-size:9px;font-weight:800;letter-spacing:1.8px}
+.stock-market-detail .course-page-provider{gap:10px;margin-bottom:16px}
+.stock-market-detail .course-page-provider img{border:1px solid #d2cbbb;border-radius:50%;background:#f4f0e7}
+.stock-market-detail .course-page-provider span{color:#777466;font-size:12px;letter-spacing:.4px}
+.stock-market-detail .course-category{display:inline-block;margin:0 0 11px;padding:6px 10px;border:1px solid #c9bba5;color:#8c654b;font-size:9px;letter-spacing:1.5px}
+.stock-market-detail .course-page-info h1{color:#282920;font-family:Georgia,serif;font-size:clamp(46px,6vw,72px);font-weight:400;line-height:.98;letter-spacing:-2.6px}
+.stock-market-detail .course-page-description{max-width:550px;margin-top:20px;color:#65665a;font-size:15px;line-height:1.9}
+.stock-market-detail .course-facts{gap:9px;margin-top:25px}
+.stock-market-detail .course-facts span{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:100px;padding:11px 13px;border:1px solid #d4cbbb;border-radius:0;background:rgba(255,255,255,.24);box-shadow:none;color:#45483c;font-size:12px}
+.stock-market-detail .course-facts span strong{color:#8c654b;font-size:8px;letter-spacing:1.2px;text-transform:uppercase}
+.stock-market-detail .course-material-count{margin-top:19px;color:#54584b;font-size:12px;font-weight:750;letter-spacing:.2px}
+.stock-market-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:23px}
+.stock-market-actions a{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:46px;padding:0 19px;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.3px;transition:background .2s ease,color .2s ease,transform .2s ease}
+.stock-market-primary{background:#354238;color:#f4f0e7}
+.stock-market-primary:hover{background:#4a5948;transform:translateY(-2px)}
+.stock-market-secondary{border:1px solid #bcb19f;color:#55594b}
+.stock-market-secondary:hover{background:#f4f0e7;color:#9b6042}
+.stock-market-note{margin:16px 0 0;color:#8a826f;font-size:10px;line-height:1.7}
+.stock-market-curriculum{padding:clamp(22px,4vw,42px);border:1px solid #d9d3c5;border-radius:2px;background:#f8f5ed;box-shadow:none;scroll-margin-top:28px}
+.stock-market-detail .course-materials-header{margin-bottom:25px}
+.stock-market-detail .course-materials-header .section-kicker{color:#a45f3d;font-size:9px;letter-spacing:1.7px}
+.stock-market-detail .course-materials-header h2{margin-top:11px;color:#292a23;font-family:Georgia,serif;font-size:clamp(31px,4vw,44px);font-weight:400;letter-spacing:-.8px}
+.stock-market-detail .course-materials-header p{max-width:650px;margin-top:10px;color:#6d6c60;font-size:13px;line-height:1.8}
+.stock-market-progress{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin:28px 0 25px;padding:18px 19px;border:1px solid #d9d3c5;border-radius:0;background:#eeeadf;color:#55594b}
+.stock-market-progress-heading,.stock-market-progress-footer{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.stock-market-progress-label{color:#8c654b;font-size:9px;font-weight:800;letter-spacing:1.4px}
+.stock-market-progress strong{color:#30352c;font-family:Georgia,serif;font-size:17px;font-weight:400}
+.stock-market-progress .progress-track{width:100%;height:8px;border-radius:0;background:#d9d3c5}
+.stock-market-progress .progress-track span{border-radius:0;background:#8b684b;transition:width .25s ease}
+.stock-market-progress-footer{color:#777466;font-size:10px;line-height:1.6}
+.stock-market-progress .progress-reset{padding:5px 0;color:#945c40;font-size:10px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.stock-market-detail .material-list{gap:9px}
+.stock-market-detail .material-item{grid-template-columns:44px minmax(0,1fr) auto;gap:15px;padding:15px 16px;border:1px solid #e0dacc;border-radius:0;background:#f4f0e7;box-shadow:none;transition:background .2s ease,border-color .2s ease}
+.stock-market-detail .material-item:hover{transform:none;border-color:#bfae96;background:#eeeadf;box-shadow:none}
+.stock-market-detail .material-number{width:38px;height:38px;border:1px solid #d6cbb9;border-radius:50%;background:transparent;color:#8c654b;font-family:Georgia,serif;font-size:13px;font-weight:400}
+.stock-market-detail .material-title h3{color:#373a30;font-size:13px;font-weight:700;line-height:1.5}
+.stock-market-detail .complete-control{display:inline-flex;align-items:center;gap:7px;margin-top:7px;color:#878273;font-size:10px;cursor:pointer}
+.stock-market-detail .complete-control input{width:14px;height:14px;margin:0;accent-color:#596a52}
+.stock-market-detail .complete-control input:focus-visible{outline:2px solid #a45f3d;outline-offset:3px}
+.stock-market-detail .material-actions a{min-width:88px;min-height:37px;padding:7px 12px;border:1px solid #354238;border-radius:0;background:#354238;box-shadow:none;color:#f4f0e7;font-size:10px;letter-spacing:.4px}
+.stock-market-detail .material-actions a:hover{background:#4a5948;transform:translateY(-1px)}
+.stock-market-related{margin-top:58px;padding-top:38px;border-top:1px solid #d9d3c5}
+.stock-market-related .section-heading h2{color:#292a23;font-family:Georgia,serif;font-size:clamp(30px,4vw,40px);font-weight:400}
+.stock-market-related .section-heading p{color:#6d6c60}
+.stock-market-detail .premium-footer{background:#292e29}
+.stock-market-detail .premium-footer .footer-links a{color:#d4d3c8}
+.stock-market-detail .premium-footer .footer-links a:hover{color:#d7a487}
+.stock-market-detail .premium-footer .footer-description,.stock-market-detail .premium-footer .copyright{color:#aaa99e}
+.stock-market-detail .course-page-container a:focus-visible{outline:2px solid #a45f3d;outline-offset:4px}
+@media(max-width:900px){
+ .stock-market-detail .course-overview{grid-template-columns:minmax(0,1fr);gap:30px}
+ .stock-market-detail .course-overview-media{max-width:520px;width:100%;margin:0 auto}
+ .stock-market-detail .course-page-image{aspect-ratio:16/10}
+ .stock-market-detail .course-page-info{text-align:left}
+ .stock-market-detail .course-page-provider{justify-content:flex-start}
+ .stock-market-detail .course-facts{justify-content:flex-start}
+ .stock-market-detail .course-material-count{text-align:left}
+}
+@media(max-width:620px){
+ .stock-market-detail .course-page-container{width:calc(100% - 30px);padding-top:22px}
+ .stock-market-breadcrumb{font-size:8px;gap:6px;margin-bottom:18px}
+ .stock-market-detail .course-overview{padding:18px;margin-bottom:38px}
+ .stock-market-detail .course-page-image{aspect-ratio:4/3}
+ .stock-market-detail .course-page-info h1{font-size:48px;letter-spacing:-1.8px}
+ .stock-market-detail .course-page-description{font-size:13px}
+ .stock-market-detail .course-facts span{min-width:0;flex:1 1 28%;padding:9px}
+ .stock-market-actions{display:grid;grid-template-columns:1fr 1fr}
+ .stock-market-actions a{padding:0 10px;font-size:10px}
+ .stock-market-curriculum{padding:18px}
+ .stock-market-progress{padding:15px}
+ .stock-market-progress-heading{align-items:flex-start;flex-direction:column;gap:5px}
+ .stock-market-progress-footer{align-items:flex-start;flex-direction:column;gap:8px}
+ .stock-market-detail .material-item{grid-template-columns:34px minmax(0,1fr);gap:10px;padding:12px}
+ .stock-market-detail .material-number{width:32px;height:32px;font-size:12px}
+ .stock-market-detail .material-title h3{font-size:12px}
+ .stock-market-detail .material-actions{grid-column:2;justify-content:flex-start;margin-top:3px}
+ .stock-market-detail .material-actions a{min-height:34px}
+}
+@media(prefers-reduced-motion:reduce){
+ .stock-market-actions a,.stock-market-detail .material-item,.stock-market-detail .material-actions a,.stock-market-progress .progress-track span{transition:none}
+}
