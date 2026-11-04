@@ -164,11 +164,17 @@ const FALLBACK_COURSES = [
 
 async function loadCourses() {
     try {
-        const response = await fetch("data/courses.json");
-        if (!response.ok) throw new Error("HTTP " + response.status);
-        const loadedData = await response.json();
-        if (!loadedData || !Array.isArray(loadedData.courses)) {
-            throw new Error("Invalid courses.json structure");
+        let loadedData;
+        try {
+            const response = await fetch("data/courses.json");
+            if (!response.ok) throw new Error("HTTP " + response.status);
+            loadedData = await response.json();
+            if (!loadedData || !Array.isArray(loadedData.courses)) {
+                throw new Error("Invalid courses.json structure");
+            }
+        } catch (error) {
+            console.warn("EarnJoy course data endpoint unavailable; using built-in catalogue fallback.", error);
+            loadedData = { courses: FALLBACK_COURSES };
         }
 
         courses = loadedData.courses;
