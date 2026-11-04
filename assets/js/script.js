@@ -227,7 +227,7 @@ function createCourseCard(course, featured = false) {
     image.alt = course.thumbnailAlt || course.name || "Course";
     image.width = 800;
     image.height = 500;
-    image.loading = featured ? "eager" : "lazy";
+    image.loading = "lazy";
     image.decoding = "async";
 
     const courseInfo = document.createElement("div");
