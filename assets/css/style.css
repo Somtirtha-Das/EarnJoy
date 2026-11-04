@@ -4688,3 +4688,57 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
 .roadmap-page .roadmap-intro-row { border-bottom-color: #b9c8b8; }
 .roadmap-page .roadmap-stage-label { border-color: #c1cdbd; }
 .about-page { --about-line: #c4bba9; }
+
+/* =========================================================
+   SCREENSHOT CONTRAST FIXES — homepage, resources, categories
+   ========================================================= */
+
+/* Homepage: heading and supporting copy on the deep green section */
+.home-page .premium-dark-section .light-heading h2,
+.home-page .premium-dark-section h2#whyHeading {
+    color: #ffffff !important;
+    text-shadow: 0 2px 16px rgba(0,0,0,.18);
+}
+.home-page .premium-dark-section .light-heading p {
+    color: #d0d9d4 !important;
+}
+.home-page .premium-dark-section .why-card p {
+    color: #c1cec7 !important;
+}
+.home-page .premium-dark-section .why-card-number {
+    color: #a9b9af !important;
+}
+
+/* Resources: title and description on the pale hero panel */
+.resources-page .discovery-hero h1 {
+    color: #34263a !important;
+    text-shadow: none;
+}
+.resources-page .discovery-hero p {
+    color: #5d5062 !important;
+}
+.resources-page .discovery-hero::after {
+    color: #80658a !important;
+}
+
+/* Categories: announcement copy sits on a light header background */
+.category-page .new-courses-announcement {
+    color: #59463d;
+    border-color: #e0cdbd;
+    background: #f4e8dc;
+}
+.category-page .announcement-label {
+    color: #8d4e36 !important;
+}
+.category-page .announcement-text {
+    color: #68564c !important;
+}
+.category-page .announcement-dot {
+    background: #b96f50;
+    box-shadow: 0 0 0 4px rgba(185,111,80,.13);
+}
+
+/* Resources: lift the announcement copy slightly on the dark header */
+.resources-page .announcement-text {
+    color: #e0d5e4 !important;
+}
