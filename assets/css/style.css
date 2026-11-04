@@ -3324,3 +3324,204 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
     .catalogue-page .catalogue-results .course-card:hover,
     .catalogue-page .back-button:hover { transform: none; }
 }
+
+
+/* =========================================================
+   EARNJOY CATEGORIES — THE SUBJECT GALLERY
+   A warm, tactile exhibition space for learning disciplines.
+   ========================================================= */
+.category-page {
+    --gallery-ink: #292522;
+    --gallery-muted: #786f68;
+    --gallery-clay: #b85e45;
+    --gallery-cream: #f5efe6;
+    --gallery-paper: #fffdf9;
+    background: #f5efe6;
+    color: var(--gallery-ink);
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+.category-page .header {
+    background: rgba(250,247,241,.94);
+    border-bottom: 1px solid #e8ded2;
+}
+.category-page .brand-name { color: #292522; font-family: Georgia,serif; letter-spacing: -.7px; }
+.category-page .brand-tagline { color: #897b70; }
+.category-page .new-courses-announcement { border-color: #e8d8ca; background: #f4e9de; box-shadow: none; }
+.category-page .announcement-dot { background: #b85e45; box-shadow: 0 0 0 4px rgba(184,94,69,.12); }
+.category-page .announcement-label { color: #8d4837; }
+.category-page .header-nav-link { color: #66574e; }
+.category-page .header-nav-link:hover { background: #eee2d7; color: #392f29; }
+.category-page .youtube-link { color: #a34d3b; }
+.category-page .discovery-page {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 78px);
+    padding: 42px 24px 110px;
+    background:
+        radial-gradient(ellipse at 91% 12%, rgba(196,125,91,.14), transparent 28%),
+        radial-gradient(ellipse at 4% 65%, rgba(210,184,151,.23), transparent 34%),
+        linear-gradient(135deg,#f5efe6 0%,#f8f3eb 52%,#efe4d8 100%);
+}
+.category-page .discovery-page::before {
+    content: "SUBJECTS / 01—08";
+    position: absolute;
+    top: 145px;
+    right: -34px;
+    color: rgba(115,91,74,.15);
+    font: 800 10px Inter,sans-serif;
+    letter-spacing: 3px;
+    writing-mode: vertical-rl;
+}
+.category-page .discovery-container { position: relative; z-index: 1; width: min(1160px,100%); margin: 0 auto; }
+.category-page .back-button {
+    margin: 0;
+    min-height: 35px;
+    padding: 7px 12px;
+    border: 1px solid #dfd1c3;
+    border-radius: 3px;
+    background: rgba(255,253,249,.6);
+    color: #76675c;
+    font-size: 11px;
+    letter-spacing: .2px;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.category-page .back-button:hover { transform: translateX(-3px); background: #fffdf9; color: #a34d3b; }
+.category-page .discovery-hero {
+    position: relative;
+    max-width: 780px;
+    margin: 76px 0 58px;
+    padding: 0 0 35px;
+    border-bottom: 1px solid #d9c9ba;
+}
+.category-page .discovery-hero::after {
+    content: "THE LEARNING COLLECTION";
+    position: absolute;
+    right: 0;
+    bottom: 37px;
+    color: #a28e7d;
+    font: 700 9px Inter,sans-serif;
+    letter-spacing: 2px;
+}
+.category-page .discovery-hero .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #a4513e;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.8px;
+}
+.category-page .discovery-hero .section-kicker::before { content: ""; width: 27px; height: 1px; background: #b85e45; }
+.category-page .discovery-hero h1 {
+    margin: 16px 0 12px;
+    color: #302923;
+    font: 500 clamp(48px,7vw,82px)/.98 Georgia,"Times New Roman",serif;
+    letter-spacing: -3.8px;
+}
+.category-page .discovery-hero p { max-width: 490px; margin: 0; color: #786f68; font-size: 15px; line-height: 1.8; }
+.category-page #categoriesHeading { color: #8d7a6b; }
+.category-page .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 16px;
+}
+.category-page .category-card {
+    position: relative;
+    min-height: 174px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    overflow: hidden;
+    padding: 23px 23px 20px;
+    border: 1px solid #e2d5c8;
+    border-radius: 3px;
+    background: rgba(255,253,249,.78);
+    color: #302923;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(77,55,39,.035);
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.category-page .category-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: #b85e45;
+    transition: height .25s ease;
+}
+.category-page .category-card:hover {
+    transform: translateY(-5px);
+    border-color: #c99b83;
+    background: #fffdf9;
+    box-shadow: 0 18px 34px rgba(77,55,39,.09);
+}
+.category-page .category-card:hover::before { height: 100%; }
+.category-page .category-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #ead8c9;
+    border-radius: 50%;
+    background: #f5e9de;
+    font-size: 20px;
+}
+.category-page .category-card h3 {
+    margin: 0 0 5px;
+    color: #332b25;
+    font: 500 23px/1.15 Georgia,"Times New Roman",serif;
+    letter-spacing: -.35px;
+}
+.category-page .category-card p { margin: 0; color: #938478; font-size: 11px; font-weight: 650; letter-spacing: .35px; }
+.category-page .category-arrow {
+    position: absolute;
+    right: 22px;
+    bottom: 21px;
+    color: #b85e45;
+    font-size: 20px;
+    transition: transform .2s ease;
+}
+.category-page .category-card:hover .category-arrow { transform: translateX(4px); }
+.category-page .loading-state,
+.category-page .empty-state {
+    grid-column: 1/-1;
+    padding: 48px 24px;
+    border: 1px dashed #d6c4b4;
+    border-radius: 3px;
+    background: rgba(255,253,249,.6);
+    color: #786f68;
+    text-align: center;
+}
+.category-page .empty-state h3 { color: #392f29; font: 500 27px Georgia,serif; }
+.category-page .empty-state p { color: #84776c; }
+.category-page .premium-footer { background: #2b2622; }
+.category-page .premium-footer .footer-links a:hover { color: #e5a58e; }
+.category-page .premium-footer .footer-description,
+.category-page .premium-footer .copyright { color: #b9aaa0; }
+@media (max-width: 900px) {
+    .category-page .category-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .category-page .discovery-hero { margin-top: 62px; }
+}
+@media (max-width: 620px) {
+    .category-page .discovery-page { padding: 27px 17px 76px; }
+    .category-page .discovery-page::before { top: 112px; right: -20px; font-size: 8px; }
+    .category-page .discovery-hero { margin: 55px 0 34px; padding-bottom: 25px; }
+    .category-page .discovery-hero::after { position: static; display: block; margin-top: 17px; font-size: 8px; }
+    .category-page .discovery-hero h1 { font-size: clamp(46px,13vw,66px); letter-spacing: -2.5px; }
+    .category-page .discovery-hero p { max-width: 340px; font-size: 13px; }
+    .category-page .category-grid { grid-template-columns: 1fr; gap: 11px; }
+    .category-page .category-card { min-height: 145px; padding: 18px; }
+    .category-page .category-card h3 { font-size: 22px; }
+    .category-page .category-arrow { right: 18px; bottom: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .category-page .category-card,
+    .category-page .category-card::before,
+    .category-page .category-arrow,
+    .category-page .back-button { transition: none; }
+    .category-page .category-card:hover,
+    .category-page .back-button:hover { transform: none; }
+}
