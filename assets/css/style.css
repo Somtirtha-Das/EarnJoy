@@ -4742,3 +4742,238 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
 .resources-page .announcement-text {
     color: #e0d5e4 !important;
 }
+
+
+/* =========================================================
+   EARNJOY HOMEPAGE — UNCOMMON CHROMATIC PALETTE
+   Scoped to .home-page so every other page keeps its design.
+   Palette: Smalt, Cerulean, Heliotrope, Aureolin, Ecru,
+   Falu Red, Amaranth, Nacarat, Puce, Glaucous,
+   Cherry Blossom and Lavender.
+   ========================================================= */
+.home-page {
+    --ej-smalt: #003399;
+    --ej-cerulean: #007BA7;
+    --ej-heliotrope: #D16BFF;
+    --ej-aureolin: #FDEE00;
+    --ej-ecru: #C2B280;
+    --ej-falu-red: #801818;
+    --ej-amaranth: #E52B50;
+    --ej-nacarat: #FF6B6B;
+    --ej-puce: #CC8899;
+    --ej-glaucous: #6082B6;
+    --ej-cherry-blossom: #FFB7C5;
+    --ej-lavender: #E6E6FA;
+}
+
+/* Header — soft lavender glass with smalt typography */
+.home-page .header {
+    background: rgba(230, 230, 250, .94);
+    border-bottom-color: rgba(96, 130, 182, .28);
+}
+.home-page .brand-name,
+.home-page .announcement-label { color: var(--ej-smalt); }
+.home-page .brand-tagline,
+.home-page .announcement-text { color: #536486; }
+.home-page .new-courses-announcement {
+    background: #fff7f0;
+    border-color: var(--ej-ecru);
+    color: var(--ej-falu-red);
+}
+.home-page .announcement-dot {
+    background: var(--ej-amaranth);
+    box-shadow: 0 0 0 4px rgba(229, 43, 80, .14);
+}
+.home-page .header-nav-link { color: var(--ej-smalt); }
+.home-page .header-nav-link:hover {
+    background: var(--ej-cherry-blossom);
+    color: var(--ej-falu-red);
+}
+.home-page .youtube-link { color: var(--ej-falu-red); }
+.home-page .youtube-link:hover {
+    background: #ffe3e9;
+    color: var(--ej-amaranth);
+}
+.home-page .youtube-icon { background: var(--ej-falu-red); }
+
+/* Hero — deep smalt / cerulean with heliotrope light */
+.home-page .hero-premium {
+    color: var(--ej-lavender);
+    background:
+        radial-gradient(ellipse at 78% 12%, rgba(209,107,255,.24), transparent 32%),
+        radial-gradient(ellipse at 12% 88%, rgba(0,123,167,.38), transparent 42%),
+        linear-gradient(128deg, #071b59 0%, var(--ej-smalt) 48%, #164f78 100%);
+}
+.home-page .hero-premium .hero-eyebrow,
+.home-page .hero-premium .hero-topline { color: var(--ej-cherry-blossom); }
+.home-page .hero-premium h1 { color: #fff8f4; }
+.home-page .hero-premium h1 span {
+    color: var(--ej-aureolin);
+    text-shadow: 0 4px 28px rgba(253,238,0,.12);
+}
+.home-page .hero-premium .hero-lead,
+.home-page .hero-premium > .hero-container > p {
+    color: #e1e5fa;
+}
+.home-page .hero-premium .hero-live-pill {
+    border-color: rgba(255,183,197,.42);
+    background: rgba(230,230,250,.12);
+    color: #fff4f6;
+}
+.home-page .hero-premium .hero-live-pill span {
+    background: var(--ej-aureolin);
+    box-shadow: 0 0 0 4px rgba(253,238,0,.16);
+}
+.home-page .hero-premium .hero-orb-one {
+    background: radial-gradient(circle, rgba(209,107,255,.42), rgba(209,107,255,0) 70%);
+}
+.home-page .hero-premium .hero-orb-two {
+    background: radial-gradient(circle, rgba(255,107,107,.26), rgba(255,107,107,0) 70%);
+}
+.home-page .hero-premium .hero-grid-glow {
+    opacity: .34;
+    background-image:
+        linear-gradient(rgba(230,230,250,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,230,250,.08) 1px, transparent 1px);
+}
+.home-page .premium-search #searchInput {
+    border-color: rgba(194,178,128,.75);
+    background: #fffaf0;
+    color: #17264f;
+    box-shadow: 0 14px 38px rgba(0,0,0,.22);
+}
+.home-page .premium-search #searchInput:focus {
+    border-color: var(--ej-heliotrope);
+    box-shadow: 0 0 0 4px rgba(209,107,255,.22), 0 14px 38px rgba(0,0,0,.22);
+}
+.home-page .premium-search #searchInput::placeholder { color: #77728c; }
+.home-page .premium-search button {
+    background: var(--ej-amaranth);
+    color: #fff;
+}
+.home-page .premium-search button:hover { background: var(--ej-falu-red); }
+.home-page .hero-suggestions { color: #e5dcf6; }
+.home-page .hero-suggestions a {
+    border-color: rgba(230,230,250,.34);
+    background: rgba(230,230,250,.10);
+    color: #fff5f7;
+}
+.home-page .hero-suggestions a:hover {
+    border-color: var(--ej-aureolin);
+    background: rgba(253,238,0,.13);
+    color: var(--ej-aureolin);
+}
+
+/* Learning highlights — ecru and lavender */
+.home-page .experience-strip {
+    background: var(--ej-lavender);
+    border-top-color: #d1c9e8;
+    border-bottom-color: #c4b9df;
+}
+.home-page .experience-item strong { color: var(--ej-falu-red); }
+.home-page .experience-item span { color: #5b5877; }
+.home-page .experience-divider { background: var(--ej-glaucous); }
+
+/* Featured courses — cherry blossom accents */
+.home-page .featured-section {
+    background: linear-gradient(180deg, #fff8f5 0%, #f8f0f7 100%);
+}
+.home-page .featured-section .section-kicker { color: var(--ej-falu-red); }
+.home-page .featured-section .section-heading h2 { color: var(--ej-smalt); }
+.home-page .featured-section .section-heading p { color: #615c76; }
+.home-page .featured-section .section-link { color: var(--ej-cerulean); }
+.home-page .featured-section .section-link:hover { color: var(--ej-amaranth); }
+.home-page .featured-courses .course-card {
+    border-color: #edcbd7;
+    box-shadow: 0 10px 28px rgba(65,35,78,.07);
+}
+.home-page .featured-courses .course-card:hover {
+    border-color: var(--ej-puce);
+    box-shadow: 0 18px 40px rgba(65,35,78,.14);
+}
+.home-page .featured-courses .course-card h3 { color: var(--ej-smalt); }
+
+/* Why EarnJoy — falu red meeting smalt */
+.home-page .premium-dark-section {
+    background:
+        radial-gradient(ellipse at 85% 8%, rgba(209,107,255,.18), transparent 35%),
+        linear-gradient(125deg, #4e142c 0%, var(--ej-falu-red) 48%, #071b59 100%);
+}
+.home-page .premium-dark-section .section-kicker { color: var(--ej-cherry-blossom); }
+.home-page .premium-dark-section .why-card {
+    border-color: rgba(255,183,197,.27);
+    background: rgba(230,230,250,.075);
+    box-shadow: 0 14px 34px rgba(0,0,0,.13);
+}
+.home-page .premium-dark-section .why-card-number { color: var(--ej-aureolin); }
+.home-page .premium-dark-section .why-icon { color: var(--ej-heliotrope); }
+.home-page .premium-dark-section .why-card h3 { color: #fff7f4; }
+.home-page .premium-dark-section .why-card p { color: #f0dfe8; }
+
+/* Journey — warm ecru canvas with amaranth actions */
+.home-page .journey-section {
+    background: linear-gradient(135deg, #f3ead8 0%, #fff7f2 55%, #f1e9f8 100%);
+}
+.home-page .journey-section .section-kicker { color: var(--ej-falu-red); }
+.home-page .journey-section h2 { color: var(--ej-smalt); }
+.home-page .journey-section p { color: #625d70; }
+.home-page .journey-section .premium-button.primary {
+    background: var(--ej-amaranth);
+    border-color: var(--ej-amaranth);
+    color: #fff;
+}
+.home-page .journey-section .premium-button.primary:hover {
+    background: var(--ej-falu-red);
+    border-color: var(--ej-falu-red);
+}
+.home-page .journey-section .premium-button.secondary {
+    border-color: var(--ej-glaucous);
+    color: var(--ej-smalt);
+}
+.home-page .journey-section .premium-button.secondary:hover {
+    background: var(--ej-lavender);
+}
+.home-page .journey-visual .journey-line { background: var(--ej-puce); }
+.home-page .journey-visual .journey-node {
+    border-color: var(--ej-glaucous);
+    background: #fffaf0;
+    color: var(--ej-smalt);
+}
+.home-page .journey-visual .journey-node span { color: var(--ej-amaranth); }
+
+/* Final invitation and footer — nacarat, heliotrope and smalt */
+.home-page .final-cta {
+    background:
+        radial-gradient(ellipse at 78% 0%, rgba(209,107,255,.28), transparent 36%),
+        linear-gradient(120deg, var(--ej-falu-red), #a51f48 48%, var(--ej-smalt));
+}
+.home-page .final-cta .section-kicker { color: var(--ej-aureolin); }
+.home-page .final-cta h2 { color: #fff8f4; }
+.home-page .final-cta p { color: #f7e5ee; }
+.home-page .final-cta .premium-button.light {
+    background: var(--ej-aureolin);
+    border-color: var(--ej-aureolin);
+    color: #332b19;
+}
+.home-page .final-cta .premium-button.light:hover {
+    background: var(--ej-cherry-blossom);
+    border-color: var(--ej-cherry-blossom);
+}
+.home-page .premium-footer {
+    background: #071b59;
+    color: var(--ej-lavender);
+}
+.home-page .premium-footer .footer-brand-block h2 { color: #fff8f4; }
+.home-page .premium-footer .footer-brand-block p,
+.home-page .premium-footer .footer-description { color: #d4d8f0; }
+.home-page .premium-footer .footer-links a { color: #e9dff4; }
+.home-page .premium-footer .footer-links a:hover { color: var(--ej-aureolin); }
+.home-page .premium-footer .copyright { color: #c7cce6; }
+.home-page .premium-footer .footer-line { background: rgba(230,230,250,.35); }
+
+/* Consistent keyboard focus for the revised homepage palette */
+.home-page a:focus-visible,
+.home-page button:focus-visible {
+    outline: 3px solid var(--ej-aureolin);
+    outline-offset: 3px;
+}
