@@ -5507,3 +5507,76 @@ body.roadmap-page button:focus-visible,body.terms-page button:focus-visible,
 body.stock-market-detail button:focus-visible {
   outline:3px solid var(--page-accent-2);outline-offset:3px;
 }
+
+
+/* =========================================================
+   EARNJOY E-BOOKS — RESTORE ORIGINAL DIGITAL LIBRARY PALETTE
+   Warm parchment, muted terracotta and forest-green book art.
+   Scoped only to the E-books landing page.
+   ========================================================= */
+body:has(main.bookworld-page) {
+  --page-ink:#27221e;
+  --page-muted:#766d62;
+  --page-accent:#8a5c46;
+  --page-accent-2:#a47b4c;
+  --page-paper:#f1eadc;
+  --page-soft:#f8f3e9;
+  --page-deep:#344b42;
+  --page-line:#d9cbb6;
+}
+body:has(main.bookworld-page) .header {
+  background:#344b42;
+  border-bottom:1px solid rgba(164,123,76,.34);
+  box-shadow:0 8px 28px rgba(52,75,66,.14);
+}
+body:has(main.bookworld-page) .brand-name {color:#f7f0e3;}
+body:has(main.bookworld-page) .brand-tagline,
+body:has(main.bookworld-page) .header-nav-link {color:#e9ddc5;}
+body:has(main.bookworld-page) .announcement-label {color:#d1b98e;}
+body:has(main.bookworld-page) .announcement-dot {background:#d1b98e;}
+body:has(main.bookworld-page) .bookworld-page {
+  background:#f1eadc;
+  color:#27221e;
+}
+body:has(main.bookworld-page) .bookworld-hero,
+body:has(main.bookworld-page) .ebooks-hero {
+  background:radial-gradient(ellipse at 82% 52%,rgba(150,112,77,.12),transparent 40%);
+}
+body:has(main.bookworld-page) h1,
+body:has(main.bookworld-page) h2 {color:#302820;}
+body:has(main.bookworld-page) .bookworld-copy h1 {color:#2d2824;}
+body:has(main.bookworld-page) .bookworld-copy h1 em,
+body:has(main.bookworld-page) .bookworld-section-head h2 span,
+body:has(main.bookworld-page) .bookworld-feature-copy h3 em {color:#8a5c46;}
+body:has(main.bookworld-page) .bookworld-kicker,
+body:has(main.bookworld-page) .bw-feature-label {color:#98744e;}
+body:has(main.bookworld-page) .bookworld-cta {
+  border-color:#a98b68;
+  color:#554333;
+}
+body:has(main.bookworld-page) .bookworld-cta:hover {
+  background:#42372e;
+  color:#f4ead9;
+}
+body:has(main.bookworld-page) .bookworld-feature {
+  border-color:#d9cbb6;
+  background:#f8f3e9;
+}
+body:has(main.bookworld-page) .bookworld-feature-copy h3 {color:#302920;}
+body:has(main.bookworld-page) .bookworld-feature-copy>p {color:#7a7165;}
+body:has(main.bookworld-page) .bookworld-coming {border-color:#cdbda5;}
+body:has(main.bookworld-page) .premium-footer {
+  background:linear-gradient(120deg,#243b35,#344b42 62%,#8a5c46);
+  color:#f4ead9;
+}
+body:has(main.bookworld-page) .premium-footer .footer-brand-block h2 {color:#f7f0e3;}
+body:has(main.bookworld-page) .premium-footer .footer-brand-block p,
+body:has(main.bookworld-page) .premium-footer .footer-description,
+body:has(main.bookworld-page) .premium-footer .copyright {color:#d8cbb5;}
+body:has(main.bookworld-page) .premium-footer .footer-links a {color:#eee4d1;}
+body:has(main.bookworld-page) .premium-footer .footer-links a:hover {color:#d1b98e;}
+body:has(main.bookworld-page) a:focus-visible,
+body:has(main.bookworld-page) button:focus-visible {
+  outline:3px solid #a47b4c;
+  outline-offset:3px;
+}
