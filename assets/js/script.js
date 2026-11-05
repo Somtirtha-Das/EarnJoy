@@ -18,7 +18,7 @@ const FALLBACK_COURSES = [
         "id": "stock-market",
         "slug": "stock-market",
         "name": "Stock Market",
-        "description": "Learn the fundamentals of financial markets, investing and the stock market.",
+        "description": "Explore how financial markets work, understand core investing concepts and develop the vocabulary to make sense of stock-market activity.",
         "category": "Finance",
         "subcategory": "Stock Market",
         "level": "Beginner",
@@ -185,7 +185,7 @@ async function loadCourses() {
         console.error("EarnJoy loading error:", error);
         if (courseGrid) {
             courseCount.textContent = "Unable to load";
-            showEmptyState("Courses could not be loaded", "Please refresh the page and try again.");
+            showEmptyState("The course library is temporarily unavailable", "Please refresh the page in a moment. Your learning library will be ready when the connection is restored.");
         }
     }
 }
@@ -208,7 +208,7 @@ function displayFeaturedCourses(courseList) {
     const list = courseList.slice(0, 4);
 
     if (!list.length) {
-        featuredCourses.innerHTML = '<div class="empty-state"><h3>No featured courses yet</h3><p>Featured learning options will appear here as courses are published.</p></div>';
+        featuredCourses.innerHTML = '<div class="empty-state"><h3>New learning experiences are on the way</h3><p>Featured courses will appear here as new learning experiences are published.</p></div>';
         return;
     }
 
@@ -404,8 +404,8 @@ function displayCourseResults(courseList, searchTerm) {
 
     if (!count) {
         showEmptyState(
-            searchTerm ? "No courses match your search" : "No courses match these filters",
-            "Try another keyword or clear one or more filters to explore the catalogue."
+            searchTerm ? "No courses match that search" : "No courses match the selected filters",
+            "Try a different search term or reset your filters to discover more of the course library."
         );
         return;
     }
