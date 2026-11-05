@@ -5944,3 +5944,471 @@ body:has(main.bookworld-page) button:focus-visible {
         transition-duration: .01ms !important;
     }
 }
+
+
+/* =========================================================
+   EARNJOY DESIGN SYSTEM — PLATFORM-WIDE EXPERIENCE
+   Applies to every published page and shared component.
+   Preserves existing page-specific art direction and content.
+   ========================================================= */
+:root {
+    --ej-ink: #101a36;
+    --ej-muted: #65718b;
+    --ej-paper: #fbfcff;
+    --ej-surface: #ffffff;
+    --ej-line: rgba(22, 39, 83, .11);
+    --ej-blue: #123caa;
+    --ej-blue-deep: #071d58;
+    --ej-violet: #7258ed;
+    --ej-lime: #d8f35a;
+    --ej-coral: #ff9cae;
+    --ej-radius-sm: 12px;
+    --ej-radius-md: 18px;
+    --ej-radius-lg: 26px;
+    --ej-shadow-soft: 0 12px 36px rgba(16, 34, 82, .07);
+    --ej-shadow-lift: 0 22px 55px rgba(16, 34, 82, .13);
+    --ej-content: 1240px;
+}
+html { scroll-padding-top: 105px; }
+body {
+    color: var(--ej-ink);
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+}
+body:not(.home-page) {
+    background-color: var(--ej-paper);
+}
+::selection {
+    color: var(--ej-blue-deep);
+    background: rgba(216,243,90,.72);
+}
+img, svg, video { max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+a { text-underline-offset: 3px; }
+a, button, input, select, textarea, summary {
+    -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--ej-violet);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+/* Shared navigation and brand */
+.header {
+    background: rgba(250,251,255,.92);
+    border-bottom: 1px solid rgba(24,45,100,.09);
+    box-shadow: 0 4px 24px rgba(13,31,76,.035);
+}
+.header-container {
+    width: min(1440px, calc(100% - 56px));
+    gap: clamp(14px, 2vw, 28px);
+}
+.brand { flex-shrink: 0; }
+.brand-logo-wrap {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.72);
+    box-shadow: 0 5px 18px rgba(7,27,89,.09);
+}
+.logo { width: 46px; height: 46px; }
+.brand-name {
+    color: #0c318f;
+    font-family: "Plus Jakarta Sans", Inter, sans-serif;
+    letter-spacing: -.7px;
+}
+.header-nav { align-items: center; }
+.header-nav-link, .youtube-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+.header-nav-link:hover {
+    color: var(--ej-blue);
+    background: rgba(30,76,183,.07);
+}
+.youtube-link:hover { transform: translateY(-1px); }
+.header-nav-link[aria-current="page"] {
+    color: var(--ej-blue);
+    background: rgba(30,76,183,.08);
+}
+
+/* Consistent editorial rhythm across all page types */
+.info-page, .discovery-page, .contact-world, .faq-world,
+.privacy-world, .terms-world, .bookworld-page {
+    isolation: isolate;
+}
+.info-page-container, .courses-page-container, .discovery-container,
+.contact-container, .faq-container, .privacy-container, .terms-container {
+    width: min(var(--ej-content), calc(100% - 56px));
+    margin-inline: auto;
+}
+.info-world, .discovery-page, .contact-world, .faq-world,
+.privacy-world, .terms-world, .bookworld-page {
+    overflow: clip;
+}
+.info-card, .contact-option, .faq-item, .roadmap-card,
+.resource-card, .category-card, .course-card, .book-card {
+    border-radius: var(--ej-radius-md);
+}
+.info-card, .contact-option, .faq-item, .roadmap-card {
+    box-shadow: var(--ej-shadow-soft);
+}
+.back-button {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 15px;
+    border: 1px solid var(--ej-line);
+    border-radius: 999px;
+    background: rgba(255,255,255,.78);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.back-button:hover {
+    transform: translateX(-2px);
+    border-color: rgba(18,60,170,.3);
+    box-shadow: var(--ej-shadow-soft);
+}
+.section-kicker, .contact-kicker, .faq-kicker, .privacy-kicker,
+.terms-kicker, .category-editorial-kicker, .bookworld-kicker {
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+h1, h2, h3, h4 {
+    font-family: "Plus Jakarta Sans", Inter, sans-serif;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+}
+p { text-wrap: pretty; }
+
+/* Discovery and catalogue: reduce friction and clarify controls */
+.discovery-hero, .courses-page-hero, .roadmap-hero,
+.contact-hero, .faq-hero, .privacy-hero, .terms-hero,
+.category-editorial-hero, .bookworld-hero {
+    position: relative;
+}
+.discovery-hero, .courses-page-hero {
+    padding-block: clamp(48px, 7vw, 92px);
+}
+.discovery-hero h1, .courses-page-hero h1 {
+    max-width: 900px;
+    font-size: clamp(42px, 6.2vw, 76px);
+    line-height: 1.04;
+}
+.catalogue-toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid var(--ej-line);
+    border-radius: var(--ej-radius-md);
+    background: rgba(255,255,255,.88);
+    box-shadow: var(--ej-shadow-soft);
+}
+.catalogue-search, .catalogue-sort {
+    min-height: 48px;
+    border-radius: 12px;
+}
+.catalogue-layout {
+    align-items: start;
+    gap: 24px;
+}
+.course-filters {
+    border: 1px solid var(--ej-line);
+    border-radius: var(--ej-radius-md);
+    background: #fff;
+    box-shadow: var(--ej-shadow-soft);
+}
+.filter-group {
+    padding-block: 16px;
+    border-bottom: 1px solid var(--ej-line);
+}
+.filter-clear, .clear-filters {
+    border-radius: 999px;
+}
+.catalogue-results { min-width: 0; }
+.results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+.courses-container, .featured-courses, .resource-grid, .category-grid {
+    gap: clamp(14px, 2vw, 24px);
+}
+.course-card, .resource-card, .category-card {
+    overflow: hidden;
+    border: 1px solid var(--ej-line);
+    background: #fff;
+    box-shadow: 0 8px 28px rgba(16,34,82,.055);
+    transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+}
+.course-card:hover, .resource-card:hover, .category-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(73,100,207,.28);
+    box-shadow: var(--ej-shadow-lift);
+}
+.course-card img, .resource-card img, .category-card img {
+    display: block;
+    max-width: 100%;
+}
+.empty-state {
+    border: 1px dashed rgba(38,69,151,.24);
+    border-radius: var(--ej-radius-lg);
+    background: rgba(255,255,255,.75);
+}
+
+/* Editorial directory and resource collections */
+.category-editorial-wrap, .bookworld-wrap {
+    width: min(1320px, calc(100% - 56px));
+    margin-inline: auto;
+}
+.category-editorial-hero {
+    border-radius: var(--ej-radius-lg);
+}
+.category-grid, .category-editorial-grid {
+    align-items: stretch;
+}
+.category-shelf-heading, .bookworld-section-head,
+.premium-heading, .section-heading {
+    gap: 18px;
+}
+.category-hero-link, .bookworld-cta, .roadmap-hero-link,
+.contact-channel-arrow, .resource-action {
+    transition: transform .2s ease, opacity .2s ease;
+}
+.category-hero-link:hover, .bookworld-cta:hover,
+.roadmap-hero-link:hover, .resource-action:hover {
+    transform: translateY(-2px);
+}
+.bookworld-feature {
+    overflow: hidden;
+    border-radius: var(--ej-radius-lg);
+}
+.bookworld-coming {
+    border-radius: var(--ej-radius-lg);
+}
+
+/* About page and editorial information pages */
+.about-world, .info-world {
+    padding-block: clamp(28px, 5vw, 64px);
+}
+.about-page .info-card, .info-page .info-card {
+    border: 1px solid var(--ej-line);
+    background: rgba(255,255,255,.9);
+    border-radius: var(--ej-radius-lg);
+    box-shadow: var(--ej-shadow-soft);
+}
+.info-card h2, .info-card h3 {
+    line-height: 1.2;
+}
+.info-card p, .info-card li {
+    color: #4d5a74;
+    line-height: 1.8;
+}
+
+/* Contact, FAQ, privacy and terms: readable long-form layouts */
+.contact-content, .faq-content, .privacy-layout, .terms-layout {
+    display: grid;
+    align-items: start;
+    gap: clamp(22px, 4vw, 52px);
+}
+.contact-option {
+    border: 1px solid var(--ej-line);
+    background: rgba(255,255,255,.88);
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+.contact-option:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ej-shadow-lift);
+}
+.faq-item {
+    overflow: hidden;
+    border: 1px solid var(--ej-line);
+    background: rgba(255,255,255,.92);
+}
+.faq-item summary {
+    cursor: pointer;
+    padding: 20px 22px;
+    font-weight: 750;
+}
+.faq-answer {
+    line-height: 1.85;
+}
+.privacy-article, .terms-article {
+    min-width: 0;
+    padding: clamp(22px, 4vw, 44px);
+    border: 1px solid var(--ej-line);
+    border-radius: var(--ej-radius-lg);
+    background: #fff;
+    box-shadow: var(--ej-shadow-soft);
+}
+.privacy-section, .terms-section {
+    padding-block: 22px;
+    border-bottom: 1px solid var(--ej-line);
+    scroll-margin-top: 110px;
+}
+.privacy-section:last-child, .terms-section:last-child { border-bottom: 0; }
+.privacy-section p, .terms-section p,
+.privacy-section li, .terms-section li {
+    color: #4d5a74;
+    line-height: 1.85;
+}
+.privacy-note, .terms-callout, .terms-financial {
+    border-radius: var(--ej-radius-md);
+}
+
+/* Roadmaps: clearer sequence and scan-friendly cards */
+.roadmap-container { width: min(1240px, calc(100% - 56px)); margin-inline: auto; }
+.roadmap-paths { gap: 20px; }
+.roadmap-card {
+    border: 1px solid var(--ej-line);
+    background: rgba(255,255,255,.94);
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+.roadmap-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ej-shadow-lift);
+}
+.roadmap-card-top { gap: 12px; }
+
+/* Shared footer: clear hierarchy and dependable tap targets */
+.premium-footer {
+    border-top: 1px solid rgba(255,255,255,.12);
+}
+.footer-container {
+    width: min(1320px, calc(100% - 56px));
+}
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    text-decoration: none;
+    transition: color .2s ease, transform .2s ease;
+}
+.footer-links a:hover {
+    color: var(--ej-lime);
+    transform: translateX(2px);
+}
+.footer-line { opacity: .55; }
+.copyright { line-height: 1.7; }
+
+/* Forms and interactive controls */
+input:not([type="checkbox"]):not([type="radio"]),
+select, textarea {
+    max-width: 100%;
+}
+input:not([type="checkbox"]):not([type="radio"]),
+select, textarea, .catalogue-search, .catalogue-sort {
+    border-color: rgba(29,51,105,.18);
+    transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: var(--ej-violet) !important;
+    box-shadow: 0 0 0 4px rgba(114,88,237,.12);
+}
+button, .premium-button, .contact-channel, .roadmap-hero-link {
+    touch-action: manipulation;
+}
+
+/* All pages: responsive layouts */
+@media (max-width: 900px) {
+    .header-container { width: calc(100% - 36px); gap: 12px; }
+    .new-courses-announcement { max-width: 390px; }
+    .info-page-container, .courses-page-container, .discovery-container,
+    .contact-container, .faq-container, .privacy-container, .terms-container,
+    .roadmap-container, .category-editorial-wrap, .bookworld-wrap {
+        width: calc(100% - 40px);
+    }
+    .catalogue-layout { grid-template-columns: 1fr; }
+    .course-filters { position: static; }
+}
+@media (max-width: 680px) {
+    html { scroll-padding-top: 86px; }
+    .header { min-height: 0; }
+    .header-container {
+        width: calc(100% - 24px);
+        min-height: 68px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 7px;
+        padding-block: 8px;
+    }
+    .brand { gap: 8px; }
+    .brand-logo-wrap { width: 46px; height: 46px; border-radius: 13px; }
+    .logo { width: 39px; height: 39px; }
+    .brand-name { font-size: 19px; }
+    .brand-tagline { font-size: 9px; }
+    .new-courses-announcement {
+        order: 3;
+        flex: 1 0 100%;
+        max-width: none;
+        min-height: 31px;
+        padding: 5px 10px;
+    }
+    .announcement-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .header-nav { margin-left: auto; gap: 2px; }
+    .header-nav-link, .youtube-link {
+        min-height: 38px;
+        padding: 7px 8px;
+        font-size: 11px;
+    }
+    .youtube-link { gap: 5px; }
+    .youtube-label { display: none; }
+    .info-page-container, .courses-page-container, .discovery-container,
+    .contact-container, .faq-container, .privacy-container, .terms-container,
+    .roadmap-container, .category-editorial-wrap, .bookworld-wrap,
+    .footer-container {
+        width: calc(100% - 32px);
+    }
+    .discovery-hero, .courses-page-hero { padding-block: 42px; }
+    .discovery-hero h1, .courses-page-hero h1 {
+        font-size: clamp(38px, 10vw, 58px);
+    }
+    .catalogue-toolbar { padding: 12px; gap: 10px; }
+    .catalogue-search, .catalogue-sort { width: 100%; min-height: 46px; }
+    .results-header { align-items: flex-start; }
+    .courses-container, .featured-courses, .resource-grid, .category-grid,
+    .category-editorial-grid { grid-template-columns: 1fr; }
+    .contact-content, .faq-content, .privacy-layout, .terms-layout {
+        grid-template-columns: 1fr;
+    }
+    .privacy-article, .terms-article { padding: 22px 18px; }
+    .faq-item summary { padding: 17px 16px; }
+    .roadmap-paths { grid-template-columns: 1fr; }
+    .footer-container { gap: 28px; }
+    .footer-links { gap: 8px 16px; }
+}
+@media (max-width: 390px) {
+    .header-container { width: calc(100% - 18px); }
+    .brand-tagline { letter-spacing: 0; }
+    .header-nav-link { padding-inline: 5px; font-size: 10px; }
+    .youtube-link { padding-inline: 5px; }
+    .new-courses-announcement { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
