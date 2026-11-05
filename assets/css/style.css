@@ -5175,3 +5175,335 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
     outline: 3px solid var(--catalogue-amber);
     outline-offset: 3px;
 }
+
+
+/* =========================================================
+   EARNJOY — REMAINING PAGES CHROMATIC SYSTEM
+   Individual page palettes use the supplied uncommon colors.
+   Structure, copy, links, assets and interactions are untouched.
+   ========================================================= */
+
+/* Distinct page color systems */
+body:has(main.info-page.about-page) {
+  --page-ink:#24243B; --page-muted:#5F6078; --page-accent:#6082B6;
+  --page-accent-2:#D16BFF; --page-paper:#F4F0EC; --page-soft:#E6E6FA;
+  --page-deep:#003399; --page-line:#D3D1E4;
+}
+body:has(main.cat-academy-page) {
+  --page-ink:#35172F; --page-muted:#755A70; --page-accent:#66023C;
+  --page-accent-2:#FFBF00; --page-paper:#F7F0E9; --page-soft:#DCAE96;
+  --page-deep:#120A8F; --page-line:#E2C9D5;
+}
+body:has(main.qa-library-page:not(.subject-library-page)) {
+  --page-ink:#202D46; --page-muted:#596B82; --page-accent:#2E5090;
+  --page-accent-2:#ACE1AF; --page-paper:#F2F5F0; --page-soft:#CCCCFF;
+  --page-deep:#003B46; --page-line:#CBD9D2;
+}
+body:has(main.qa-library-page.subject-library-page) {
+  --page-ink:#40213A; --page-muted:#765E70; --page-accent:#A51F48;
+  --page-accent-2:#FDEE00; --page-paper:#FBF0F2; --page-soft:#FFB7C5;
+  --page-deep:#66023C; --page-line:#E7C8D2;
+}
+body.category-page {
+  --page-ink:#243B35; --page-muted:#5F746C; --page-accent:#4A7C59;
+  --page-accent-2:#FFBF00; --page-paper:#F2F5EA; --page-soft:#ACE1AF;
+  --page-deep:#174B42; --page-line:#CBDCCB;
+}
+body.contact-page {
+  --page-ink:#3D2132; --page-muted:#755A6B; --page-accent:#C8102E;
+  --page-accent-2:#DA70D6; --page-paper:#FFF3F0; --page-soft:#FFB7C5;
+  --page-deep:#66023C; --page-line:#E9C9D1;
+}
+body:has(main.bookworld-page) {
+  --page-ink:#28223F; --page-muted:#6E6683; --page-accent:#120A8F;
+  --page-accent-2:#FDEE00; --page-paper:#F4F0EC; --page-soft:#E6E6FA;
+  --page-deep:#003399; --page-line:#D4D0E8;
+}
+body.faq-page {
+  --page-ink:#3B2C22; --page-muted:#766454; --page-accent:#8A5A32;
+  --page-accent-2:#ACE1AF; --page-paper:#F7F1E8; --page-soft:#E9E0C9;
+  --page-deep:#4B3A2A; --page-line:#DED1BE;
+}
+body.privacy-page {
+  --page-ink:#1F3542; --page-muted:#5D7480; --page-accent:#007BA7;
+  --page-accent-2:#D16BFF; --page-paper:#EFF5F7; --page-soft:#DCECF1;
+  --page-deep:#003B5C; --page-line:#C9DDE5;
+}
+body.resources-page {
+  --page-ink:#35243D; --page-muted:#716178; --page-accent:#DA70D6;
+  --page-accent-2:#FFBF00; --page-paper:#F8F0F7; --page-soft:#E6E6FA;
+  --page-deep:#360D31; --page-line:#E4CFE1;
+}
+body.roadmap-page {
+  --page-ink:#25364C; --page-muted:#60748B; --page-accent:#7A9CC6;
+  --page-accent-2:#FF6B6B; --page-paper:#F1F4F8; --page-soft:#DCE5F1;
+  --page-deep:#120A8F; --page-line:#CFD9E8;
+}
+body.terms-page {
+  --page-ink:#3B2635; --page-muted:#786273; --page-accent:#801818;
+  --page-accent-2:#FFBF00; --page-paper:#F7F0EC; --page-soft:#DCAE96;
+  --page-deep:#4E142C; --page-line:#E0CFCB;
+}
+body.stock-market-detail {
+  --page-ink:#263A35; --page-muted:#61766F; --page-accent:#4A7C59;
+  --page-accent-2:#FDEE00; --page-paper:#F1F5EC; --page-soft:#ACE1AF;
+  --page-deep:#174B42; --page-line:#CBDCCB;
+}
+
+/* Shared navigation and footer, individually tinted by page tokens */
+body:has(main.info-page.about-page) .header,
+body:has(main.cat-academy-page) .header,
+body:has(main.qa-library-page) .header,
+body.category-page .header,
+body.contact-page .header,
+body:has(main.bookworld-page) .header,
+body.faq-page .header,
+body.privacy-page .header,
+body.resources-page .header,
+body.roadmap-page .header,
+body.terms-page .header,
+body.stock-market-detail .header {
+  background:color-mix(in srgb,var(--page-deep) 96%,#111 4%);
+  border-bottom:1px solid color-mix(in srgb,var(--page-accent-2) 34%,transparent);
+  box-shadow:0 8px 28px color-mix(in srgb,var(--page-deep) 18%,transparent);
+}
+body:has(main.info-page.about-page) .brand-name,
+body:has(main.cat-academy-page) .brand-name,
+body:has(main.qa-library-page) .brand-name,
+body.category-page .brand-name, body.contact-page .brand-name,
+body:has(main.bookworld-page) .brand-name, body.faq-page .brand-name,
+body.privacy-page .brand-name, body.resources-page .brand-name,
+body.roadmap-page .brand-name, body.terms-page .brand-name,
+body.stock-market-detail .brand-name {color:#FFF9F5;}
+body:has(main.info-page.about-page) .brand-tagline,
+body:has(main.cat-academy-page) .brand-tagline,
+body:has(main.qa-library-page) .brand-tagline,
+body.category-page .brand-tagline, body.contact-page .brand-tagline,
+body:has(main.bookworld-page) .brand-tagline, body.faq-page .brand-tagline,
+body.privacy-page .brand-tagline, body.resources-page .brand-tagline,
+body.roadmap-page .brand-tagline, body.terms-page .brand-tagline,
+body.stock-market-detail .brand-tagline {color:#E8E1ED;}
+body:has(main.info-page.about-page) .header-nav-link,
+body:has(main.cat-academy-page) .header-nav-link,
+body:has(main.qa-library-page) .header-nav-link,
+body.category-page .header-nav-link, body.contact-page .header-nav-link,
+body:has(main.bookworld-page) .header-nav-link, body.faq-page .header-nav-link,
+body.privacy-page .header-nav-link, body.resources-page .header-nav-link,
+body.roadmap-page .header-nav-link, body.terms-page .header-nav-link,
+body.stock-market-detail .header-nav-link {color:#F6EDF5;}
+body:has(main.info-page.about-page) .announcement-label,
+body:has(main.cat-academy-page) .announcement-label,
+body:has(main.qa-library-page) .announcement-label,
+body.category-page .announcement-label, body.contact-page .announcement-label,
+body:has(main.bookworld-page) .announcement-label, body.faq-page .announcement-label,
+body.privacy-page .announcement-label, body.resources-page .announcement-label,
+body.roadmap-page .announcement-label, body.terms-page .announcement-label,
+body.stock-market-detail .announcement-label {color:var(--page-accent-2);}
+body:has(main.info-page.about-page) .announcement-dot,
+body:has(main.cat-academy-page) .announcement-dot,
+body:has(main.qa-library-page) .announcement-dot,
+body.category-page .announcement-dot, body.contact-page .announcement-dot,
+body:has(main.bookworld-page) .announcement-dot, body.faq-page .announcement-dot,
+body.privacy-page .announcement-dot, body.resources-page .announcement-dot,
+body.roadmap-page .announcement-dot, body.terms-page .announcement-dot,
+body.stock-market-detail .announcement-dot {background:var(--page-accent-2);}
+body:has(main.info-page.about-page) .premium-footer,
+body:has(main.cat-academy-page) .premium-footer,
+body:has(main.qa-library-page) .premium-footer,
+body.category-page .premium-footer, body.contact-page .premium-footer,
+body:has(main.bookworld-page) .premium-footer, body.faq-page .premium-footer,
+body.privacy-page .premium-footer, body.resources-page .premium-footer,
+body.roadmap-page .premium-footer, body.terms-page .premium-footer,
+body.stock-market-detail .premium-footer {
+  background:linear-gradient(120deg,var(--page-deep),color-mix(in srgb,var(--page-deep) 72%,var(--page-accent)));
+  color:#F7F0F4;
+}
+body:has(main.info-page.about-page) .premium-footer .footer-links a,
+body:has(main.cat-academy-page) .premium-footer .footer-links a,
+body:has(main.qa-library-page) .premium-footer .footer-links a,
+body.category-page .premium-footer .footer-links a, body.contact-page .premium-footer .footer-links a,
+body:has(main.bookworld-page) .premium-footer .footer-links a, body.faq-page .premium-footer .footer-links a,
+body.privacy-page .premium-footer .footer-links a, body.resources-page .premium-footer .footer-links a,
+body.roadmap-page .premium-footer .footer-links a, body.terms-page .premium-footer .footer-links a,
+body.stock-market-detail .premium-footer .footer-links a {color:#F3EAF1;}
+body:has(main.info-page.about-page) .premium-footer .footer-links a:hover,
+body:has(main.cat-academy-page) .premium-footer .footer-links a:hover,
+body:has(main.qa-library-page) .premium-footer .footer-links a:hover,
+body.category-page .premium-footer .footer-links a:hover, body.contact-page .premium-footer .footer-links a:hover,
+body:has(main.bookworld-page) .premium-footer .footer-links a:hover, body.faq-page .premium-footer .footer-links a:hover,
+body.privacy-page .premium-footer .footer-links a:hover, body.resources-page .premium-footer .footer-links a:hover,
+body.roadmap-page .premium-footer .footer-links a:hover, body.terms-page .premium-footer .footer-links a:hover,
+body.stock-market-detail .premium-footer .footer-links a:hover {color:var(--page-accent-2);}
+
+/* About, contact, FAQ and legal information surfaces */
+.info-page.about-page,.contact-world,.faq-world,.privacy-world,.terms-world {
+  background:radial-gradient(ellipse at 92% 5%,color-mix(in srgb,var(--page-accent-2) 16%,transparent),transparent 30%),
+             linear-gradient(145deg,var(--page-paper),var(--page-soft));
+  color:var(--page-ink);
+}
+.info-page.about-page .info-card,.contact-world .contact-card,
+.faq-world .faq-card,.privacy-world .privacy-card,.terms-world .terms-article {
+  background:color-mix(in srgb,#fff 86%,var(--page-paper));
+  border-color:var(--page-line);
+  box-shadow:0 18px 48px color-mix(in srgb,var(--page-deep) 9%,transparent);
+}
+.info-page.about-page h1,.info-page.about-page h2,
+.contact-world h1,.contact-world h2,.faq-world h1,.faq-world h2,
+.privacy-world h1,.privacy-world h2,.terms-world h1,.terms-world h2 {
+  color:var(--page-deep);
+}
+.info-page.about-page .section-kicker,.contact-world .section-kicker,
+.faq-world .section-kicker,.privacy-world .section-kicker,
+.terms-world .section-kicker {color:var(--page-accent);}
+.info-page.about-page a,.contact-world a,.faq-world a,
+.privacy-world a,.terms-world a {color:var(--page-accent);}
+.info-page.about-page a:hover,.contact-world a:hover,.faq-world a:hover,
+.privacy-world a:hover,.terms-world a:hover {color:var(--page-deep);}
+.contact-world input,.contact-world textarea,.contact-world select {
+  border-color:var(--page-line);background:#FFFCFA;color:var(--page-ink);
+}
+.contact-world input:focus,.contact-world textarea:focus,.contact-world select:focus {
+  border-color:var(--page-accent-2);box-shadow:0 0 0 4px color-mix(in srgb,var(--page-accent-2) 20%,transparent);
+}
+.faq-world details,.faq-world .faq-item,.privacy-world .privacy-section,
+.terms-world .term-section {border-color:var(--page-line);}
+.faq-world summary,.faq-world h3,.privacy-world h3,.terms-world h3 {color:var(--page-deep);}
+.terms-aside {background:color-mix(in srgb,var(--page-soft) 62%,#fff);border-color:var(--page-line);}
+.terms-aside a:hover {color:var(--page-accent);}
+
+/* Category, resource and roadmap discovery pages */
+.category-world,.resources-world,.roadmap-world {
+  background:radial-gradient(ellipse at 88% 3%,color-mix(in srgb,var(--page-accent-2) 18%,transparent),transparent 28%),
+             linear-gradient(180deg,var(--page-paper),color-mix(in srgb,var(--page-soft) 54%,#fff));
+  color:var(--page-ink);
+}
+.category-world .courses-page-hero,.resources-world .courses-page-hero,
+.roadmap-world .courses-page-hero {
+  background:radial-gradient(circle at 82% 20%,color-mix(in srgb,var(--page-accent-2) 35%,transparent),transparent 26%),
+             linear-gradient(120deg,var(--page-deep),var(--page-accent));
+}
+.category-world .courses-page-hero h1,.resources-world .courses-page-hero h1,
+.roadmap-world .courses-page-hero h1 {color:#FFF9F5;}
+.category-world .courses-page-hero p,.resources-world .courses-page-hero p,
+.roadmap-world .courses-page-hero p {color:#F4EAF1;}
+.category-world .section-kicker,.resources-world .section-kicker,
+.roadmap-world .section-kicker {color:var(--page-accent);}
+.category-world .course-card,.resources-world .course-card,
+.roadmap-world .course-card,.category-world .category-card,
+.resources-world .resource-card,.roadmap-world .roadmap-card {
+  border-color:var(--page-line);background:#FFFCF8;
+  box-shadow:0 12px 32px color-mix(in srgb,var(--page-deep) 8%,transparent);
+}
+.category-world .course-card:hover,.resources-world .course-card:hover,
+.roadmap-world .course-card:hover,.category-world .category-card:hover,
+.resources-world .resource-card:hover,.roadmap-world .roadmap-card:hover {
+  border-color:var(--page-accent-2);
+}
+.category-world h1,.category-world h2,.resources-world h1,.resources-world h2,
+.roadmap-world h1,.roadmap-world h2 {color:var(--page-deep);}
+.category-world a,.resources-world a,.roadmap-world a {color:var(--page-accent);}
+.category-world a:hover,.resources-world a:hover,.roadmap-world a:hover {color:var(--page-deep);}
+
+/* E-books and CAT Success Series — editorial color treatments */
+.bookworld-page {
+  background:radial-gradient(ellipse at 90% 0%,rgba(209,107,255,.16),transparent 30%),
+             linear-gradient(145deg,#F4F0EC,#E6E6FA);
+  color:#28223F;
+}
+.bookworld-page .bookworld-hero,.bookworld-page .ebooks-hero {
+  background:linear-gradient(120deg,#120A8F,#003399 62%,#66023C);
+}
+.bookworld-page h1,.bookworld-page h2 {color:#120A8F;}
+.bookworld-page .book-card,.bookworld-page .ebook-card {
+  border-color:#D4D0E8;background:#FFFCF8;
+}
+.bookworld-page a {color:#120A8F;}
+.bookworld-page a:hover {color:#66023C;}
+.cat-academy-page {
+  color:#35172F;
+  background:radial-gradient(ellipse at 85% 12%,rgba(255,191,0,.12),transparent 28%),#F7F0E9;
+}
+.cat-academy-page .cat-academy-hero {
+  background:radial-gradient(circle at 82% 18%,rgba(255,191,0,.22),transparent 24%),
+             linear-gradient(125deg,#360D31,#66023C 54%,#120A8F);
+}
+.cat-academy-page .cat-academy-hero h1 {color:#FFF8F4;}
+.cat-academy-page .cat-academy-hero em {color:#FFBF00;}
+.cat-academy-page .cat-discipline-card {
+  border-color:#E2C9D5;background:#FFFAF5;
+  box-shadow:0 14px 36px rgba(54,13,49,.08);
+}
+.cat-academy-page .cat-discipline-card:hover {border-color:#DA70D6;}
+.cat-academy-page .cat-card-bottom,.cat-academy-page .cat-card-top {color:#66023C;}
+.qa-library-page {
+  background:radial-gradient(ellipse at 88% 8%,color-mix(in srgb,var(--page-accent-2) 18%,transparent),transparent 30%),
+             linear-gradient(150deg,var(--page-paper),var(--page-soft));
+  color:var(--page-ink);
+}
+.qa-library-page .qa-editorial-hero {
+  background:radial-gradient(circle at 80% 24%,color-mix(in srgb,var(--page-accent-2) 28%,transparent),transparent 28%),
+             linear-gradient(120deg,var(--page-deep),var(--page-accent));
+}
+.qa-library-page .qa-editorial-hero h1 {color:#FFF9F5;}
+.qa-library-page .qa-editorial-hero em {color:var(--page-accent-2);}
+.qa-library-page .qa-eyebrow,.qa-library-page .qa-hero-index {color:var(--page-accent-2);}
+.qa-library-page .qa-premium-module,.qa-library-page .subject-empty-panel {
+  border-color:var(--page-line);background:color-mix(in srgb,#fff 88%,var(--page-paper));
+  box-shadow:0 16px 42px color-mix(in srgb,var(--page-deep) 9%,transparent);
+}
+.qa-library-page .qa-module-cover {
+  background:linear-gradient(145deg,var(--page-deep),var(--page-accent));
+}
+.qa-library-page .qa-module-cover .qa-cover-number,
+.qa-library-page .qa-module-cover .qa-cover-title {color:#FFF9F5;}
+.qa-library-page .qa-read-link {background:var(--page-accent);color:#fff;}
+.qa-library-page .qa-download-link {border-color:var(--page-accent);color:var(--page-accent);}
+.qa-library-page .subject-empty-orbit {color:var(--page-accent);border-color:var(--page-accent-2);}
+
+/* Stock Market learning page — celadon, smalt and aureolin */
+.stock-market-world {
+  background:radial-gradient(ellipse at 90% 5%,rgba(172,225,175,.22),transparent 28%),
+             linear-gradient(145deg,#F1F5EC,#E6EFE4);
+  color:#263A35;
+}
+.stock-market-world .course-overview {
+  border-color:#CBDCCB;background:#FFFCF5;
+  box-shadow:0 18px 48px rgba(23,75,66,.10);
+}
+.stock-market-world .stock-market-breadcrumb,
+.stock-market-world .stock-market-eyebrow {color:#4A7C59;}
+.stock-market-world h1,.stock-market-world h2,.stock-market-world h3 {color:#174B42;}
+.stock-market-world .course-category {background:#ACE1AF;color:#174B42;}
+.stock-market-world .course-material-count {color:#174B42;}
+.stock-market-world .course-page-image {border-color:#CBDCCB;}
+.stock-market-world .stock-market-actions a,
+.stock-market-world .course-page-info .premium-button {
+  background:#174B42;border-color:#174B42;color:#fff;
+}
+.stock-market-world .stock-market-actions a:hover,
+.stock-market-world .course-page-info .premium-button:hover {background:#4A7C59;border-color:#4A7C59;}
+.stock-market-world .course-material-card,.stock-market-world .lesson-card {
+  border-color:#CBDCCB;background:#FFFCF5;
+}
+.stock-market-world a {color:#4A7C59;}
+.stock-market-world a:hover {color:#174B42;}
+
+/* Shared visible focus treatment for all redesigned pages */
+body:has(main.info-page.about-page) a:focus-visible,
+body:has(main.cat-academy-page) a:focus-visible,
+body:has(main.qa-library-page) a:focus-visible,
+body.category-page a:focus-visible,body.contact-page a:focus-visible,
+body:has(main.bookworld-page) a:focus-visible,body.faq-page a:focus-visible,
+body.privacy-page a:focus-visible,body.resources-page a:focus-visible,
+body.roadmap-page a:focus-visible,body.terms-page a:focus-visible,
+body.stock-market-detail a:focus-visible,
+body:has(main.info-page.about-page) button:focus-visible,
+body:has(main.cat-academy-page) button:focus-visible,
+body:has(main.qa-library-page) button:focus-visible,
+body.category-page button:focus-visible,body.contact-page button:focus-visible,
+body:has(main.bookworld-page) button:focus-visible,body.faq-page button:focus-visible,
+body.privacy-page button:focus-visible,body.resources-page button:focus-visible,
+body.roadmap-page button:focus-visible,body.terms-page button:focus-visible,
+body.stock-market-detail button:focus-visible {
+  outline:3px solid var(--page-accent-2);outline-offset:3px;
+}
