@@ -4977,3 +4977,201 @@ body.home-page{background:#f6f8fd}.header{min-height:82px;background:rgba(5,14,2
     outline: 3px solid var(--ej-aureolin);
     outline-offset: 3px;
 }
+
+
+/* =========================================================
+   EARNJOY ALL COURSES — UNCOMMON CHROMATIC PALETTE
+   Scoped only to the All Courses page; layout and components
+   remain unchanged.
+   Palette: Tyrian Purple, Natural Ultramarine, YInMn Blue,
+   Mummy Brown, Fire-Engine Crimson, Amber, Celadon,
+   Periwinkle, Nattier Blue, Dusty Rose, Isabelline and Orchid.
+   ========================================================= */
+.catalogue-page {
+    --catalogue-tyrian: #66023C;
+    --catalogue-ultramarine: #120A8F;
+    --catalogue-yinmn: #2E5090;
+    --catalogue-mummy: #8A5A32;
+    --catalogue-crimson: #C8102E;
+    --catalogue-amber: #FFBF00;
+    --catalogue-celadon: #ACE1AF;
+    --catalogue-periwinkle: #CCCCFF;
+    --catalogue-nattier: #7A9CC6;
+    --catalogue-dusty-rose: #DCAE96;
+    --catalogue-isabelline: #F4F0EC;
+    --catalogue-orchid: #DA70D6;
+    --catalogue-ink: #30243A;
+    --catalogue-muted: #716477;
+    --catalogue-line: #DED1D9;
+    background: var(--catalogue-isabelline);
+    color: var(--catalogue-ink);
+}
+
+/* Header — dark Tyrian purple with warm amber details */
+.catalogue-page .header {
+    background: rgba(54, 13, 49, .97);
+    border-bottom-color: rgba(220, 174, 150, .28);
+    box-shadow: 0 8px 28px rgba(54, 13, 49, .16);
+}
+.catalogue-page .brand-name { color: #FFF9F5; }
+.catalogue-page .brand-tagline { color: #E4C9D8; }
+.catalogue-page .new-courses-announcement {
+    border-color: rgba(255, 191, 0, .32);
+    background: rgba(255, 191, 0, .09);
+}
+.catalogue-page .announcement-label { color: var(--catalogue-amber); }
+.catalogue-page .announcement-text { color: #EADCE6; }
+.catalogue-page .announcement-dot {
+    background: var(--catalogue-celadon);
+    box-shadow: 0 0 0 4px rgba(172, 225, 175, .15);
+}
+.catalogue-page .header-nav-link { color: #F1E7F0; }
+.catalogue-page .header-nav-link:hover {
+    color: #fff;
+    background: rgba(218, 112, 214, .16);
+}
+.catalogue-page .youtube-link { color: #FF8797; }
+.catalogue-page .youtube-link:hover {
+    color: #fff;
+    background: rgba(200, 16, 46, .22);
+}
+
+/* Page canvas and hero — ultramarine, YInMn blue and orchid */
+.catalogue-page .discovery-page {
+    background:
+        radial-gradient(ellipse at 92% 5%, rgba(218,112,214,.15), transparent 28%),
+        radial-gradient(ellipse at 4% 48%, rgba(122,156,198,.13), transparent 30%),
+        linear-gradient(180deg, #F4F0EC 0%, #F0E8E9 52%, #F6F0EC 100%);
+}
+.catalogue-page .back-button {
+    color: var(--catalogue-yinmn);
+}
+.catalogue-page .back-button:hover { color: var(--catalogue-tyrian); }
+.catalogue-page .courses-page-hero {
+    background:
+        linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+        radial-gradient(circle at 82% 24%, rgba(218,112,214,.30), transparent 24%),
+        radial-gradient(circle at 68% 100%, rgba(255,191,0,.13), transparent 35%),
+        linear-gradient(118deg, #360D31 0%, #66023C 42%, #120A8F 100%);
+    box-shadow: 0 24px 60px rgba(65, 17, 58, .20);
+}
+.catalogue-page .courses-page-hero::after { color: rgba(255, 226, 239, .56); }
+.catalogue-page .courses-page-hero .section-kicker { color: var(--catalogue-amber); }
+.catalogue-page .courses-page-hero h1 { color: #FFF8F4; }
+.catalogue-page .courses-page-hero p { color: #EADDEB; }
+
+/* Catalogue surface and toolbar */
+.catalogue-page .course-catalogue {
+    border-color: #E2D3D9;
+    background: rgba(255, 250, 247, .88);
+    box-shadow: 0 18px 55px rgba(72, 31, 62, .075);
+}
+.catalogue-page .catalogue-toolbar { border-bottom-color: #E5D8D9; }
+.catalogue-page .catalogue-search label,
+.catalogue-page .catalogue-sort label,
+.catalogue-page .filter-group > label {
+    color: #6D425D;
+}
+.catalogue-page .catalogue-search input,
+.catalogue-page .catalogue-sort select,
+.catalogue-page .filter-group select {
+    border-color: #D8C5D1;
+    background: #FBF8F5;
+    color: #382A43;
+}
+.catalogue-page .catalogue-search input::placeholder { color: #9A8797; }
+.catalogue-page .catalogue-search input:focus,
+.catalogue-page .catalogue-sort select:focus,
+.catalogue-page .filter-group select:focus {
+    border-color: var(--catalogue-orchid);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(218,112,214,.17);
+}
+
+/* Filters — celadon, dusty rose and mummy-brown accents */
+.catalogue-page .course-filters {
+    border-color: #D8C8D1;
+    background: linear-gradient(150deg, #F7F1EE 0%, #E9F0E7 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 10px 24px rgba(72,31,62,.045);
+}
+.catalogue-page .filter-header { border-bottom-color: #D8C8D1; }
+.catalogue-page .filter-header .section-kicker,
+.catalogue-page .results-header .section-kicker { color: var(--catalogue-crimson); }
+.catalogue-page .filter-header h2 { color: var(--catalogue-tyrian); }
+.catalogue-page .filter-clear {
+    border-color: #D7B7B7;
+    background: #FFF9F5;
+    color: #75465D;
+}
+.catalogue-page .filter-clear:hover {
+    border-color: var(--catalogue-dusty-rose);
+    color: var(--catalogue-crimson);
+}
+.catalogue-page .featured-filter {
+    border-color: #C8D9C8;
+    background: rgba(255,255,255,.76);
+    color: #435C4A;
+}
+.catalogue-page .featured-filter input { accent-color: var(--catalogue-yinmn); }
+
+/* Results and course cards */
+.catalogue-page .results-header h2 { color: var(--catalogue-tyrian); }
+.catalogue-page .course-count {
+    border-color: #D8C5D1;
+    background: #F1E8F0;
+    color: var(--catalogue-tyrian);
+}
+.catalogue-page .catalogue-results .course-card {
+    border-color: #E1D0D7;
+    background: #FFFCF9;
+    box-shadow: 0 9px 28px rgba(72,31,62,.065);
+}
+.catalogue-page .catalogue-results .course-card:hover {
+    border-color: var(--catalogue-dusty-rose);
+    box-shadow: 0 18px 38px rgba(72,31,62,.14);
+}
+.catalogue-page .catalogue-results .course-image { background: #E5E1E9; }
+.catalogue-page .catalogue-results .course-card-content { background: #FFFCF9; }
+.catalogue-page .catalogue-results .course-card h3 { color: #40203F; }
+.catalogue-page .catalogue-results .course-card p { color: #716477; }
+.catalogue-page .catalogue-results .course-card .course-meta,
+.catalogue-page .catalogue-results .course-card .course-tags { color: #78677B; }
+.catalogue-page .catalogue-results .course-card .course-badge {
+    background: #E5F0E5;
+    color: #385A42;
+}
+.catalogue-page .empty-state {
+    border-color: #D8C5D1;
+    background: #F8F2F0;
+}
+.catalogue-page .empty-state-icon { color: var(--catalogue-yinmn); }
+.catalogue-page .empty-state h3 { color: var(--catalogue-tyrian); }
+.catalogue-page .empty-state p { color: var(--catalogue-muted); }
+.catalogue-page .clear-filters {
+    background: var(--catalogue-crimson);
+    color: #fff;
+}
+.catalogue-page .clear-filters:hover { background: var(--catalogue-tyrian); }
+
+/* Footer — deep purple with periwinkle and celadon details */
+.catalogue-page .premium-footer {
+    background: linear-gradient(115deg, #250C2C 0%, #360D31 52%, #120A8F 100%);
+    color: #F4F0EC;
+}
+.catalogue-page .premium-footer .footer-brand-block h2 { color: #FFF8F4; }
+.catalogue-page .premium-footer .footer-brand-block p,
+.catalogue-page .premium-footer .footer-description { color: #D8C9D9; }
+.catalogue-page .premium-footer .footer-links a { color: #E8DDED; }
+.catalogue-page .premium-footer .footer-links a:hover { color: var(--catalogue-amber); }
+.catalogue-page .premium-footer .copyright { color: #C9BDD4; }
+.catalogue-page .premium-footer .footer-line { background: rgba(204,204,255,.34); }
+
+/* Visible keyboard focus, including search, filters and navigation */
+.catalogue-page a:focus-visible,
+.catalogue-page button:focus-visible,
+.catalogue-page input:focus-visible,
+.catalogue-page select:focus-visible {
+    outline: 3px solid var(--catalogue-amber);
+    outline-offset: 3px;
+}
